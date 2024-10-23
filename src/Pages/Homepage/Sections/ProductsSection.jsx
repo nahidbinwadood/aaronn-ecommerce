@@ -7,7 +7,7 @@ const ProductsSection = () => {
       image: 'https://i.imgur.com/ia0QnBP.png',
       title: 'Xiaomi Mijia vacuum Cleaner',
       review: 5,
-      price: 196.34,
+      price: 196.33,
       previousPrice: 330.69,
     },
     {
