@@ -5,8 +5,16 @@ import {
   PersonSvg,
   SearchSvg,
 } from '@/Components/Svg Container/SvgContainer';
-import { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
+import { useState } from 'react';
+
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@/components/ui/select';
 
 const navLinks = [
   {
@@ -92,6 +100,7 @@ const categories = [
 const Navbar = () => {
   const [showCategory, setShowCategory] = useState(false);
   const [showPriceInfo, setShowPriceInfo] = useState(false);
+
   return (
     <div className="font-sans">
       {/* primary navbar */}
@@ -123,8 +132,8 @@ const Navbar = () => {
           <div className="flex items-center gap-12">
             <div className="cursor-pointer">
               <div
-                onMouseEnter={() => setShowPriceInfo(true)}
-                onMouseLeave={() => setShowPriceInfo(false)}
+                onMouseEnter={() => setShowPriceInfo(false)}
+                onMouseLeave={() => setShowPriceInfo(true)}
                 className="flex items-center gap-2 relative"
               >
                 <div className="size-6 rounded-full overflow-hidden">
@@ -145,9 +154,79 @@ const Navbar = () => {
                 </div>
 
                 {/* popup */}
-                <div className="relative">
-                  <div className="p-6 h-[300px] w-[400px] absolute top-8 -right-10 bg-white shadow-lg rounded-3xl">
+                <div  onMouseEnter={() => setShowPriceInfo(false)}
+                onMouseLeave={() => setShowPriceInfo(true)}
+                  className={`relative transition-all duration-500 ${
+                    !showPriceInfo
+                      ? 'z-10 translate-y-0 opacity-100 transition-all duration-500'
+                      : '-z-10 translate-y-2 opacity-0 transition-all duration-500'
+                  }`}
+                >
+                  <div className="w-[300px] absolute top-8 -right-10 bg-white shadow-lg rounded-3xl p-8">
                     <div className="absolute top-[-13px] right-[48px] w-0 h-0 border-r-[13px] border-b-[13px] border-l-[13px] border-b-white border-r-transparent border-l-transparent" />
+
+                    {/* contents */}
+                    <div className="space-y-4">
+                      <div>
+                        <h2 className="text-xl font-semibold text-black pb-2">
+                          Ship to
+                        </h2>
+                        <div>
+                          <Select>
+                            <SelectTrigger className="w-full">
+                              <SelectValue placeholder="Bangladesh" />
+                            </SelectTrigger>
+                            <SelectContent>
+                              <SelectItem value="Bangladesh">
+                                Bangladesh
+                              </SelectItem>
+                              <SelectItem value="India">India</SelectItem>
+                              <SelectItem value="Pakistan">Pakistan</SelectItem>
+                            </SelectContent>
+                          </Select>
+                        </div>
+                      </div>
+                      <div>
+                        <h2 className="text-xl font-semibold text-black">
+                          Language
+                        </h2>
+                        <div className="pt-2">
+                          <Select>
+                            <SelectTrigger className="w-full">
+                              <SelectValue placeholder="English" />
+                            </SelectTrigger>
+                            <SelectContent>
+                              <SelectItem value="light">English</SelectItem>
+                              <SelectItem value="dark">Spanish</SelectItem>
+                              <SelectItem value="system">Bangla</SelectItem>
+                            </SelectContent>
+                          </Select>
+                        </div>
+                      </div>
+                      <div>
+                        <h2 className="text-xl font-semibold text-black">
+                          Currency
+                        </h2>
+                        <div className="pt-2">
+                          <Select>
+                            <SelectTrigger className="w-full">
+                              <SelectValue placeholder="BDT ( BAngladeshi Taka) " />
+                            </SelectTrigger>
+                            <SelectContent>
+                              <SelectItem value="BDT">
+                                BDT ( BAngladeshi Taka){' '}
+                              </SelectItem>
+                              <SelectItem value="USD">
+                                USD(United States Dollar)
+                              </SelectItem>
+                              <SelectItem value="Rupee">
+                                Rupee (Indian Rupee)
+                              </SelectItem>
+                            </SelectContent>
+                          </Select>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
