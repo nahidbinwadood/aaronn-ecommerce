@@ -88,7 +88,7 @@ const Footer = () => {
     },
   ];
   return (
-    <section className="bg-backColor text-white">
+    <section className="bg-blackColor text-white">
       <div className="container mx-auto py-[100px] flex justify-between ">
         <div className="w-2/3">
           <Link to="/">

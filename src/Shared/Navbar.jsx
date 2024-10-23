@@ -2,8 +2,13 @@ import {
   CartSvg,
   DownArrowSvg,
   HamburgerSvg,
+  MessageSvg,
+  OrderSvg,
+  PaymentSvg,
+  PersonBlackSvg,
   PersonSvg,
   SearchSvg,
+  WishlistSvg,
 } from '@/Components/Svg Container/SvgContainer';
 import { Link, NavLink } from 'react-router-dom';
 import { useState } from 'react';
@@ -96,10 +101,46 @@ const categories = [
     path: '/categories/laptop',
   },
 ];
-
+const profileNavLinks = [
+  {
+    title: 'My Orders',
+    logo: <OrderSvg />,
+    path: '/my-orders',
+  },
+  {
+    title: 'Message center',
+    logo: <MessageSvg />,
+    path: '/message-center',
+  },
+  {
+    title: 'Payment ',
+    logo: <PaymentSvg />,
+    path: '/payment',
+  },
+  {
+    title: 'Wishlist ',
+    logo: <WishlistSvg />,
+    path: '/wishlist',
+  },
+];
+const profileDashboardLinks = [
+  {
+    title: 'Settings',
+    path: '/settings',
+  },
+  {
+    title: 'Seller Log In',
+    path: '/seller-login',
+  },
+  {
+    title: 'Help Center',
+    path: '/help-center',
+  },
+];
 const Navbar = () => {
   const [showCategory, setShowCategory] = useState(false);
   const [showPriceInfo, setShowPriceInfo] = useState(false);
+  const [showProfileInfo, setShowProfileInfo] = useState(false);
 
   return (
     <div className="font-sans">
@@ -132,8 +173,8 @@ const Navbar = () => {
           <div className="flex items-center gap-12">
             <div className="cursor-pointer">
               <div
-                onMouseEnter={() => setShowPriceInfo(false)}
-                onMouseLeave={() => setShowPriceInfo(true)}
+                onMouseEnter={() => setShowPriceInfo(true)}
+                onMouseLeave={() => setShowPriceInfo(false)}
                 className="flex items-center gap-2 relative"
               >
                 <div className="size-6 rounded-full overflow-hidden">
@@ -154,12 +195,13 @@ const Navbar = () => {
                 </div>
 
                 {/* popup */}
-                <div  onMouseEnter={() => setShowPriceInfo(false)}
-                onMouseLeave={() => setShowPriceInfo(true)}
-                  className={`relative transition-all duration-500 ${
-                    !showPriceInfo
-                      ? 'z-10 translate-y-0 opacity-100 transition-all duration-500'
-                      : '-z-10 translate-y-2 opacity-0 transition-all duration-500'
+                <div
+                  onMouseEnter={() => setShowPriceInfo(true)}
+                  onMouseLeave={() => setShowPriceInfo(false)}
+                  className={`relative transition-all duration-300 ${
+                    showPriceInfo
+                      ? 'z-10 scale-100 opacity-100 transition-all duration-300'
+                      : '-z-10 scale-90 opacity-0 transition-all duration-300'
                   }`}
                 >
                   <div className="w-[300px] absolute top-8 -right-10 bg-white shadow-lg rounded-3xl p-8">
@@ -231,15 +273,93 @@ const Navbar = () => {
                 </div>
               </div>
             </div>
-            <div className="flex items-center gap-2 cursor-pointer">
-              <div>
-                <PersonSvg />
+            <div
+              onMouseEnter={() => setShowProfileInfo(true)}
+              onMouseLeave={() => setShowProfileInfo(false)}
+              className="cursor-pointer relative"
+            >
+              <div
+                onMouseEnter={() => setShowProfileInfo(true)}
+                onMouseLeave={() => setShowProfileInfo(false)}
+                className="flex items-center gap-2 cursor-pointer relative"
+              >
+                <div>
+                  <PersonSvg />
+                </div>
+                <div>
+                  <p className="text-xs">Hello</p>
+                  <div className="flex items-center gap-2">
+                    <p className="text-sm">Sign In Register</p>
+                    <DownArrowSvg />
+                  </div>
+                </div>
               </div>
-              <div>
-                <p className="text-xs">Hello</p>
-                <div className="flex items-center gap-2">
-                  <p className="text-sm">Sign In Register</p>
-                  <DownArrowSvg />
+              {/* popup */}
+              <div
+                onMouseEnter={() => setShowProfileInfo(true)}
+                onMouseLeave={() => setShowProfileInfo(false)}
+                className={`  p-6 text-black absolute top-5 -right-10
+                  ${showProfileInfo?"opacity-100 transition-all duration-500" : "opacity-0 transition-all duration-500"}
+                  `}
+              >
+                <div className="w-[340px] absolute top-8 -right-10 bg-white shadow-lg rounded-3xl p-8">
+                  <div className="absolute top-[-13px] right-1/2 translate-x-1/2  w-0 h-0 border-r-[20px] border-b-[13px] border-l-[20px] border-b-white border-r-transparent border-l-transparent" />
+
+                  {/* contents */}
+                  <div className="">
+                    <div>
+                      <div className="flex items-center gap-4 pb-2">
+                        <div className="size-12 flex items-center justify-center bg-[#D1D0D0] rounded-full">
+                          <PersonBlackSvg />
+                        </div>
+                        <div>
+                          <h4 className="text-sm">
+                            Welcome back ,{' '}
+                            <span className="text-base font-semibold">
+                              Badhan
+                            </span>
+                          </h4>
+                        </div>
+                      </div>
+                      <Link
+                        to="/"
+                        className="text-[#256FF9] font-semibold text-sm ml-16"
+                      >
+                        Sign Out
+                      </Link>
+                    </div>
+                    <div className="border border-[#D1D0D0] my-4" />
+                    <div>
+                      <ul className="flex flex-col gap-4">
+                        {profileNavLinks?.map((link) => (
+                          <li key={link?.title}>
+                            <Link
+                              to={link?.path}
+                              className="text-blackColor hover:font-bold transition-all duration-300 font-semibold text-sm flex items-center gap-2"
+                            >
+                              <span>{link?.logo}</span>
+                              {link?.title}
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                    <div className="border border-[#D1D0D0] my-4" />
+                    <div>
+                      <ul className="flex flex-col gap-4">
+                        {profileDashboardLinks?.map((link) => (
+                          <li key={link?.title}>
+                            <Link
+                              to={link?.path}
+                              className="text-[#5A5C5F] hover:font-bold transition-all duration-300 font-semibold text-sm flex items-center gap-2"
+                            >
+                              {link?.title}
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
