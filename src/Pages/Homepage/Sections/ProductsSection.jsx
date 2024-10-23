@@ -177,8 +177,8 @@ const ProductsSection = () => {
       <Title title={'More to Love'} />
 
       <div className="mt-20 grid grid-cols-4 gap-8">
-        {allProducts?.map((item) => (
-          <ItemCard key={item?.image} item={item} />
+        {allProducts?.map((item,idx) => (
+          <ItemCard key={idx} item={item} />
         ))}
       </div>
       <div className='w-full flex items-center justify-center pt-20'>

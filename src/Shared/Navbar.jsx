@@ -299,7 +299,11 @@ const Navbar = () => {
                 onMouseEnter={() => setShowProfileInfo(true)}
                 onMouseLeave={() => setShowProfileInfo(false)}
                 className={`  p-6 text-black absolute top-5 -right-10
-                  ${showProfileInfo?"opacity-100 transition-all duration-500" : "opacity-0 transition-all duration-500"}
+                  ${
+                    showProfileInfo
+                      ? 'opacity-100 transition-all duration-500'
+                      : 'opacity-0 transition-all duration-500'
+                  }
                   `}
               >
                 <div className="w-[340px] absolute top-8 -right-10 bg-white shadow-lg rounded-3xl p-8">
