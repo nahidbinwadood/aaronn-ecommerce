@@ -118,18 +118,16 @@ const Navbar = () => {
               <DownArrowSvg dark={true} />
             </div>
           </div>
-          <div className="flex items-center gap-8">
+          <ul className="flex items-center gap-8">
             {navLinks?.map((link) => (
-              <NavLink
-                key={link?.title}
-                to={link?.path}
-                className="flex items-center gap-1"
-              >
-                <p>{link?.title}</p>
-                {link?.path === '/more' ? <DownArrowSvg dark={true} /> : ''}
-              </NavLink>
+              <li key={link?.title}>
+                <NavLink to={link?.path} className="flex items-center gap-1">
+                  {link?.title}
+                  {link?.path === '/more' ? <DownArrowSvg dark={true} /> : ''}
+                </NavLink>
+              </li>
             ))}
-          </div>
+          </ul>
         </div>
       </div>
     </div>

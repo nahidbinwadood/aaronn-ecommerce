@@ -181,7 +181,7 @@ const ProductsSection = () => {
           <ItemCard key={item?.image} item={item} />
         ))}
       </div>
-      <div className='w-full flex items-center justify-center py-20'>
+      <div className='w-full flex items-center justify-center pt-20'>
         <button className='bg-[#191919] px-8 py-3 rounded-full text-white  '>Load More</button>
       </div>
     </section>
