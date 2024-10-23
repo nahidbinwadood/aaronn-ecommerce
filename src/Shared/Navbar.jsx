@@ -89,10 +89,9 @@ const categories = [
   },
 ];
 
-const lastCategory = categories[categories.length - 1];
-console.log(lastCategory);
 const Navbar = () => {
   const [showCategory, setShowCategory] = useState(false);
+  const [showPriceInfo, setShowPriceInfo] = useState(false);
   return (
     <div className="font-sans">
       {/* primary navbar */}
@@ -123,7 +122,11 @@ const Navbar = () => {
 
           <div className="flex items-center gap-12">
             <div className="cursor-pointer">
-              <div className="flex items-center gap-2">
+              <div
+                onMouseEnter={() => setShowPriceInfo(true)}
+                onMouseLeave={() => setShowPriceInfo(false)}
+                className="flex items-center gap-2 relative"
+              >
                 <div className="size-6 rounded-full overflow-hidden">
                   <img
                     className="w-full h-full object-cover"
@@ -138,6 +141,13 @@ const Navbar = () => {
                   </div>
                   <div>
                     <DownArrowSvg />
+                  </div>
+                </div>
+
+                {/* popup */}
+                <div className="relative">
+                  <div className="p-6 h-[300px] w-[400px] absolute top-8 -right-10 bg-white shadow-lg rounded-3xl">
+                    <div className="absolute top-[-13px] right-[48px] w-0 h-0 border-r-[13px] border-b-[13px] border-l-[13px] border-b-white border-r-transparent border-l-transparent" />
                   </div>
                 </div>
               </div>
@@ -172,8 +182,8 @@ const Navbar = () => {
         <div className="container mx-auto flex items-center gap-40">
           <div className="relative">
             <button
-              onMouseEnter={() => setShowCategory(!showCategory)}
-              onMouseLeave={() => setShowCategory(!showCategory)}
+              onMouseEnter={() => setShowCategory(true)}
+              onMouseLeave={() => setShowCategory(false)}
               className={` bg-white px-6 py-3 rounded-full flex items-center gap-16 w-fit cursor-pointer`}
             >
               <div className="flex items-center gap-3">
@@ -185,19 +195,17 @@ const Navbar = () => {
               </div>
             </button>
             <div
+              onMouseEnter={() => setShowCategory(true)}
+              onMouseLeave={() => setShowCategory(false)}
               className={`bg-white p-6 rounded-3xl absolute w-full shadow-lg transition-all duration-500
                 ${
                   showCategory
-                    ? 'z-10 translate-y-3 opacity-100'
-                    : '-z-10 translate-y-6 opacity-0'
+                    ? 'z-10 translate-y-3 opacity-100 transition-all duration-500'
+                    : '-z-10 translate-y-6 opacity-0 transition-all duration-500'
                 }
                 `}
             >
-              <ul
-                onMouseEnter={() => setShowCategory(!showCategory)}
-                onMouseLeave={() => setShowCategory(!showCategory)}
-                className="space-y-4"
-              >
+              <ul className="space-y-4">
                 {categories?.map((category, index) => (
                   <li key={category?.title} className="cursor-pointer w-full">
                     <Link
