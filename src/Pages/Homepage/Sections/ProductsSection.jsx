@@ -177,12 +177,14 @@ const ProductsSection = () => {
       <Title title={'More to Love'} />
 
       <div className="mt-20 grid grid-cols-4 gap-8">
-        {allProducts?.map((item,idx) => (
+        {allProducts?.map((item, idx) => (
           <ItemCard key={idx} item={item} />
         ))}
       </div>
-      <div className='w-full flex items-center justify-center pt-20'>
-        <button className='bg-[#191919] px-8 py-3 rounded-full text-white  '>Load More</button>
+      <div className="w-full flex items-center justify-center pt-20">
+        <button className="bg-[#191919] px-8 py-3 rounded-full text-white  ">
+          Load More
+        </button>
       </div>
     </section>
   );

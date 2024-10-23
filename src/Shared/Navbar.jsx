@@ -301,8 +301,8 @@ const Navbar = () => {
                 className={`  p-6 text-black absolute top-5 -right-10
                   ${
                     showProfileInfo
-                      ? 'opacity-100 transition-all duration-500'
-                      : 'opacity-0 transition-all duration-500'
+                      ? 'opacity-100 transition-all duration-500 z-10'
+                      : 'opacity-0 transition-all duration-500 -z-10'
                   }
                   `}
               >
