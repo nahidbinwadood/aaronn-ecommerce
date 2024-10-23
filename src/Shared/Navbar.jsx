@@ -413,7 +413,8 @@ const Navbar = () => {
                   <li key={category?.title} className="cursor-pointer w-full">
                     <Link
                       className="block hover:font-bold transition-all duration-300"
-                      to={category?.path}
+                      // to={category?.path}
+                      to='/category'
                     >
                       {category?.title}
                       {index < categories.length - 1 && (
