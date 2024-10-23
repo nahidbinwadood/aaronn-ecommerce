@@ -2,7 +2,7 @@ import ItemCard from '@/Components/Cards/ItemCard';
 import BannerCardContainer from '@/Components/Sections/BannerCardContainer';
 import {
   RightArrowSvg,
-  StartSvg,
+  StarSvg,
 } from '@/Components/Svg Container/SvgContainer';
 import { Link } from 'react-router-dom';
 
@@ -93,7 +93,7 @@ const Banner = () => {
               />
               <div className="absolute bottom-8 right-10">
                 <div className="relative">
-                  <StartSvg />
+                  <StarSvg />
                   <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-semibold text-xl">
                     <p>70%</p>
                     <p>Off</p>

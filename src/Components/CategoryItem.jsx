@@ -6,7 +6,8 @@ const CategoryItem = ({ item }) => {
   const { image, category, path } = item;
   return (
     <Link
-      to={path}
+      // to={path}
+      to='/category'
       className="flex items-center flex-col justify-center gap-5 mr-20 cursor-pointer"
     >
       <div className="size-24 rounded-full">

@@ -1,11 +1,11 @@
 /* eslint-disable react/prop-types */
 import { Link } from 'react-router-dom';
-import { CartSvg, YellowStartSvg } from '../Svg Container/SvgContainer';
+import { CartSvg, YellowStarSvg } from '../Svg Container/SvgContainer';
 
 const ItemCard = ({ item }) => {
   const { title, review, price, previousPrice, image } = item;
   return (
-    <Link to="/card/details">
+    <Link to="/product-details">
       <div className="h-[450px] w-full relative">
         <img
           className="h-full w-full object-cover rounded-2xl"
@@ -19,7 +19,7 @@ const ItemCard = ({ item }) => {
               {Array(review)
                 .fill()
                 .map((_, index) => (
-                  <YellowStartSvg key={index} />
+                  <YellowStarSvg key={index} />
                 ))}
             </div>
             <div className="flex items-center justify-between">

@@ -411,7 +411,7 @@ const Navbar = () => {
               <ul className="space-y-4">
                 {categories?.map((category, index) => (
                   <li key={category?.title} className="cursor-pointer w-full">
-                    <Link
+                    <Link onClick={()=>setShowCategory(false)}
                       className="block hover:font-bold transition-all duration-300"
                       // to={category?.path}
                       to='/category'

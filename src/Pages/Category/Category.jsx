@@ -1,9 +1,6 @@
 import ItemCard from '@/Components/Cards/ItemCard';
 import Services from '../Homepage/Sections/Services';
-import {
-  DownArrowSvg,
-  RightArrowSvg,
-} from '@/Components/Svg Container/SvgContainer';
+import { DownArrowSvg } from '@/Components/Svg Container/SvgContainer';
 
 const Category = () => {
   const allProducts = [

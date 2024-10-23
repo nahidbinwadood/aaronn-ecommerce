@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const HeroCard = ({ card }) => {
   const { image, price, previousPrice } = card;
   return (
-    <Link to="/card/id">
+    <Link to="/product-details">
       <div className="h-[220px] w-full">
         <img
           className="h-full w-full object-cover rounded-2xl"
