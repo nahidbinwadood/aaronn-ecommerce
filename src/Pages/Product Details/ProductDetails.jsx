@@ -1,3 +1,4 @@
+import DetailsSlider from '@/Components/Sliders/DetailsSlider';
 import {
   CartFullSvg,
   HeartRedSvg,
@@ -6,6 +7,7 @@ import {
   PlusSvg,
   YellowStarSvg,
 } from '@/Components/Svg Container/SvgContainer';
+import MyTabs from '@/Components/Tabs';
 import { useState } from 'react';
 
 const ProductDetails = () => {
@@ -18,8 +20,8 @@ const ProductDetails = () => {
 
   const handleIncreaseCount = () => {
     setCount(count + 1);
-    setPrice(price + count * 88);
-    setPrevPrice(prevPrice + count * 210.7);
+    setPrice(price + 88);
+    setPrevPrice(prevPrice + 210.7);
   };
   const handleDecreaseCount = () => {
     if (count > 1) {
@@ -32,11 +34,12 @@ const ProductDetails = () => {
     <section className="my-16 container mx-auto">
       <div className="flex gap-16">
         <div className="w-1/2">
-          <img
+          {/* <img
             className="rounded-2xl w-full h-full object-cover"
             src="https://i.imgur.com/yK7SZMY.png"
             alt=""
-          />
+          /> */}
+          <DetailsSlider />
         </div>
         <div className="w-1/2">
           <div>
@@ -159,6 +162,19 @@ const ProductDetails = () => {
                   {!wished ? <HeartSvg /> : <HeartRedSvg />}
                 </button>
               </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="mt-40">
+        <div>
+          <h2 className="text-4xl font-semibold">About This Product</h2>
+
+          {/* tabs */}
+          <div className="bg-[#F6F7FB] px-16 py-12 mt-16 rounded-lg">
+            <div className="flex items-center gap-5">
+              <MyTabs />
             </div>
           </div>
         </div>
