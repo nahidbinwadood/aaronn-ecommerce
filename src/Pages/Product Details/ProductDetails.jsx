@@ -12,6 +12,7 @@ import {
 import MyTabs from '@/Components/Tabs';
 import { useState } from 'react';
 import Services from '../Homepage/Sections/Services';
+import { Link } from 'react-router-dom';
 const allProducts = [
   {
     image: 'https://i.imgur.com/ia0QnBP.png',
@@ -210,10 +211,10 @@ const ProductDetails = () => {
 
               {/* add to cart */}
               <div className="flex items-center gap-5">
-                <button className="bg-[#191919] px-8 py-3 rounded-full text-white flex items-center justify-center gap-3">
+                <Link to='/checkout' className="bg-[#191919] px-8 py-3 rounded-full text-white flex items-center justify-center gap-3">
                   <CartFullSvg />
                   Add To Cart
-                </button>
+                </Link>
 
                 <button
                   onClick={() => setWished(!wished)}

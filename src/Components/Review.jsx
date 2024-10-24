@@ -38,14 +38,14 @@ const TestimonialSlider = () => {
 
   return (
     <div className="relative overflow-hidden">
-      <div className="flex items-center justify-between">
+      <div className="flex items-center justify-between pl-10">
         <div>
           <h2 className="text-2xl font-semibold pb-16">Customer Reviews </h2>
         </div>
 
         {/* nav btns */}
         <div>
-          <SliderNavButtons />
+          {/* <SliderNavButtons /> */}
         </div>
       </div>
       <Swiper
