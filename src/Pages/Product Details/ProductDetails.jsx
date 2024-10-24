@@ -1,3 +1,5 @@
+import ItemCard from '@/Components/Cards/ItemCard';
+import ReviewsSlider from '@/Components/Review';
 import DetailsSlider from '@/Components/Sliders/DetailsSlider';
 import {
   CartFullSvg,
@@ -9,7 +11,65 @@ import {
 } from '@/Components/Svg Container/SvgContainer';
 import MyTabs from '@/Components/Tabs';
 import { useState } from 'react';
-
+import Services from '../Homepage/Sections/Services';
+const allProducts = [
+  {
+    image: 'https://i.imgur.com/ia0QnBP.png',
+    title: 'Xiaomi Mijia vacuum Cleaner',
+    review: 5,
+    price: 196.33,
+    previousPrice: 330.69,
+  },
+  {
+    image: 'https://i.imgur.com/SQQlarb.png',
+    title: 'Xiaomi Mijia vacuum Cleaner',
+    review: 5,
+    price: 196.34,
+    previousPrice: 330.69,
+  },
+  {
+    image: 'https://i.imgur.com/LRfGo6D.png',
+    title: 'Xiaomi Mijia vacuum Cleaner',
+    review: 5,
+    price: 196.34,
+    previousPrice: 330.69,
+  },
+  {
+    image: 'https://i.imgur.com/LRfGo6D.png',
+    title: 'Xiaomi Mijia vacuum Cleaner',
+    review: 5,
+    price: 196.34,
+    previousPrice: 330.69,
+  },
+  {
+    image: 'https://i.imgur.com/ia0QnBP.png',
+    title: 'Xiaomi Mijia vacuum Cleaner',
+    review: 5,
+    price: 196.34,
+    previousPrice: 330.69,
+  },
+  {
+    image: 'https://i.imgur.com/SQQlarb.png',
+    title: 'Xiaomi Mijia vacuum Cleaner',
+    review: 5,
+    price: 196.34,
+    previousPrice: 330.69,
+  },
+  {
+    image: 'https://i.imgur.com/LRfGo6D.png',
+    title: 'Xiaomi Mijia vacuum Cleaner',
+    review: 5,
+    price: 196.34,
+    previousPrice: 330.69,
+  },
+  {
+    image: 'https://i.imgur.com/LRfGo6D.png',
+    title: 'Xiaomi Mijia vacuum Cleaner',
+    review: 5,
+    price: 196.34,
+    previousPrice: 330.69,
+  },
+];
 const ProductDetails = () => {
   const [wished, setWished] = useState(false);
   const [count, setCount] = useState(1);
@@ -31,8 +91,8 @@ const ProductDetails = () => {
     }
   };
   return (
-    <section className="my-16 container mx-auto">
-      <div className="flex gap-16">
+    <section className="my-16 ">
+      <div className="flex gap-16 container mx-auto">
         <div className="w-1/2">
           {/* <img
             className="rounded-2xl w-full h-full object-cover"
@@ -167,7 +227,7 @@ const ProductDetails = () => {
         </div>
       </div>
 
-      <div className="mt-40">
+      <div className="mt-40 container mx-auto">
         <div>
           <h2 className="text-4xl font-semibold">About This Product</h2>
 
@@ -179,6 +239,27 @@ const ProductDetails = () => {
           </div>
         </div>
       </div>
+
+      <div className="my-40 bg-[#FDF9D4]  ">
+        <div className="container mx-auto py-24">
+          <div className="pt-10">
+            <ReviewsSlider />
+          </div>
+        </div>
+      </div>
+
+      <div className="my-40 container mx-auto">
+        <div>
+          <h2 className="text-center text-4xl font-semibold">Related Items</h2>
+        </div>
+        <div className="mt-20 grid grid-cols-4 gap-8">
+          {allProducts?.map((item, idx) => (
+            <ItemCard key={idx} item={item} />
+          ))}
+        </div>
+      </div>
+
+      <Services />
     </section>
   );
 };
