@@ -13,28 +13,90 @@ const DashboardOrders = () => {
               key={tab?.title}
               onClick={() => setActive(tab?.title)}
               className={`cursor-pointer text-2xl transition-all duration-300 ${
-                tab.title == active
-                  ? ' text-blackColor'
-                  : 'opacity-50'
+                tab.title == active ? ' text-blackColor' : 'opacity-50'
               }`}
             >
-              {tab?.title}
+              {tab.title == 'Unpaid' ? (
+                <span>{tab?.title} (2)</span>
+              ) : (
+                tab?.title
+              )}
             </h2>
           ))}
         </div>
       </div>
 
-      {/* awaiting delivery */}
-      <div className="mt-6">
-        <div>
-          <h3 className="font-semibold text-xl">Awaiting Delivery</h3>
+      {active === 'All' && (
+        <>
+          {/* awaiting delivery */}
+          <div className="mt-6">
+            <div>
+              <h3 className="font-semibold text-xl">Awaiting Delivery</h3>
+            </div>
+            <div>
+              <DashboardCard variant={'awaitingDelivery'} />
+              <DashboardCard variant={'awaitingDelivery'} />
+            </div>
+          </div>
+
+          {/* pending*/}
+          <div className="mt-6">
+            <div>
+              <h3 className="font-semibold text-xl">Pending</h3>
+            </div>
+            <div>
+              <DashboardCard variant={'pending'} />
+              <DashboardCard variant={'pending'} />
+            </div>
+          </div>
+
+          {/* finished */}
+
+          <div className="mt-6">
+            <div>
+              <h3 className="font-semibold text-xl">Finished</h3>
+            </div>
+            <div>
+              <DashboardCard variant={'completed'} />
+              <DashboardCard variant={'completed'} />
+            </div>
+          </div>
+        </>
+      )}
+      {active === 'Unpaid' && (
+        <div className="transition-all duration-500">
+          {/* awaiting delivery */}
+          <div className="mt-6">
+            <div>
+              <h3 className="font-semibold text-xl">Unpaid</h3>
+            </div>
+          </div>
+
+          {/* finished */}
+
+          <div>
+            <DashboardCard variant={'pending'} />
+            <DashboardCard variant={'pending'} />
+          </div>
         </div>
-        <div>
-          <DashboardCard variant={"awaitingDelivery"}/>
-          <DashboardCard variant={"awaitingDelivery"}/>
-          <DashboardCard variant={"awaitingDelivery"}/>
+      )}
+      {active === 'Completed' && (
+        <div className="transition-all duration-500">
+          {/* awaiting delivery */}
+          <div className="mt-6">
+            <div>
+              <h3 className="font-semibold text-xl">Completed</h3>
+            </div>
+          </div>
+
+          {/* finished */}
+
+          <div>
+            <DashboardCard variant={'completed'} />
+            <DashboardCard variant={'completed'} />
+          </div>
         </div>
-      </div>
+      )}
     </div>
   );
 };

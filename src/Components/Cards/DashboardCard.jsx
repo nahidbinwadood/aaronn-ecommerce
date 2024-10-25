@@ -111,7 +111,7 @@ const DashboardCard = ({ variant }) => {
                 onMouseLeave={() => setShowTracking(false)}
                 className="flex items-center justify-center gap-2 w-52 py-3 rounded-full border border-[#C5C5C5] transition-all duration-500"
               >
-                <span className="  transition duration-500">Track Order</span>
+                <span className="transition duration-500">Track Order</span>
               </button>
 
               {/* tracking */}
@@ -128,7 +128,7 @@ const DashboardCard = ({ variant }) => {
               >
                 <div className="relative w-[350px] h-[289px]">
                   <div
-                    className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-[#F7F7F7] border border-[#C5C5C5] shadow-lg"
+                    className="absolute top-0 left-[55%] -translate-x-1/2 w-full h-full bg-[#F7F7F7] border border-[#C5C5C5] shadow-lg"
                     style={{
                       clipPath:
                         "path('M20 51.3579C20 38.1031 30.7452 27.3579 44 27.3579H141.5L154 16L167.5 27.3579H259C272.255 27.3579 283 38.1031 283 51.3579V241C283 254.255 272.255 265 259 265H44C30.7452 265 20 254.255 20 241V51.3579Z')",
@@ -188,6 +188,21 @@ const DashboardCard = ({ variant }) => {
             </div>
           </>
         )}
+        {variant && variant === 'completed' && (
+          <>
+            <button className="flex items-center justify-center gap-2 w-52 py-3 rounded-full border hover:border-[#C5C5C5] hover:bg-transparent text-white group bg-blackColor border-blackColor transition-all duration-500">
+              <span className="group-hover:text-blackColor transition duration-500">
+                Write a Review
+              </span>
+            </button>
+            <div className="relative">
+              <button className="flex items-center justify-center gap-2 w-52 py-3 rounded-full border border-[#C5C5C5]  hover:bg-blackColor group hover:border-blackColor transition-all duration-500">
+                <span className="transition duration-500 group-hover:text-white">Delete</span>
+              </button>
+            </div>
+          </>
+        )}
+
       </div>
     </div>
   );
