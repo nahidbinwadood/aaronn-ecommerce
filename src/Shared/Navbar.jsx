@@ -367,7 +367,7 @@ const Navbar = () => {
                 </div>
               </div>
             </div>
-            <div className="flex items-center gap-2 cursor-pointer">
+            <Link to='/dashboard/overview' className="flex items-center gap-2 cursor-pointer">
               <div>
                 <CartSvg />
               </div>
@@ -375,7 +375,7 @@ const Navbar = () => {
                 <p className="text-xs">0</p>
                 <p className="text-sm">Cart</p>
               </div>
-            </div>
+            </Link>
           </div>
         </div>
       </div>
