@@ -39,7 +39,7 @@ const DashboardCard = ({ variant }) => {
 
               {/* quantity */}
               {variant &&
-                (variant == 'pending' || variant == 'awaitingDelivery') && (
+                (variant == 'pending' || variant == 'awaitingDelivery' || variant == 'completed') && (
                   <span className="text-[#5A5C5F] text-base flex items-center gap-2">
                     <CrossSvg /> 1
                   </span>

@@ -13,6 +13,7 @@ import DashboardFeedback from '@/Pages/Dashboard/Feedback/DashboardFeedback';
 import DashboardMessageCenter from '@/Pages/Dashboard/Message Center/DashboardMessageCenter';
 import DashboardSetting from '@/Pages/Dashboard/Setting/DashboardSetting';
 import DashboardHelpCenter from '@/Pages/Dashboard/Help Center/DashboardHelpCenter';
+import BestSellers from '@/Pages/Best Sellers/BestSellers';
 
 const router = createBrowserRouter([
   {
@@ -21,6 +22,22 @@ const router = createBrowserRouter([
     children: [
       {
         path: '/',
+        element: <Homepage />,
+      },
+      {
+        path: '/best-sellers',
+        element: <BestSellers />,
+      },
+      {
+        path: '/top-brands',
+        element: <Homepage />,
+      },
+      {
+        path: '/hair-extension',
+        element: <Homepage />,
+      },
+      {
+        path: '/home-and-garden',
         element: <Homepage />,
       },
       {

@@ -4,6 +4,7 @@ import TopPicks from './TopPicks';
 import Marquee from 'react-fast-marquee';
 import CategoryItem from '@/Components/CategoryItem';
 import ItemCard from '@/Components/Cards/ItemCard';
+import Banner from '@/Components/Banner';
 const WelcomePage = () => {
   const allCategories = [
     {
@@ -227,32 +228,7 @@ const WelcomePage = () => {
   ];
   return (
     <section>
-      <section className="py-5">
-        <div className="bg-[#FD384F] h-[320px] rounded-2xl container mx-auto relative flex items-center justify-center py-20">
-          {/* shades */}
-          <div>
-            <div className="absolute top-1/2 left-0 -translate-y-1/2">
-              <img
-                className="h-full w-full object-cover"
-                src="https://i.imgur.com/IFXdgM2.png"
-                alt=""
-              />
-            </div>
-            <div className="absolute top-1/2 right-0 -translate-y-1/2">
-              <img
-                className="h-full w-full object-cover"
-                src="https://i.imgur.com/iVxMC5a.png"
-                alt=""
-              />
-            </div>
-          </div>
-
-          <div className="text-white text-center space-y-6">
-            <h2 className="text-4xl font-semibold">Welcome deals</h2>
-            <h3 className="text-6xl font-bold text-[#FFDF88]">Up to 70% Off</h3>
-          </div>
-        </div>
-      </section>
+      <Banner title={'Welcome deals'} secondaryTitle={'Up to 70% Off'} />
       <div className="container mx-auto">
         <TopPicks />
       </div>

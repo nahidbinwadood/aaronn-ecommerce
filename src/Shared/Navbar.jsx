@@ -23,28 +23,24 @@ import {
 
 const navLinks = [
   {
-    title: 'Dollar Express',
-    path: '/dollar-express',
+    title: 'Home',
+    path: '/',
   },
   {
     title: 'Best sellers',
     path: '/best-sellers',
   },
   {
-    title: 'Ships from us',
-    path: '/ships-from-us',
-  },
-  {
-    title: 'Home Improvement',
-    path: '/home-improvement',
-  },
-  {
     title: 'Top Brands',
     path: '/top-brands',
   },
   {
-    title: 'More',
-    path: '/more',
+    title: 'Hair Extension & Wigs',
+    path: '/hair-extension',
+  },
+  {
+    title: 'Home & Garden',
+    path: '/home-and-garden',
   },
 ];
 const categories = [
@@ -367,7 +363,10 @@ const Navbar = () => {
                 </div>
               </div>
             </div>
-            <Link to='/dashboard/overview' className="flex items-center gap-2 cursor-pointer">
+            <Link
+              to="/dashboard/overview"
+              className="flex items-center gap-2 cursor-pointer"
+            >
               <div>
                 <CartSvg />
               </div>
@@ -411,10 +410,11 @@ const Navbar = () => {
               <ul className="space-y-4">
                 {categories?.map((category, index) => (
                   <li key={category?.title} className="cursor-pointer w-full">
-                    <Link onClick={()=>setShowCategory(false)}
+                    <Link
+                      onClick={() => setShowCategory(false)}
                       className="block hover:font-bold transition-all duration-300"
                       // to={category?.path}
-                      to='/category'
+                      to="/category"
                     >
                       {category?.title}
                       {index < categories.length - 1 && (
@@ -429,9 +429,15 @@ const Navbar = () => {
           <ul className="flex items-center gap-8">
             {navLinks?.map((link) => (
               <li key={link?.title}>
-                <NavLink to={link?.path} className="flex items-center gap-1">
+                <NavLink
+                  to={link?.path}
+                  className={({ isActive }) =>
+                    `flex items-center gap-1 ${
+                      isActive ? 'font-semibold' : 'font-normal'
+                    }`
+                  }
+                >
                   {link?.title}
-                  {link?.path === '/more' ? <DownArrowSvg dark={true} /> : ''}
                 </NavLink>
               </li>
             ))}
