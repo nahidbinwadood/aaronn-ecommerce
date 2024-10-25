@@ -818,3 +818,26 @@ export function PaypalSvg() {
     </svg>
   );
 }
+export function CrossSvg() {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="12"
+      height="12"
+      viewBox="0 0 12 12"
+      fill="none"
+    >
+      <g clipPath="url(#clip0_6424_9506)">
+        <path
+          d="M12 0.521508L11.4784 0L5.99848 5.47992L0.521555 0.00323437L0 0.524742L5.47692 6.00148L0 11.4784L0.521555 12L5.99848 6.52308L11.4756 12L11.9971 11.4784L6.52003 6.00148L12 0.521508Z"
+          fill="#5A5C5F"
+        />
+      </g>
+      <defs>
+        <clipPath id="clip0_6424_9506">
+          <rect width="12" height="12" fill="white" />
+        </clipPath>
+      </defs>
+    </svg>
+  );
+}
