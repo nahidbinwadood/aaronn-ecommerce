@@ -14,6 +14,9 @@ import DashboardMessageCenter from '@/Pages/Dashboard/Message Center/DashboardMe
 import DashboardSetting from '@/Pages/Dashboard/Setting/DashboardSetting';
 import DashboardHelpCenter from '@/Pages/Dashboard/Help Center/DashboardHelpCenter';
 import BestSellers from '@/Pages/Best Sellers/BestSellers';
+import TopBrands from '@/Pages/Top Brands/TopBrands';
+import HairExtension from '@/Pages/Hair Extension/HairExtension';
+import HomeAndGarden from '@/Pages/Home and Garden/HomeAndGarden';
 
 const router = createBrowserRouter([
   {
@@ -30,15 +33,15 @@ const router = createBrowserRouter([
       },
       {
         path: '/top-brands',
-        element: <Homepage />,
+        element: <TopBrands />,
       },
       {
         path: '/hair-extension',
-        element: <Homepage />,
+        element: <HairExtension />,
       },
       {
         path: '/home-and-garden',
-        element: <Homepage />,
+        element: <HomeAndGarden />,
       },
       {
         path: '/welcome-deals',
