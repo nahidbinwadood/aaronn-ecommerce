@@ -70,7 +70,7 @@ const DashboardLayout = () => {
               </p>
             </div>
             <div className="mt-16 flex gap-5">
-              <div className="w-[30%] px-8 py-9 rounded-[24px] border border-[#E5E5E5]">
+              <div className="w-[30%] h-fit px-8 py-9 rounded-[24px] border border-[#E5E5E5]">
                 <div>
                   <h2 className="text-3xl font-semibold pb-6 border-b border-[#C5C5C5]">
                     Account
