@@ -1,11 +1,9 @@
-/* eslint-disable no-irregular-whitespace */
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from '@/components/ui/accordion';
-import { Link } from 'react-router-dom';
+} from '@/Components/ui/accordion';
 const DashboardHelpCenter = () => {
   const faq = [
     {
@@ -56,12 +54,8 @@ const DashboardHelpCenter = () => {
         {faq?.map((item) => (
           <Accordion key={item?.title} type="single" collapsible>
             <AccordionItem value="item-1">
-              <AccordionTrigger>
-                {item?.title}
-              </AccordionTrigger>
-              <AccordionContent>
-                {item?.description}
-              </AccordionContent>
+              <AccordionTrigger>{item?.title}</AccordionTrigger>
+              <AccordionContent>{item?.description}</AccordionContent>
             </AccordionItem>
           </Accordion>
         ))}
