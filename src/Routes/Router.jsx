@@ -20,6 +20,7 @@ import HomeAndGarden from '@/Pages/Home and Garden/HomeAndGarden';
 import Registration from '@/Pages/Auth/Registration';
 import Login from '@/Pages/Auth/Login';
 import EmailLogin from '@/Pages/Auth/EmailLogin';
+import NumberLogin from '@/Pages/Auth/NumberLogin';
 
 const router = createBrowserRouter([
   {
@@ -101,5 +102,6 @@ const router = createBrowserRouter([
   { path: '/register', element: <Registration /> },
   { path: '/login', element: <Login /> },
   { path: '/email-login', element: <EmailLogin /> },
+  { path: '/number-login', element: <NumberLogin /> },
 ]);
 export default router;
