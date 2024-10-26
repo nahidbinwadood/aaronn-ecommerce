@@ -11,6 +11,7 @@ export default {
       },
       fontFamily: {
         sans: ["'Open Sans'", 'sans-serif'],
+        poppins: ["'Poppins'", 'sans-serif'],
       },
       colors: {
         background: 'hsl(var(--background))',

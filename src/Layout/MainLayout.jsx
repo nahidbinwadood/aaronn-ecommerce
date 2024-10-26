@@ -6,14 +6,14 @@ const MainLayout = () => {
   return (
     <>
       <ScrollRestoration />
-      <nav>
+      <nav className='font-poppins'>
         <Navbar />
       </nav>
-      <main className="min-h-[calc(100vh-612px)]">
+      <main className="min-h-[calc(100vh-612px)] font-poppins">
         <Outlet />
       </main>
       <footer>
-        <Footer />
+        <Footer className='font-poppins' />
       </footer>
     </>
   );
