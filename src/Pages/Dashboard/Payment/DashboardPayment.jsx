@@ -1,4 +1,3 @@
-import FormInput from '@/Components/Form/FormInput';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 const payments = [
@@ -168,7 +167,7 @@ const DashboardPayment = () => {
               </div>
               <div className="flex flex-col gap-4 w-1/2">
                 <label id="passcode" className="text-lg">
-                Passcode
+                  Passcode
                 </label>
                 <input
                   {...register('city')}
