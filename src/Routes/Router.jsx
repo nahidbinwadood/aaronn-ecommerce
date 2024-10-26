@@ -21,6 +21,8 @@ import Registration from '@/Pages/Auth/Registration';
 import Login from '@/Pages/Auth/Login';
 import EmailLogin from '@/Pages/Auth/EmailLogin';
 import NumberLogin from '@/Pages/Auth/NumberLogin';
+import VerifyEmail from '@/Pages/Auth/VerifyEmail';
+import ResetPassword from '@/Pages/Auth/ResetPassword';
 
 const router = createBrowserRouter([
   {
@@ -103,5 +105,8 @@ const router = createBrowserRouter([
   { path: '/login', element: <Login /> },
   { path: '/email-login', element: <EmailLogin /> },
   { path: '/number-login', element: <NumberLogin /> },
+  { path: '/verify-email', element: <VerifyEmail /> },
+  { path: '/verify-email', element: <VerifyEmail /> },
+  { path: '/reset-password', element: <ResetPassword /> },
 ]);
 export default router;
