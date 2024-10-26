@@ -9,11 +9,11 @@ const MainLayout = () => {
       <nav className='font-poppins'>
         <Navbar />
       </nav>
-      <main className="min-h-[calc(100vh-612px)] font-poppins">
+      <main className="min-h-[calc(100vh-612px)]">
         <Outlet />
       </main>
-      <footer>
-        <Footer className='font-poppins' />
+      <footer className='font-poppins'>
+        <Footer />
       </footer>
     </>
   );

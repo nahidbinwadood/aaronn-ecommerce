@@ -58,7 +58,7 @@ const DashboardLayout = () => {
   return (
     <>
       <ScrollRestoration />
-      <nav className='font-poppins'>
+      <nav>
         <Navbar />
       </nav>
       <main className="min-h-[calc(100vh-612px)] font-poppins">
@@ -111,7 +111,7 @@ const DashboardLayout = () => {
           </div>
         </div>
       </main>
-      <footer className='font-poppins'>
+      <footer>
         <Footer />
       </footer>
     </>

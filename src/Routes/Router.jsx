@@ -17,6 +17,9 @@ import BestSellers from '@/Pages/Best Sellers/BestSellers';
 import TopBrands from '@/Pages/Top Brands/TopBrands';
 import HairExtension from '@/Pages/Hair Extension/HairExtension';
 import HomeAndGarden from '@/Pages/Home and Garden/HomeAndGarden';
+import Registration from '@/Pages/Auth/Registration';
+import Login from '@/Pages/Auth/Login';
+import EmailLogin from '@/Pages/Auth/EmailLogin';
 
 const router = createBrowserRouter([
   {
@@ -95,5 +98,8 @@ const router = createBrowserRouter([
       },
     ],
   },
+  { path: '/register', element: <Registration /> },
+  { path: '/login', element: <Login /> },
+  { path: '/email-login', element: <EmailLogin /> },
 ]);
 export default router;

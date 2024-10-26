@@ -322,7 +322,7 @@ const Navbar = () => {
                         </div>
                       </div>
                       <Link
-                        to="/"
+                        to="/login"
                         className="text-[#256FF9] font-semibold text-sm ml-16"
                       >
                         Sign Out
@@ -412,8 +412,7 @@ const Navbar = () => {
                   <li key={category?.title} className="cursor-pointer w-full">
                     <Link
                       onClick={() => setShowCategory(false)}
-                      className="block hover:font-bold transition-all duration-300"
-                      // to={category?.path}
+                      className="block hover:font-bold duration-200 transition-all"
                       to="/category"
                     >
                       {category?.title}
