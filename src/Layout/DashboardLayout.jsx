@@ -45,6 +45,7 @@ const DashboardLayout = () => {
   );
   const location = useLocation();
   const currentPath = location?.pathname;
+  const isMessageCenter = currentPath == '/dashboard/message-center';
 
   useEffect(() => {
     const currentNavItem = dashboardNavLinks.find(
@@ -99,7 +100,11 @@ const DashboardLayout = () => {
                   </ul>
                 </div>
               </div>
-              <div className="w-full px-8 py-9 rounded-[24px] border border-[#E5E5E5]">
+              <div
+                className={`w-full px-8 pt-9 ${
+                  isMessageCenter ? 'pb-0' : 'pb-9 '
+                } rounded-[24px] border border-[#E5E5E5]`}
+              >
                 <Outlet />
               </div>
             </div>
