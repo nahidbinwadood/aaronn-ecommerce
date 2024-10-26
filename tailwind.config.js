@@ -19,6 +19,7 @@ export default {
         secondaryColor: '#FFCC43',
         textLight: '#5A5C5F',
         blackColor: '#191919',
+        borderColor: '#C5C5C5',
         card: {
           DEFAULT: 'hsl(var(--card))',
           foreground: 'hsl(var(--card-foreground))',
