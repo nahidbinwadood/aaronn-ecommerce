@@ -7,6 +7,7 @@ import {
 } from '@/Components/Svg Container/SvgContainer';
 import Services from '../Homepage/Sections/Services';
 import { useEffect, useRef, useState } from 'react';
+import ItemCardListView from '@/Components/Cards/ItemCardListView';
 const allProducts = [
   {
     image: 'https://i.imgur.com/ia0QnBP.png',
@@ -357,11 +358,21 @@ const BestSellers = () => {
 
       <div>
         <section className="container mx-auto">
-          <div className="mt-20 grid grid-cols-4 gap-8">
-            {allProducts?.map((item, idx) => (
-              <ItemCard key={idx} item={item} />
-            ))}
-          </div>
+          {activeView == 'gallery' && (
+            <div className="mt-20 grid grid-cols-4 gap-8">
+              {allProducts?.map((item, idx) => (
+                <ItemCard key={idx} item={item} />
+              ))}
+            </div>
+          )}
+
+          {activeView == 'list' && (
+            <div className="mt-20 grid grid-cols-2 gap-5 ">
+              {allProducts?.map((item, idx) => (
+                <ItemCardListView key={idx} item={item} />
+              ))}
+            </div>
+          )}
           <div className="w-full flex items-center justify-center pt-20">
             <button className="bg-[#191919] px-8 py-3 rounded-full text-white  ">
               Load More
