@@ -3,9 +3,15 @@ import { useState } from 'react';
 
 const DashboardSetting = () => {
   const [selectedImage, setSelectedImage] = useState(null);
+  const [editable, setEditable] = useState(false);
   const handleImageChange = (e) => {
     const file = e.target.files[0];
     setSelectedImage(URL.createObjectURL(file));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // submit form data here
   };
   return (
     <div>
@@ -33,6 +39,7 @@ const DashboardSetting = () => {
               type="file"
               name=""
               id="image"
+              disabled={!editable}
             />
             {selectedImage ? (
               <div className="size-72">
@@ -51,14 +58,19 @@ const DashboardSetting = () => {
           </label>
         </div>
         <div className="mt-9">
-          <form action="" className="w-full px-20 space-y-6">
+          <form
+            onSubmit={handleSubmit}
+            action=""
+            className="w-full px-20 space-y-6"
+          >
             <div className="flex items-center w-full gap-6">
               <div className="px-6 py-3 rounded-[24px] flex items-center gap-2 border border-borderColor w-full">
                 <label className="text-nowrap" htmlFor="name">
                   Name :
                 </label>
                 <input
-                  defaultValue={'Nahid Bin Wadood'}
+                  readOnly={!editable}
+                  defaultValue="Nahid Bin Wadood"
                   className="w-full font-medium py-2 focus:outline-none"
                   type="text"
                   name="name"
@@ -70,6 +82,7 @@ const DashboardSetting = () => {
                   Email Address :
                 </label>
                 <input
+                  readOnly={!editable}
                   defaultValue={'nahidbinwadood@gmail.com'}
                   className="w-full font-medium py-2 focus:outline-none"
                   type="email"
@@ -84,6 +97,7 @@ const DashboardSetting = () => {
                   Email Address :
                 </label>
                 <input
+                  readOnly={!editable}
                   defaultValue={'Nahidbinwadood@gmail.com'}
                   className="w-full font-medium py-2 focus:outline-none"
                   type="email"
@@ -96,6 +110,7 @@ const DashboardSetting = () => {
                   Member ID :
                 </label>
                 <input
+                  readOnly={!editable}
                   defaultValue={'us1664578218bgqae'}
                   className="w-full font-medium py-2 focus:outline-none"
                   type="text"
@@ -110,6 +125,7 @@ const DashboardSetting = () => {
                   Street Address :
                 </label>
                 <input
+                  readOnly={!editable}
                   defaultValue={'18887 4th Street'}
                   className="w-full font-medium py-2 focus:outline-none"
                   type="text"
@@ -122,6 +138,7 @@ const DashboardSetting = () => {
                   City :
                 </label>
                 <input
+                  readOnly={!editable}
                   defaultValue={'Ibrahimborough'}
                   className="w-full font-medium py-2 focus:outline-none"
                   type="text"
@@ -136,6 +153,7 @@ const DashboardSetting = () => {
                   Country/region :
                 </label>
                 <input
+                  readOnly={!editable}
                   defaultValue={'Japan'}
                   className="w-full font-medium py-2 focus:outline-none"
                   type="text"
@@ -148,6 +166,7 @@ const DashboardSetting = () => {
                   Zip/postal code :
                 </label>
                 <input
+                  readOnly={!editable}
                   defaultValue={'16205-0776'}
                   className="w-full font-medium py-2 focus:outline-none"
                   type="text"
@@ -162,6 +181,7 @@ const DashboardSetting = () => {
                   Phone Number :
                 </label>
                 <input
+                  readOnly={!editable}
                   defaultValue={'1-526-272-7718'}
                   className="w-full font-medium py-2 focus:outline-none"
                   type="text"
@@ -172,12 +192,26 @@ const DashboardSetting = () => {
             </div>
 
             <div className="pt-12 w-full flex flex-col gap-6 items-center justify-center">
-              <button className="hover:bg-blackColor px-12 w-1/2 text-center py-3 transition duration-300 border border-blackColor bg-transparent text-blackColor text-lg rounded-full hover:text-white">
-                Edit Account
-              </button>
-              <button className="bg-blackColor px-12 w-1/2 text-center py-3 transition duration-300 border border-blackColor hover:bg-transparent hover:text-blackColor text-lg rounded-full text-white">
-                Delete Account
-              </button>
+              {editable ? (
+                <button
+                  onClick={() => setEditable(false)}
+                  className="hover:bg-blackColor px-12 w-1/2 text-center py-3 transition duration-300 border border-blackColor bg-transparent text-blackColor text-lg rounded-full hover:text-white"
+                >
+                  Save Changes
+                </button>
+              ) : (
+                <>
+                  <button
+                    onClick={() => setEditable(true)}
+                    className="hover:bg-blackColor px-12 w-1/2 text-center py-3 transition duration-300 border border-blackColor bg-transparent text-blackColor text-lg rounded-full hover:text-white"
+                  >
+                    Edit Account
+                  </button>
+                  <button className="bg-blackColor px-12 w-1/2 text-center py-3 transition duration-300 border border-blackColor hover:bg-transparent hover:text-blackColor text-lg rounded-full text-white">
+                    Delete Account
+                  </button>
+                </>
+              )}
             </div>
           </form>
         </div>
