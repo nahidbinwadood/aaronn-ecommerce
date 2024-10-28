@@ -26,11 +26,9 @@ const ConfirmReceiptModal = ({ setOpen }) => {
       <div className="mt-8 font-poppins space-y-4">
         <button
           onClick={handleConfirmReceipt}
-          className="flex w-[450px] mx-auto items-center justify-center gap-2 py-3 rounded-full border hover:border-[#C5C5C5] hover:bg-transparent text-white group bg-blackColor border-blackColor transition-all duration-500"
+          className="flex w-[450px] mx-auto items-center justify-center gap-2 py-3 rounded-full border text-white group bg-blackColor border-blackColor transition-all duration-500"
         >
-          <span className="group-hover:text-blackColor transition duration-500">
-            Confirm
-          </span>
+          <span className="transition duration-500">Confirm</span>
         </button>
 
         <button

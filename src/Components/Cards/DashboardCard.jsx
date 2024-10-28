@@ -8,15 +8,23 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Modal } from '../Modals/Modal';
 import ConfirmReceiptModal from '../Modals/ConfirmReceiptModal';
+import ReviewModal from '../Modals/ReviewModal';
 
 const DashboardCard = ({ variant }) => {
   const [open, setOpen] = useState(false);
+  const [modalType, setModalType] = useState('');
   const [showTracking, setShowTracking] = useState(false);
-
+  console.log(modalType);
   return (
     <div className="flex w-full items-center justify-between py-8 border-b border-[#C5C5C5]">
+      {/* Modal */}
       <Modal open={open} setOpen={setOpen}>
-        <ConfirmReceiptModal setOpen={setOpen} />
+        {modalType && modalType === 'confirmReceipt' && (
+          <ConfirmReceiptModal setOpen={setOpen} />
+        )}
+        {modalType && modalType === 'review' && (
+          <ReviewModal setOpen={setOpen} />
+        )}
       </Modal>
       <div className="flex gap-7 w-4/5">
         <div className="size-[200px]">
@@ -115,6 +123,7 @@ const DashboardCard = ({ variant }) => {
             <button
               onClick={() => {
                 setOpen(true);
+                setModalType('confirmReceipt');
               }}
               className="flex items-center justify-center gap-2 w-52 py-3 rounded-full border hover:border-[#C5C5C5] hover:bg-transparent text-white group bg-blackColor border-blackColor transition-all duration-500"
             >
@@ -207,7 +216,13 @@ const DashboardCard = ({ variant }) => {
         )}
         {variant && variant === 'completed' && (
           <>
-            <button className="flex items-center justify-center gap-2 w-52 py-3 rounded-full border hover:border-[#C5C5C5] hover:bg-transparent text-white group bg-blackColor border-blackColor transition-all duration-500">
+            <button
+              onClick={() => {
+                setOpen(true);
+                setModalType('review');
+              }}
+              className="flex items-center justify-center gap-2 w-52 py-3 rounded-full border hover:border-[#C5C5C5] hover:bg-transparent text-white group bg-blackColor border-blackColor transition-all duration-500"
+            >
               <span className="group-hover:text-blackColor transition duration-500">
                 Write a Review
               </span>
