@@ -6,12 +6,18 @@ import {
 } from '@/Components/Svg Container/SvgContainer';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-// eslint-disable-next-line react/prop-types
+import { Modal } from '../Modals/Modal';
+import ConfirmReceiptModal from '../Modals/ConfirmReceiptModal';
+
 const DashboardCard = ({ variant }) => {
+  const [open, setOpen] = useState(false);
   const [showTracking, setShowTracking] = useState(false);
 
   return (
     <div className="flex w-full items-center justify-between py-8 border-b border-[#C5C5C5]">
+      <Modal open={open} setOpen={setOpen}>
+        <ConfirmReceiptModal setOpen={setOpen} />
+      </Modal>
       <div className="flex gap-7 w-4/5">
         <div className="size-[200px]">
           <img
@@ -40,7 +46,9 @@ const DashboardCard = ({ variant }) => {
 
               {/* quantity */}
               {variant &&
-                (variant == 'pending' || variant == 'awaitingDelivery' || variant == 'completed') && (
+                (variant == 'pending' ||
+                  variant == 'awaitingDelivery' ||
+                  variant == 'completed') && (
                   <span className="text-[#5A5C5F] text-base flex items-center gap-2">
                     <CrossSvg /> 1
                   </span>
@@ -86,7 +94,10 @@ const DashboardCard = ({ variant }) => {
 
         {variant && variant === 'pending' && (
           <>
-            <Link to='/checkout' className="flex items-center justify-center gap-2 w-52 py-3 rounded-full border hover:border-[#C5C5C5] hover:bg-transparent text-white group bg-blackColor border-blackColor transition-all duration-500">
+            <Link
+              to="/checkout"
+              className="flex items-center justify-center gap-2 w-52 py-3 rounded-full border hover:border-[#C5C5C5] hover:bg-transparent text-white group bg-blackColor border-blackColor transition-all duration-500"
+            >
               <span className="group-hover:text-blackColor transition duration-500">
                 Pay Now
               </span>
@@ -101,7 +112,12 @@ const DashboardCard = ({ variant }) => {
 
         {variant && variant === 'awaitingDelivery' && (
           <>
-            <button className="flex items-center justify-center gap-2 w-52 py-3 rounded-full border hover:border-[#C5C5C5] hover:bg-transparent text-white group bg-blackColor border-blackColor transition-all duration-500">
+            <button
+              onClick={() => {
+                setOpen(true);
+              }}
+              className="flex items-center justify-center gap-2 w-52 py-3 rounded-full border hover:border-[#C5C5C5] hover:bg-transparent text-white group bg-blackColor border-blackColor transition-all duration-500"
+            >
               <span className="group-hover:text-blackColor transition duration-500">
                 Confirm Receipt
               </span>
@@ -198,12 +214,13 @@ const DashboardCard = ({ variant }) => {
             </button>
             <div className="relative">
               <button className="flex items-center justify-center gap-2 w-52 py-3 rounded-full border border-[#C5C5C5]  hover:bg-blackColor group hover:border-blackColor transition-all duration-500">
-                <span className="transition duration-500 group-hover:text-white">Delete</span>
+                <span className="transition duration-500 group-hover:text-white">
+                  Delete
+                </span>
               </button>
             </div>
           </>
         )}
-
       </div>
     </div>
   );
