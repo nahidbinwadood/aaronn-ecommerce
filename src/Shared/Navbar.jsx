@@ -364,7 +364,7 @@ const Navbar = () => {
               </div>
             </div>
             <Link
-              to="/dashboard/overview"
+              to="/cart"
               className="flex items-center gap-2 cursor-pointer"
             >
               <div>

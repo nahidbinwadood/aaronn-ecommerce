@@ -27,6 +27,7 @@ import ResetPassNumber from '@/Pages/Auth/ResetPassNumber';
 import ChangePassword from '@/Pages/Auth/ChangePassword';
 import DashboardWishlist from '@/Pages/Dashboard/Wishlist/DashboardWishlist';
 import BuyInBulk from '@/Pages/Buy In Bulk/BuyInBulk';
+import Cart from '@/Pages/Cart/Cart';
 
 const router = createBrowserRouter([
   {
@@ -72,6 +73,10 @@ const router = createBrowserRouter([
       {
         path: '/checkout',
         element: <Checkout />,
+      },
+      {
+        path: '/cart',
+        element: <Cart />,
       },
     ],
   },

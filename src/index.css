@@ -57,6 +57,9 @@
     --chart-5: 340 75% 55%;
   }
 }
+body {
+  font-family: 'Poppins', 'sans-serif';
+}
 @layer base {
   * {
     @apply border-border;
