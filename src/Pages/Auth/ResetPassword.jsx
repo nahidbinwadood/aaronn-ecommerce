@@ -24,7 +24,7 @@ const ResetPassword = () => {
         setTimeout(() => {
           setLoading(false);
           toast.success('A verification code sent to your email address');
-          // navigate('/dashboard/overview');
+          navigate('/reset-password/email');
         }, 2000);
       }
     } else if (active == 'number') {
@@ -32,7 +32,7 @@ const ResetPassword = () => {
         setTimeout(() => {
           setLoading(false);
           toast.success('A verification code sent to your number');
-          // navigate('/dashboard/overview');
+          navigate('/reset-password/number');
         }, 2000);
       }
     }
@@ -77,7 +77,7 @@ const ResetPassword = () => {
                   className="flex items-center gap-3 cursor-pointer"
                 >
                   {active === 'number' ? <CheckedSvg /> : <UncheckedSvg />}
-                  <span className="cursor-pointer">Number</span>
+                  <span className="cursor-pointer">Phone Number</span>
                 </div>
               </div>
               <div>

@@ -1,4 +1,3 @@
-import { GreenTickSvg } from '@/Components/Svg Container/SvgContainer';
 import { CgSpinnerTwo } from 'react-icons/cg';
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
@@ -12,12 +11,12 @@ import {
   InputOTPSlot,
 } from '@/Components/ui/input-otp';
 
-const VerifyEmail = () => {
+const ResetPassEmail = () => {
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   const { handleSubmit, setValue, watch } = useForm({
     defaultValues: {
-      otp: ['', '', '', ''], // Initialize with empty strings for each slot
+      otp: ['', '', '', '','',''], // Initialize with empty strings for each slot
     },
   });
 
@@ -35,7 +34,7 @@ const VerifyEmail = () => {
     if (data) {
       setTimeout(() => {
         setLoading(false);
-        toast.success('Email Verified Successfully');
+        toast.success('Verification Successful');
         navigate('/dashboard/overview');
       }, 2000);
     }
@@ -49,13 +48,11 @@ const VerifyEmail = () => {
       </div>
       <div className="w-1/2 h-full flex items-center justify-center">
         <div className="rounded-[24px] border border-[#E5E5E5] w-[573px] py-10">
-          <div className="text-center ">
-            <h3 className="font-semibold text-2xl">Verify Your Email</h3>
+          <div className="text-center mt-10">
+            <h3 className="font-semibold text-2xl">Email Verification Code</h3>
           </div>
-          <div className="flex items-center justify-center mt-5 bg-[#e4f7f1]">
-            <p className="flex gap-2 items-center py-2">
-              <GreenTickSvg /> Your information is protected
-            </p>
+          <div className="flex items-center justify-center mt-6 text-textLight text-center w-1/2 mx-auto">
+            <p>Enter the 6-digit code we emailed to nahid*****@gmail.com</p>
           </div>
 
           {/* form */}
@@ -65,17 +62,12 @@ const VerifyEmail = () => {
               action=""
               className="w-3/4 mx-auto flex flex-col gap-5"
             >
-              <div className="text-center text-textLight">
-                <p>Please enter the 4-digit code sent to</p>
-                <p className="pt-2">nahidbinwadood@gmail.com</p>
-              </div>
-
               {/* OTP */}
 
               <div className="w-full flex items-center justify-center">
-                <InputOTP maxLength={4} pattern={REGEXP_ONLY_DIGITS_AND_CHARS}>
+                <InputOTP maxLength={6} pattern={REGEXP_ONLY_DIGITS_AND_CHARS}>
                   <InputOTPGroup>
-                    {[0, 1, 2, 3].map((index) => (
+                    {[0, 1, 2, 3, 4, 5].map((index) => (
                       <InputOTPSlot
                         key={index}
                         index={index}
@@ -97,7 +89,7 @@ const VerifyEmail = () => {
                     {loading ? (
                       <CgSpinnerTwo className="size-6 animate-spin" />
                     ) : (
-                      'Verify Email'
+                      'Verify'
                     )}
                   </span>
                 </button>
@@ -119,4 +111,4 @@ const VerifyEmail = () => {
   );
 };
 
-export default VerifyEmail;
+export default ResetPassEmail;
