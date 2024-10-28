@@ -35,7 +35,7 @@ const ResetPassNumber = () => {
       setTimeout(() => {
         setLoading(false);
         toast.success('Verification Successful');
-        navigate('/dashboard/overview');
+        navigate('/change-password');
       }, 2000);
     }
   };

@@ -25,6 +25,7 @@ import VerifyEmail from '@/Pages/Auth/VerifyEmail';
 import ResetPassword from '@/Pages/Auth/ResetPassword';
 import ResetPassEmail from '@/Pages/Auth/ResetPassEmail';
 import ResetPassNumber from '@/Pages/Auth/ResetPassNumber';
+import ChangePassword from '@/Pages/Auth/ChangePassword';
 
 const router = createBrowserRouter([
   {
@@ -112,5 +113,6 @@ const router = createBrowserRouter([
   { path: '/reset-password', element: <ResetPassword /> },
   { path: '/reset-password/email', element: <ResetPassEmail /> },
   { path: '/reset-password/number', element: <ResetPassNumber /> },
+  { path: '/change-password', element: <ChangePassword /> },
 ]);
 export default router;

@@ -16,7 +16,7 @@ const ResetPassEmail = () => {
   const navigate = useNavigate();
   const { handleSubmit, setValue, watch } = useForm({
     defaultValues: {
-      otp: ['', '', '', '','',''], // Initialize with empty strings for each slot
+      otp: ['', '', '', '', '', ''], // Initialize with empty strings for each slot
     },
   });
 
@@ -35,7 +35,7 @@ const ResetPassEmail = () => {
       setTimeout(() => {
         setLoading(false);
         toast.success('Verification Successful');
-        navigate('/dashboard/overview');
+        navigate('/change-password');
       }, 2000);
     }
   };
