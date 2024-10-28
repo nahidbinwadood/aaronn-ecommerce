@@ -91,10 +91,7 @@ const DashboardCard = ({ variant }) => {
         {variant && (variant == 'wishlist' || variant == 'viewed') && (
           <>
             <button
-              onClick={() => {
-                setOpen(true);
-                setModalType('delete');
-              }}
+               
               className="flex items-center justify-center gap-2 w-52 py-3 rounded-full border border-[#C5C5C5] group hover:bg-blackColor hover:border-blackColor transition-all duration-500"
             >
               <CartBlack />
