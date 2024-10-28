@@ -105,36 +105,27 @@ const profileNavLinks = [
   {
     title: 'My Orders',
     logo: <OrderSvg />,
-    path: '/my-orders',
+    path: '/dashboard/orders',
   },
   {
     title: 'Message center',
     logo: <MessageSvg />,
-    path: '/message-center',
-  },
-  {
-    title: 'Payment ',
-    logo: <PaymentSvg />,
-    path: '/payment',
+    path: '/dashboard/message-center',
   },
   {
     title: 'Wishlist ',
     logo: <WishlistSvg />,
-    path: '/wishlist',
+    path: '/dashboard/wishlist',
   },
 ];
 const profileDashboardLinks = [
   {
     title: 'Settings',
-    path: '/settings',
-  },
-  {
-    title: 'Seller Log In',
-    path: '/seller-login',
+    path: '/dashboard/setting',
   },
   {
     title: 'Help Center',
-    path: '/help-center',
+    path: '/dashboard/help-center',
   },
 ];
 const Navbar = () => {
@@ -320,7 +311,7 @@ const Navbar = () => {
                           <h4 className="text-sm">
                             Welcome back ,{' '}
                             <span className="text-base font-semibold">
-                              Badhan
+                              Aaron
                             </span>
                           </h4>
                         </div>
@@ -367,10 +358,7 @@ const Navbar = () => {
                 </div>
               </div>
             </div>
-            <Link
-              to="/cart"
-              className="flex items-center gap-2 cursor-pointer"
-            >
+            <Link to="/cart" className="flex items-center gap-2 cursor-pointer">
               <div>
                 <CartSvg />
               </div>
