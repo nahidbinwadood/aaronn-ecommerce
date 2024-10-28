@@ -7,7 +7,7 @@ const DashboardOrders = () => {
   return (
     <div>
       <div>
-        <div className=" flex items-center gap-12 font-semibold pb-8 border-b border-[#C5C5C5]">
+        <div className=" flex items-center gap-12 font-medium pb-8 border-b border-[#C5C5C5]">
           {tabs?.map((tab) => (
             <h2
               key={tab?.title}
@@ -31,7 +31,7 @@ const DashboardOrders = () => {
           {/* awaiting delivery */}
           <div className="mt-6">
             <div>
-              <h3 className="font-semibold text-xl">Awaiting Delivery</h3>
+              <h3 className="font-medium text-xl">Awaiting Delivery</h3>
             </div>
             <div>
               <DashboardCard variant={'awaitingDelivery'} />
@@ -42,7 +42,7 @@ const DashboardOrders = () => {
           {/* pending*/}
           <div className="mt-6">
             <div>
-              <h3 className="font-semibold text-xl">Pending</h3>
+              <h3 className="font-medium text-xl">Pending</h3>
             </div>
             <div>
               <DashboardCard variant={'pending'} />
@@ -54,7 +54,7 @@ const DashboardOrders = () => {
 
           <div className="mt-6">
             <div>
-              <h3 className="font-semibold text-xl">Finished</h3>
+              <h3 className="font-medium text-xl">Finished</h3>
             </div>
             <div>
               <DashboardCard variant={'completed'} />

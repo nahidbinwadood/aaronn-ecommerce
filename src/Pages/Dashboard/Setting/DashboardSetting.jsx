@@ -10,7 +10,7 @@ const DashboardSetting = () => {
   return (
     <div>
       <div>
-        <h2 className="text-[#191919] font-semibold text-3xl pb-8 border-b border-[#C5C5C5]">
+        <h2 className="text-[#191919] font-medium text-3xl pb-8 border-b border-[#C5C5C5]">
           Settings
         </h2>
       </div>
@@ -18,7 +18,7 @@ const DashboardSetting = () => {
       {/* form */}
       <div className="mt-9">
         <div>
-          <h4 className="text-center text-2xl font-semibold">
+          <h4 className="text-center text-2xl font-medium">
             Personal Information
           </h4>
         </div>
@@ -45,7 +45,7 @@ const DashboardSetting = () => {
             ) : (
               <div className="flex flex-col items-center justify-center gap-3">
                 <ImageUploadPlaceholderSvg />
-                <p className="text-sm font-semibold">Upload Image</p>
+                <p className="text-sm font-medium">Upload Image</p>
               </div>
             )}
           </label>
@@ -59,7 +59,7 @@ const DashboardSetting = () => {
                 </label>
                 <input
                   defaultValue={'Nahid Bin Wadood'}
-                  className="w-full font-semibold py-2 focus:outline-none"
+                  className="w-full font-medium py-2 focus:outline-none"
                   type="text"
                   name="name"
                   id="name"
@@ -71,7 +71,7 @@ const DashboardSetting = () => {
                 </label>
                 <input
                   defaultValue={'nahidbinwadood@gmail.com'}
-                  className="w-full font-semibold py-2 focus:outline-none"
+                  className="w-full font-medium py-2 focus:outline-none"
                   type="email"
                   name="email"
                   id="email"
@@ -85,7 +85,7 @@ const DashboardSetting = () => {
                 </label>
                 <input
                   defaultValue={'Nahidbinwadood@gmail.com'}
-                  className="w-full font-semibold py-2 focus:outline-none"
+                  className="w-full font-medium py-2 focus:outline-none"
                   type="email"
                   name="email"
                   id="email"
@@ -97,7 +97,7 @@ const DashboardSetting = () => {
                 </label>
                 <input
                   defaultValue={'us1664578218bgqae'}
-                  className="w-full font-semibold py-2 focus:outline-none"
+                  className="w-full font-medium py-2 focus:outline-none"
                   type="text"
                   name="memberId"
                   id="memberId"
@@ -111,7 +111,7 @@ const DashboardSetting = () => {
                 </label>
                 <input
                   defaultValue={'18887 4th Street'}
-                  className="w-full font-semibold py-2 focus:outline-none"
+                  className="w-full font-medium py-2 focus:outline-none"
                   type="text"
                   name="streetAddress"
                   id="streetAddress"
@@ -123,7 +123,7 @@ const DashboardSetting = () => {
                 </label>
                 <input
                   defaultValue={'Ibrahimborough'}
-                  className="w-full font-semibold py-2 focus:outline-none"
+                  className="w-full font-medium py-2 focus:outline-none"
                   type="text"
                   name="city"
                   id="city"
@@ -137,7 +137,7 @@ const DashboardSetting = () => {
                 </label>
                 <input
                   defaultValue={'Japan'}
-                  className="w-full font-semibold py-2 focus:outline-none"
+                  className="w-full font-medium py-2 focus:outline-none"
                   type="text"
                   name="country"
                   id="country"
@@ -149,7 +149,7 @@ const DashboardSetting = () => {
                 </label>
                 <input
                   defaultValue={'16205-0776'}
-                  className="w-full font-semibold py-2 focus:outline-none"
+                  className="w-full font-medium py-2 focus:outline-none"
                   type="text"
                   name="zipCode"
                   id="zipCode"
@@ -163,7 +163,7 @@ const DashboardSetting = () => {
                 </label>
                 <input
                   defaultValue={'1-526-272-7718'}
-                  className="w-full font-semibold py-2 focus:outline-none"
+                  className="w-full font-medium py-2 focus:outline-none"
                   type="text"
                   name="phoneNumber"
                   id="phoneNumber"

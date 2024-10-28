@@ -21,14 +21,14 @@ const DashboardCard = ({ variant }) => {
         </div>
         <div className="w-[70%]">
           <div>
-            <h4 className="text-xl font-semibold">
+            <h4 className="text-xl font-medium">
               Air Wave Mattress Cool Sleep Supportive and Pressure Relief Air
               Wrapped Coils Comforthable Mattress Topper Affordable Queen&SS
             </h4>
 
             {/* price */}
             <div className="mt-5 flex items-center gap-2">
-              <p className="text-2xl font-semibold">$88.00</p>
+              <p className="text-2xl font-medium">$88.00</p>
 
               {/* showing price */}
               {variant && (variant == 'wishlist' || variant == 'viewed') && (

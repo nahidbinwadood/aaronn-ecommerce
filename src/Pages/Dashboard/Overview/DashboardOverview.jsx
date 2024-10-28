@@ -4,13 +4,13 @@ const DashboardOverview = () => {
   return (
     <div>
       <div>
-        <h2 className="text-[#191919] font-semibold text-3xl pb-8 border-b border-[#C5C5C5]">
+        <h2 className="text-[#191919] font-medium text-3xl pb-8 border-b border-[#C5C5C5]">
           Overview
         </h2>
       </div>
       <div className="mt-6">
         <div>
-          <h3 className="font-semibold text-xl">Wishlist</h3>
+          <h3 className="font-medium text-xl">Wishlist</h3>
         </div>
         <div>
           <DashboardCard variant={"wishlist"}/>

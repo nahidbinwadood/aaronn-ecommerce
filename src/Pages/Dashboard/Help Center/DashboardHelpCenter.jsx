@@ -46,7 +46,7 @@ const DashboardHelpCenter = () => {
   return (
     <div>
       <div>
-        <h2 className="text-[#191919] font-semibold text-3xl pb-8 border-b border-[#C5C5C5]">
+        <h2 className="text-[#191919] font-medium text-3xl pb-8 border-b border-[#C5C5C5]">
           Help Center
         </h2>
       </div>

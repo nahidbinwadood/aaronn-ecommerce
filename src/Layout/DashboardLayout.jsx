@@ -21,8 +21,8 @@ const DashboardLayout = () => {
         path: '/dashboard/orders',
       },
       {
-        title: 'Payment',
-        path: '/dashboard/payment',
+        title: 'Wishlist',
+        path: '/dashboard/wishlist',
       },
       {
         title: 'Feedback',
@@ -73,7 +73,7 @@ const DashboardLayout = () => {
             <div className="mt-16 flex gap-5">
               <div className="w-[30%] h-fit px-8 py-9 rounded-[24px] border border-[#E5E5E5]">
                 <div>
-                  <h2 className="text-3xl font-semibold pb-6 border-b border-[#C5C5C5]">
+                  <h2 className="text-3xl font-medium pb-6 border-b border-[#C5C5C5]">
                     Account
                   </h2>
                 </div>
@@ -84,7 +84,7 @@ const DashboardLayout = () => {
                         <NavLink
                           to={link?.path}
                           className={({ isActive }) =>
-                            `text-lg font-semibold block  pb-4  ${
+                            `text-lg font-medium block  pb-4  ${
                               dashboardNavLinks.length - 1 === idx
                                 ? 'border-none '
                                 : 'border-b'

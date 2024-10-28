@@ -8,7 +8,6 @@ import Checkout from '@/Pages/Checkout Page/Checkout';
 import DashboardLayout from '@/Layout/DashboardLayout';
 import DashboardOverview from '@/Pages/Dashboard/Overview/DashboardOverview';
 import DashboardOrders from '@/Pages/Dashboard/Orders/DashboardOrders';
-import DashboardPayment from '@/Pages/Dashboard/Payment/DashboardPayment';
 import DashboardFeedback from '@/Pages/Dashboard/Feedback/DashboardFeedback';
 import DashboardMessageCenter from '@/Pages/Dashboard/Message Center/DashboardMessageCenter';
 import DashboardSetting from '@/Pages/Dashboard/Setting/DashboardSetting';
@@ -26,6 +25,7 @@ import ResetPassword from '@/Pages/Auth/ResetPassword';
 import ResetPassEmail from '@/Pages/Auth/ResetPassEmail';
 import ResetPassNumber from '@/Pages/Auth/ResetPassNumber';
 import ChangePassword from '@/Pages/Auth/ChangePassword';
+import DashboardWishlist from '@/Pages/Dashboard/Wishlist/DashboardWishlist';
 
 const router = createBrowserRouter([
   {
@@ -83,8 +83,8 @@ const router = createBrowserRouter([
         element: <DashboardOrders />,
       },
       {
-        path: '/dashboard/payment',
-        element: <DashboardPayment />,
+        path: '/dashboard/wishlist',
+        element: <DashboardWishlist />,
       },
       {
         path: '/dashboard/feedback',

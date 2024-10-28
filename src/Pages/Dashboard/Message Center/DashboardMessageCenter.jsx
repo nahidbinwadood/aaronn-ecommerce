@@ -4,7 +4,7 @@ const DashboardMessageCenter = () => {
   return (
     <div className="">
       <div>
-        <h2 className="text-[#191919] font-semibold text-3xl pb-8 border-b border-[#C5C5C5]">
+        <h2 className="text-[#191919] font-medium text-3xl pb-8 border-b border-[#C5C5C5]">
           Message Center
         </h2>
       </div>
@@ -20,7 +20,7 @@ const DashboardMessageCenter = () => {
                 />
               </div>
               <div className="space-y-2 w-[60%]">
-                <h4 className="text-lg font-semibold">Chinese Shoe Store</h4>
+                <h4 className="text-lg font-medium">Chinese Shoe Store</h4>
                 <div className="text-textLight flex items-center justify-between w-full">
                   <p>[Product Details]</p>
                   <p>8:33</p>
@@ -99,7 +99,7 @@ const DashboardMessageCenter = () => {
                 />
                 <button
                   type="submit"
-                  className="px-20 py-3 w-fit rounded-full font-semibold bg-blackColor text-white border border-blackColor hover:bg-transparent hover:text-blackColor transition duration-300"
+                  className="px-20 py-3 w-fit rounded-full font-medium bg-blackColor text-white border border-blackColor hover:bg-transparent hover:text-blackColor transition duration-300"
                 >
                   Send
                 </button>
