@@ -9,7 +9,9 @@ import { Link } from 'react-router-dom';
 import { Modal } from '../Modals/Modal';
 import ConfirmReceiptModal from '../Modals/ConfirmReceiptModal';
 import ReviewModal from '../Modals/ReviewModal';
+import DeleteModal from '../Modals/DeleteModal';
 
+// eslint-disable-next-line react/prop-types
 const DashboardCard = ({ variant }) => {
   const [open, setOpen] = useState(false);
   const [modalType, setModalType] = useState('');
@@ -24,6 +26,9 @@ const DashboardCard = ({ variant }) => {
         )}
         {modalType && modalType === 'review' && (
           <ReviewModal setOpen={setOpen} />
+        )}
+        {modalType && modalType === 'delete' && (
+          <DeleteModal setOpen={setOpen} />
         )}
       </Modal>
       <div className="flex gap-7 w-4/5">
@@ -85,13 +90,25 @@ const DashboardCard = ({ variant }) => {
       <div className="space-y-8">
         {variant && (variant == 'wishlist' || variant == 'viewed') && (
           <>
-            <button className="flex items-center justify-center gap-2 w-52 py-3 rounded-full border border-[#C5C5C5] group hover:bg-blackColor hover:border-blackColor transition-all duration-500">
+            <button
+              onClick={() => {
+                setOpen(true);
+                setModalType('delete');
+              }}
+              className="flex items-center justify-center gap-2 w-52 py-3 rounded-full border border-[#C5C5C5] group hover:bg-blackColor hover:border-blackColor transition-all duration-500"
+            >
               <CartBlack />
               <span className="group-hover:text-white transition duration-500">
                 Add To Cart
               </span>
             </button>
-            <button className="flex items-center justify-center gap-2 w-52 py-3 rounded-full border border-[#C5C5C5] group hover:bg-blackColor hover:border-blackColor transition-all duration-500">
+            <button
+              onClick={() => {
+                setOpen(true);
+                setModalType('delete');
+              }}
+              className="flex items-center justify-center gap-2 w-52 py-3 rounded-full border border-[#C5C5C5] group hover:bg-blackColor hover:border-blackColor transition-all duration-500"
+            >
               <DeleteBlackSvg />
               <span className="group-hover:text-white transition duration-500">
                 Delete
@@ -228,7 +245,13 @@ const DashboardCard = ({ variant }) => {
               </span>
             </button>
             <div className="relative">
-              <button className="flex items-center justify-center gap-2 w-52 py-3 rounded-full border border-[#C5C5C5]  hover:bg-blackColor group hover:border-blackColor transition-all duration-500">
+              <button
+                onClick={() => {
+                  setOpen(true);
+                  setModalType('delete');
+                }}
+                className="flex items-center justify-center gap-2 w-52 py-3 rounded-full border border-[#C5C5C5]  hover:bg-blackColor group hover:border-blackColor transition-all duration-500"
+              >
                 <span className="transition duration-500 group-hover:text-white">
                   Delete
                 </span>

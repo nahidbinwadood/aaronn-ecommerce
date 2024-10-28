@@ -1,9 +1,13 @@
+import DeleteModal from '@/Components/Modals/DeleteModal';
+import { Modal } from '@/Components/Modals/Modal';
 import { ImageUploadPlaceholderSvg } from '@/Components/Svg Container/SvgContainer';
 import { useState } from 'react';
 
 const DashboardSetting = () => {
   const [selectedImage, setSelectedImage] = useState(null);
   const [editable, setEditable] = useState(false);
+  const [open, setOpen] = useState(false);
+  const [modalType, setModalType] = useState('');
   const handleImageChange = (e) => {
     const file = e.target.files[0];
     setSelectedImage(URL.createObjectURL(file));
@@ -15,6 +19,11 @@ const DashboardSetting = () => {
   };
   return (
     <div>
+      <Modal open={open} modalType={modalType}>
+        {modalType && modalType === 'delete' && (
+          <DeleteModal setOpen={setOpen} />
+        )}
+      </Modal>
       <div>
         <h2 className="text-[#191919] font-medium text-3xl pb-8 border-b border-[#C5C5C5]">
           Settings
@@ -207,7 +216,13 @@ const DashboardSetting = () => {
                   >
                     Edit Account
                   </button>
-                  <button className="bg-blackColor px-12 w-1/2 text-center py-3 transition duration-300 border border-blackColor hover:bg-transparent hover:text-blackColor text-lg rounded-full text-white">
+                  <button
+                    onClick={() => {
+                      setOpen(true);
+                      setModalType('delete');
+                    }}
+                    className="bg-blackColor px-12 w-1/2 text-center py-3 transition duration-300 border border-blackColor hover:bg-transparent hover:text-blackColor text-lg rounded-full text-white"
+                  >
                     Delete Account
                   </button>
                 </>
