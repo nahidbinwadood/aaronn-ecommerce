@@ -189,15 +189,6 @@ const ProductDetails = () => {
 
                 <div className="flex items-center gap-3">
                   <button
-                    onClick={handleIncreaseCount}
-                    className="size-12 flex items-center justify-center rounded-lg bg-[#E5E5E5]"
-                  >
-                    <PlusSvg />
-                  </button>
-                  <button className="text-lg font-semibold size-12 flex items-center justify-center rounded-lg border border-[#E5E5E5]">
-                    <span>{count}</span>
-                  </button>
-                  <button
                     disabled={count < 1} // Disable button when count is less than 1
                     onClick={handleDecreaseCount}
                     className={`size-12 flex items-center justify-center rounded-lg bg-[#E5E5E5] ${
@@ -206,12 +197,25 @@ const ProductDetails = () => {
                   >
                     <MinusSvg />
                   </button>
+
+                  <button className="text-lg font-medium size-12 flex items-center justify-center rounded-lg border border-[#E5E5E5]">
+                    <span>{count}</span>
+                  </button>
+                  <button
+                    onClick={handleIncreaseCount}
+                    className="size-12 flex items-center justify-center rounded-lg bg-[#E5E5E5]"
+                  >
+                    <PlusSvg />
+                  </button>
                 </div>
               </div>
 
               {/* add to cart */}
               <div className="flex items-center gap-5">
-                <Link to='/checkout' className="bg-[#191919] px-8 py-3 rounded-full text-white flex items-center justify-center gap-3">
+                <Link
+                  to="/checkout"
+                  className="bg-[#191919] px-8 py-3 rounded-full text-white flex items-center justify-center gap-3"
+                >
                   <CartFullSvg />
                   Add To Cart
                 </Link>

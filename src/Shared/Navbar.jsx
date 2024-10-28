@@ -53,6 +53,10 @@ const categories = [
     path: '/categories/furniture',
   },
   {
+    title: 'Motor & parts & accessories ',
+    path: '/categories/furniture',
+  },
+  {
     title: 'Beauty & Health',
     path: '/categories/beauty-&-health',
   },
