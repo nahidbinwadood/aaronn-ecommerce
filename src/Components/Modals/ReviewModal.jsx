@@ -1,14 +1,12 @@
+/* eslint-disable react/prop-types */
 import {
   DialogContent,
   DialogDescription,
   DialogFooter,
   DialogHeader,
   DialogTitle,
-  DialogTrigger,
 } from '@/Components/ui/dialog';
 import toast from 'react-hot-toast';
-import Rating from 'react-rating';
-import { RatingSvg } from '../Svg Container/SvgContainer';
 import { useState } from 'react';
 import { Star } from 'lucide-react';
 const ReviewModal = ({ setOpen }) => {
@@ -16,15 +14,12 @@ const ReviewModal = ({ setOpen }) => {
   const [hover, setHover] = useState(0);
   const handleRating = (value) => {
     setRating(value);
-    if (onRatingChange) {
-      onRatingChange(value);
-    }
   };
-  const handleSubmit=(e)=>{
+  const handleSubmit = (e) => {
     e.preventDefault();
     toast.success('Review submitted successfully!', { duration: 2000 });
     setOpen(false);
-  }
+  };
   return (
     <DialogContent className="sm:max-w-[825px] py-[100px] px-14 text-center">
       <DialogHeader>
