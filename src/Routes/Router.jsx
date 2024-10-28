@@ -26,6 +26,7 @@ import ResetPassEmail from '@/Pages/Auth/ResetPassEmail';
 import ResetPassNumber from '@/Pages/Auth/ResetPassNumber';
 import ChangePassword from '@/Pages/Auth/ChangePassword';
 import DashboardWishlist from '@/Pages/Dashboard/Wishlist/DashboardWishlist';
+import BuyInBulk from '@/Pages/Buy In Bulk/BuyInBulk';
 
 const router = createBrowserRouter([
   {
@@ -35,6 +36,10 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Homepage />,
+      },
+      {
+        path: '/buy-bulk',
+        element: <BuyInBulk />,
       },
       {
         path: '/best-sellers',

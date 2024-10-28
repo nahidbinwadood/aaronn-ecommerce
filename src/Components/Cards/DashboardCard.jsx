@@ -5,6 +5,7 @@ import {
   YellowStarSvg,
 } from '@/Components/Svg Container/SvgContainer';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 // eslint-disable-next-line react/prop-types
 const DashboardCard = ({ variant }) => {
   const [showTracking, setShowTracking] = useState(false);
@@ -85,11 +86,11 @@ const DashboardCard = ({ variant }) => {
 
         {variant && variant === 'pending' && (
           <>
-            <button className="flex items-center justify-center gap-2 w-52 py-3 rounded-full border hover:border-[#C5C5C5] hover:bg-transparent text-white group bg-blackColor border-blackColor transition-all duration-500">
+            <Link to='/checkout' className="flex items-center justify-center gap-2 w-52 py-3 rounded-full border hover:border-[#C5C5C5] hover:bg-transparent text-white group bg-blackColor border-blackColor transition-all duration-500">
               <span className="group-hover:text-blackColor transition duration-500">
                 Pay Now
               </span>
-            </button>
+            </Link>
             <button className="flex items-center justify-center gap-2 w-52 py-3 rounded-full border border-[#C5C5C5] group hover:bg-blackColor hover:border-blackColor transition-all duration-500">
               <span className="group-hover:text-white transition duration-500">
                 Edit Address

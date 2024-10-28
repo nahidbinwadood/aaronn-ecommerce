@@ -28,6 +28,60 @@ const DashboardMessageCenter = () => {
               </div>
             </div>
           </div>
+          <div className="mt-9">
+            <div className="flex items-center gap-4 mr-10">
+              <div className="size-24  w-[30%]">
+                <img
+                  className="w-full h-full rounded-2xl"
+                  src="https://i.postimg.cc/J0xRQQsQ/shoe.jpg"
+                  alt=""
+                />
+              </div>
+              <div className="space-y-2 w-[60%]">
+                <h4 className="text-lg font-medium">Chinese Shoe Store</h4>
+                <div className="text-textLight flex items-center justify-between w-full">
+                  <p>[Product Details]</p>
+                  <p>8:33</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="mt-9">
+            <div className="flex items-center gap-4 mr-10">
+              <div className="size-24  w-[30%]">
+                <img
+                  className="w-full h-full rounded-2xl"
+                  src="https://i.postimg.cc/J0xRQQsQ/shoe.jpg"
+                  alt=""
+                />
+              </div>
+              <div className="space-y-2 w-[60%]">
+                <h4 className="text-lg font-medium">Chinese Shoe Store</h4>
+                <div className="text-textLight flex items-center justify-between w-full">
+                  <p>[Product Details]</p>
+                  <p>8:33</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="mt-9">
+            <div className="flex items-center gap-4 mr-10">
+              <div className="size-24  w-[30%]">
+                <img
+                  className="w-full h-full rounded-2xl"
+                  src="https://i.postimg.cc/J0xRQQsQ/shoe.jpg"
+                  alt=""
+                />
+              </div>
+              <div className="space-y-2 w-[60%]">
+                <h4 className="text-lg font-medium">Chinese Shoe Store</h4>
+                <div className="text-textLight flex items-center justify-between w-full">
+                  <p>[Product Details]</p>
+                  <p>8:33</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
         <div className="h-full p-9 w-[67%]">
           <div className="flex flex-col gap-9">
