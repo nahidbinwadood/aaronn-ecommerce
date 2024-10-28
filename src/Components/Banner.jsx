@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 const Banner = ({ title, secondaryTitle }) => {
   return (
-    <section className="py-5">
+    <section className="py-10">
       <div className="bg-[#FD384F] h-[320px] rounded-2xl container mx-auto relative flex items-center justify-center py-20">
         {/* shades */}
         <div>
