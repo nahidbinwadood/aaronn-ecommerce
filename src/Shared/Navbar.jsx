@@ -19,6 +19,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/Components/ui/select';
+import ReactFlagsSelect from 'react-flags-select';
 
 const navLinks = [
   {
@@ -248,6 +249,7 @@ const Navbar = () => {
   const [showSuggestionsText, setShowSuggestionsText] = useState(false);
   const [showProfileInfo, setShowProfileInfo] = useState(false);
   const [searchText, setSearchText] = useState('');
+  const [selected, setSelected] = useState('BD');
   const dropdownRef = useRef(null);
   const profileInfoRef = useRef(null);
   const priceInfoRef = useRef(null);
@@ -268,6 +270,7 @@ const Navbar = () => {
     }
 
     //
+
     const handleClickOutside = (event) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
         setShowSuggestion(false);
@@ -278,11 +281,25 @@ const Navbar = () => {
       ) {
         setShowProfileInfo(false);
       }
-      if (
-        priceInfoRef.current &&
-        !priceInfoRef.current.contains(event.target)
-      ) {
-        setShowPriceInfo(false);
+
+      if (priceInfoRef.current) {
+        // Check if the click is on the flags select or its dropdown
+        const isReactFlagsSelectClick =
+          event.target.closest('.ReactFlagsSelect') !== null;
+        // Check if the click is on the shadcn select
+        const isShadcnSelectClick =
+          event.target.closest('[role="listbox"]') !== null;
+        // Check if the click is inside our main dropdown
+        const isInsideDropdown = priceInfoRef.current.contains(event.target);
+
+        // Only close if the click is outside all of these areas
+        if (
+          !isReactFlagsSelectClick &&
+          !isShadcnSelectClick &&
+          !isInsideDropdown
+        ) {
+           setShowPriceInfo(false);
+        }
       }
     };
 
@@ -397,14 +414,49 @@ const Navbar = () => {
 
                 {showSuggestionsText && (
                   <div className="flex flex-col justify-evenly text-black px-9 py-6 h-full">
-                    <Link onClick={()=>setShowSuggestion(false)} to="/category">Mattress Topper</Link>
-                    <Link onClick={()=>setShowSuggestion(false)} to="/category">Matte Lipstick</Link>
-                    <Link onClick={()=>setShowSuggestion(false)} to="/category">Mattress Queen Size</Link>
-                    <Link onClick={()=>setShowSuggestion(false)} to="/category">Mattress</Link>
-                    <Link onClick={()=>setShowSuggestion(false)} to="/category">Mattress Protector</Link>
-                    <Link onClick={()=>setShowSuggestion(false)} to="/category">Mattress Full Size</Link>
+                    <Link
+                      onClick={() => setShowSuggestion(false)}
+                      to="/category"
+                    >
+                      Mattress Topper
+                    </Link>
+                    <Link
+                      onClick={() => setShowSuggestion(false)}
+                      to="/category"
+                    >
+                      Matte Lipstick
+                    </Link>
+                    <Link
+                      onClick={() => setShowSuggestion(false)}
+                      to="/category"
+                    >
+                      Mattress Queen Size
+                    </Link>
+                    <Link
+                      onClick={() => setShowSuggestion(false)}
+                      to="/category"
+                    >
+                      Mattress
+                    </Link>
+                    <Link
+                      onClick={() => setShowSuggestion(false)}
+                      to="/category"
+                    >
+                      Mattress Protector
+                    </Link>
+                    <Link
+                      onClick={() => setShowSuggestion(false)}
+                      to="/category"
+                    >
+                      Mattress Full Size
+                    </Link>
                     <Link to="/category">Mattress Cover</Link>
-                    <Link onClick={()=>setShowSuggestion(false)} to="/category">Mattress Gloves</Link>
+                    <Link
+                      onClick={() => setShowSuggestion(false)}
+                      to="/category"
+                    >
+                      Mattress Gloves
+                    </Link>
                   </div>
                 )}
               </div>
@@ -414,7 +466,7 @@ const Navbar = () => {
           <div className="flex items-center gap-12">
             <div
               ref={priceInfoRef}
-              onClick={() => setShowPriceInfo(!showPriceInfo)}
+              onClick={() => setShowPriceInfo(true)}
               className="cursor-pointer"
             >
               <div
@@ -459,18 +511,14 @@ const Navbar = () => {
                           Ship to
                         </h2>
                         <div>
-                          <Select>
-                            <SelectTrigger className="w-full">
-                              <SelectValue placeholder="Bangladesh" />
-                            </SelectTrigger>
-                            <SelectContent>
-                              <SelectItem value="Bangladesh">
-                                Bangladesh
-                              </SelectItem>
-                              <SelectItem value="India">India</SelectItem>
-                              <SelectItem value="Pakistan">Pakistan</SelectItem>
-                            </SelectContent>
-                          </Select>
+                          <div>
+                            <ReactFlagsSelect
+                              selected={selected}
+                              onSelect={(code) => setSelected(code)}
+                              className="border-black"
+                              selectButtonClassName="!border-black focus:!border-black !text-black !text-sm !h-10"
+                            />
+                          </div>
                         </div>
                       </div>
                       <div>
@@ -497,7 +545,7 @@ const Navbar = () => {
                         <div className="pt-2">
                           <Select>
                             <SelectTrigger className="w-full">
-                              <SelectValue placeholder="BDT ( BAngladeshi Taka) " />
+                              <SelectValue placeholder="BDT ( Bangladeshi Taka) " />
                             </SelectTrigger>
                             <SelectContent>
                               <SelectItem value="BDT">
@@ -650,8 +698,8 @@ const Navbar = () => {
               className={`bg-white p-6 rounded-3xl absolute w-full shadow-lg transition-all duration-500
                 ${
                   showCategory
-                    ? 'z-10 translate-y-3 opacity-100 transition-all duration-500'
-                    : '-z-10 translate-y-6 opacity-0 transition-all duration-500'
+                    ? 'z-20 translate-y-3 opacity-100 transition-all duration-500'
+                    : '-z-20 translate-y-6 opacity-0 transition-all duration-500'
                 }
                 `}
             >

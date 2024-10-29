@@ -69,19 +69,24 @@ body {
   }
 }
 
- /* custom scrollbar */
+/* custom scrollbar */
 .discover-more::-webkit-scrollbar {
   width: 6px;
   height: 6px;
 }
 
 .discover-more::-webkit-scrollbar-thumb {
-  background-color: #C8C5C5;
+  background-color: #c8c5c5;
   border-radius: 8px;
 }
 
 .discover-more::-webkit-scrollbar-track {
   background-color: #f1f1f1;
   border-radius: 8px;
-  border: 1px solid #E5E5E5;
+  border: 1px solid #e5e5e5;
+}
+
+.ReactFlagsSelect-module_selectOptions__3LNBJ {
+  font-size: 14px !important;
+  color: black;
 }

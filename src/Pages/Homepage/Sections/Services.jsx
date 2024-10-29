@@ -29,6 +29,7 @@ const Services = () => {
       title: 'Next Level Pro Quality',
     },
   ];
+
   return (
     <section className="my-40 grid grid-cols-5 gap-6 container mx-auto">
       {allServices?.map((service, idx) => (
