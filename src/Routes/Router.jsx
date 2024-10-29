@@ -28,6 +28,7 @@ import ChangePassword from '@/Pages/Auth/ChangePassword';
 import DashboardWishlist from '@/Pages/Dashboard/Wishlist/DashboardWishlist';
 import BuyInBulk from '@/Pages/Buy In Bulk/BuyInBulk';
 import Cart from '@/Pages/Cart/Cart';
+import SearchResult from '@/Pages/SearchResult/SearchResult';
 
 const router = createBrowserRouter([
   {
@@ -65,6 +66,10 @@ const router = createBrowserRouter([
       {
         path: '/category',
         element: <Category />,
+      },
+      {
+        path: '/search-result',
+        element: <SearchResult />,
       },
       {
         path: '/product-details',

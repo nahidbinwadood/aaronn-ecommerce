@@ -255,7 +255,8 @@ const Navbar = () => {
     e.preventDefault();
     const search = e.target.search.value;
     if (search.length > 0) {
-      navigate('/');
+      navigate('/search-result');
+      setShowSuggestion(false);
     }
   };
 
