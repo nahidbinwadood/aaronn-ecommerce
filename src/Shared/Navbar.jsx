@@ -4,14 +4,13 @@ import {
   HamburgerSvg,
   MessageSvg,
   OrderSvg,
-  PaymentSvg,
   PersonBlackSvg,
   PersonSvg,
   SearchSvg,
   WishlistSvg,
 } from '@/Components/Svg Container/SvgContainer';
-import { Link, NavLink } from 'react-router-dom';
-import { useState } from 'react';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
+import { useEffect, useRef, useState } from 'react';
 
 import {
   Select,
@@ -128,13 +127,160 @@ const profileDashboardLinks = [
     path: '/dashboard/help-center',
   },
 ];
+const discoverMore = [
+  {
+    title: 'Tumbler stainless',
+    path: '/categories/tumbler-stainless',
+  },
+  {
+    title: '3 for 99 cents free',
+    path: '/categories/3-for-99-cents-free',
+  },
+  {
+    title: 'Playstation 5',
+    path: '/categories/playstation',
+  },
+  {
+    title: '99 cents items',
+    path: '/categories/99-cents-item',
+  },
+  {
+    title: 'Halloween',
+    path: '/categories/halloween',
+  },
+  {
+    title: 'iPhone 14pro max',
+    path: '/categories/iphone',
+  },
+  {
+    title: 'Watches',
+    path: '/categories/watches',
+  },
+  {
+    title: '99 cents items',
+    path: '/categories/99-cents-item',
+  },
+  {
+    title: 'Halloween',
+    path: '/categories/halloween',
+  },
+  {
+    title: 'iPhone 14pro max',
+    path: '/categories/iphone',
+  },
+  {
+    title: 'Watches',
+    path: '/categories/watches',
+  },
+  {
+    title: '99 cents items',
+    path: '/categories/99-cents-item',
+  },
+  {
+    title: 'Halloween',
+    path: '/categories/halloween',
+  },
+  {
+    title: 'iPhone 14pro max',
+    path: '/categories/iphone',
+  },
+  {
+    title: 'Watches',
+    path: '/categories/watches',
+  },
+];
+const homeAppliances = [
+  {
+    image: 'https://i.postimg.cc/rpGfv1Pr/1.png',
+    title: 'Air Purifier',
+    path: '/category/air-purifier',
+  },
+  {
+    image: 'https://i.postimg.cc/Gmy7jwPz/2.png',
+    title: 'Dressers',
+    path: '/category/dressers',
+  },
+  {
+    image: 'https://i.postimg.cc/vmwPqq3y/3.png',
+    title: 'TV Stands',
+    path: '/category/tv-stands',
+  },
+  {
+    image: 'https://i.postimg.cc/PhMGVWh5/4.png',
+    title: 'HairDryer',
+    path: '/category/hair-dryer',
+  },
+  {
+    image: 'https://i.postimg.cc/7Yct7Yzf/5.png',
+    title: 'Iron',
+    path: '/category/iron',
+  },
+  {
+    image: 'https://i.postimg.cc/nzkwQ4KJ/6.png',
+    title: 'Refrigerators',
+    path: '/category/refrigerators',
+  },
+  {
+    image: 'https://i.postimg.cc/cCLk7vT8/7.png',
+    title: 'Water Dispenser',
+    path: '/category/water-dispenser',
+  },
+  {
+    image: 'https://i.postimg.cc/cCk9Fd5k/8.png',
+    title: 'Smart Watches',
+    path: '/category/smart-watches',
+  },
+  {
+    image: 'https://i.postimg.cc/nV3PF1cK/9.png',
+    title: 'Monitor',
+    path: '/category/monitor',
+  },
+  {
+    image: 'https://i.postimg.cc/ZRZMR7dH/10.png',
+    title: 'Chargers',
+    path: '/category/charger',
+  },
+];
 const Navbar = () => {
   const [showCategory, setShowCategory] = useState(false);
   const [showPriceInfo, setShowPriceInfo] = useState(false);
+  const [showSuggestion, setShowSuggestion] = useState(false);
+  const [showSuggestionsText, setShowSuggestionsText] = useState(false);
   const [showProfileInfo, setShowProfileInfo] = useState(false);
+  const [searchText, setSearchText] = useState('');
+  const dropdownRef = useRef(null);
+  const navigate = useNavigate();
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const search = e.target.search.value;
+    if (search.length > 0) {
+      navigate('/');
+    }
+  };
+
+  useEffect(() => {
+    if (searchText == '' || searchText.length == 0) {
+      setShowSuggestionsText(false);
+    }
+
+    //
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setShowSuggestion(false);
+      }
+    };
+
+    // Add event listener when component mounts
+    document.addEventListener('mousedown', handleClickOutside);
+
+    // Clean up event listener when component unmounts
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [searchText]);
   return (
-    <div className="font-sans">
+    <div className="font-poppins">
       {/* primary navbar */}
       <div className="bg-primaryColor text-white h-[70px] flex items-center">
         <div className="container mx-auto w-full flex items-center justify-between">
@@ -144,10 +290,18 @@ const Navbar = () => {
             </Link>
           </div>
           <div>
-            <form action="">
+            <form onSubmit={handleSubmit} action="" className="relative">
               <label htmlFor="search" className="relative block w-[750px]">
                 <input
+                  onFocus={() => setShowSuggestion(true)}
+                  onChange={(e) => {
+                    //setShowSuggestion(false)
+                    setShowSuggestionsText(true);
+                    setSearchText(e.target.value);
+                  }}
+                  value={searchText}
                   id="search"
+                  name="search"
                   className="w-full pl-6 pr-40 py-3 text-black border border-gray-300 rounded-full focus:outline-none placeholder:text-sm text-sm"
                   placeholder="Search for the product"
                 />
@@ -158,6 +312,87 @@ const Navbar = () => {
                   <SearchSvg />
                 </button>
               </label>
+
+              {/* Suggestions in searchBar */}
+              <div
+                ref={dropdownRef}
+                style={{
+                  boxShadow:
+                    '0px 0px 2px rgba(145, 158, 171, 0.24), -20px 20px 40px -4px rgba(145, 158, 171, 0.24)',
+                }}
+                className={`absolute transition-transform duration-500 h-[400px] w-full rounded-[24px] bg-white   ${
+                  showSuggestion
+                    ? 'z-10 translate-y-2 opacity-100  transition-transform duration-500'
+                    : '-z-10 translate-y-6 opacity-0 transition-transform duration-500'
+                }`}
+              >
+                {!showSuggestionsText && (
+                  <div className="flex text-black p-9 h-full">
+                    <div className="w-[25%] overflow-y-scroll discover-more">
+                      <div>
+                        <h2 className="text-xl font-medium">Discover More</h2>
+                      </div>
+                      <div>
+                        <ul className="mt-6 flex flex-col gap-4">
+                          {discoverMore?.map((item, idx) => (
+                            <li
+                              onClick={() => setShowSuggestion(false)}
+                              key={idx}
+                            >
+                              <Link to={'/category'} className="">
+                                {item?.title}
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+                    <div className="w-[75%] pl-7">
+                      <div className="flex items-center justify-between">
+                        <h2 className="text-lg font-medium">Home Appliance </h2>
+                        <h2 className="text-lg font-medium">
+                          Other Recommendations
+                        </h2>
+                      </div>
+                      <div className="mt-6 grid grid-cols-5 gap-4">
+                        {homeAppliances?.map((item, idx) => (
+                          <Link
+                            onClick={() => setShowSuggestion(false)}
+                            to="/category"
+                            key={idx}
+                          >
+                            <div className="size-20">
+                              <img
+                                className="rounded-xl h-full w-full object-cover"
+                                src={item?.image}
+                                alt=""
+                              />
+                            </div>
+                            <div className="text-center">
+                              <h5 className="text-sm font-medium mt-3">
+                                {item?.title}
+                              </h5>
+                            </div>
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                )}
+
+                {showSuggestionsText && (
+                  <div className="flex flex-col justify-evenly text-black px-9 py-6 h-full">
+                    <Link to="/category">Mattress Topper</Link>
+                    <Link to="/category">Matte Lipstick</Link>
+                    <Link to="/category">Mattress Queen Size</Link>
+                    <Link to="/category">Mattress</Link>
+                    <Link to="/category">Mattress Protector</Link>
+                    <Link to="/category">Mattress Full Size</Link>
+                    <Link to="/category">Mattress Cover</Link>
+                    <Link to="/category">Mattress Gloves</Link>
+                  </div>
+                )}
+              </div>
             </form>
           </div>
 
