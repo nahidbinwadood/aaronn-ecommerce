@@ -32,9 +32,36 @@ const TestimonialSlider = () => {
       text: "Our mission is to leave every customer with a memorable experience. We strive to not be like other contractors and provide an exceptional pressure washing service. Over the years our strongest form of advertisement has been word of mouth, and that's why we will like our countless happy customers speak for the quality of our pressure washing services!",
       rating: 5,
     },
+    {
+      id: 4,
+      name: 'Emmett Torphy',
+      image:
+        'https://s3-alpha-sig.figma.com/img/46e6/195c/0a37263a9ae1b0716c61b3f01b72a5e7?Expires=1730678400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=I9bRo3kicN5F4SuTCh0-c5ekwoX7Zhg5eMYW5ydes3HtUAf0AFK5KQOrINg~m8DSScKtfwT24cNjCZQiZep3sBiTYshjxTEtUzc2celNNug4b7kWUph6zmVBuRLfyFNMujeNqWarJxw7~jD1SmqfooYSwTKW27N8D9C8n0QbJPq9N6TD68TU1~4FRFUVjt51I0tuXIPnTUw0QW4dLXBnXOQYfnfaioD5o7TZVMqAUnC8RmhxrwAwI090nc50f8f9JV93567A2n5aeJ2yUK4Y1ppgRZyV4ZKBGiVrAjNr~fSOVmKhXURNzge-z97CLj1R1xL~hpnguxv0mGejRvviCw__',
+      role: 'Direct Operations Producer',
+      text: "Our mission is to leave every customer with a memorable experience. We strive to not be like other contractors and provide an exceptional pressure washing service. Over the years our strongest form of advertisement has been word of mouth, and that's why we will like our countless happy customers speak for the quality of our pressure washing services!",
+      rating: 5,
+    },
+    {
+      id: 5,
+      image:
+        'https://s3-alpha-sig.figma.com/img/46e6/195c/0a37263a9ae1b0716c61b3f01b72a5e7?Expires=1730678400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=I9bRo3kicN5F4SuTCh0-c5ekwoX7Zhg5eMYW5ydes3HtUAf0AFK5KQOrINg~m8DSScKtfwT24cNjCZQiZep3sBiTYshjxTEtUzc2celNNug4b7kWUph6zmVBuRLfyFNMujeNqWarJxw7~jD1SmqfooYSwTKW27N8D9C8n0QbJPq9N6TD68TU1~4FRFUVjt51I0tuXIPnTUw0QW4dLXBnXOQYfnfaioD5o7TZVMqAUnC8RmhxrwAwI090nc50f8f9JV93567A2n5aeJ2yUK4Y1ppgRZyV4ZKBGiVrAjNr~fSOVmKhXURNzge-z97CLj1R1xL~hpnguxv0mGejRvviCw__',
+      name: 'Emmett Torphy',
+      role: 'Direct Operations Producer',
+      text: "Our mission is to leave every customer with a memorable experience. We strive to not be like other contractors and provide an exceptional pressure washing service. Over the years our strongest form of advertisement has been word of mouth, and that's why we will like our countless happy customers speak for the quality of our pressure washing services!",
+      rating: 5,
+    },
+    {
+      id: 6,
+      image:
+        'https://s3-alpha-sig.figma.com/img/46e6/195c/0a37263a9ae1b0716c61b3f01b72a5e7?Expires=1730678400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=I9bRo3kicN5F4SuTCh0-c5ekwoX7Zhg5eMYW5ydes3HtUAf0AFK5KQOrINg~m8DSScKtfwT24cNjCZQiZep3sBiTYshjxTEtUzc2celNNug4b7kWUph6zmVBuRLfyFNMujeNqWarJxw7~jD1SmqfooYSwTKW27N8D9C8n0QbJPq9N6TD68TU1~4FRFUVjt51I0tuXIPnTUw0QW4dLXBnXOQYfnfaioD5o7TZVMqAUnC8RmhxrwAwI090nc50f8f9JV93567A2n5aeJ2yUK4Y1ppgRZyV4ZKBGiVrAjNr~fSOVmKhXURNzge-z97CLj1R1xL~hpnguxv0mGejRvviCw__',
+      name: 'Emmett Torphy',
+      role: 'Direct Operations Producer',
+      text: "Our mission is to leave every customer with a memorable experience. We strive to not be like other contractors and provide an exceptional pressure washing service. Over the years our strongest form of advertisement has been word of mouth, and that's why we will like our countless happy customers speak for the quality of our pressure washing services!",
+      rating: 5,
+    },
   ];
 
-  const duplicatedTestimonials = [...testimonials, ...testimonials];
+  const duplicatedTestimonials = [...testimonials, ...testimonials,...testimonials,...testimonials,...testimonials];
 
   return (
     <div className="relative overflow-hidden">

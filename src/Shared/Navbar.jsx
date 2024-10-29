@@ -249,6 +249,8 @@ const Navbar = () => {
   const [showProfileInfo, setShowProfileInfo] = useState(false);
   const [searchText, setSearchText] = useState('');
   const dropdownRef = useRef(null);
+  const profileInfoRef = useRef(null);
+  const priceInfoRef = useRef(null);
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
@@ -269,6 +271,18 @@ const Navbar = () => {
     const handleClickOutside = (event) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
         setShowSuggestion(false);
+      }
+      if (
+        profileInfoRef.current &&
+        !profileInfoRef.current.contains(event.target)
+      ) {
+        setShowProfileInfo(false);
+      }
+      if (
+        priceInfoRef.current &&
+        !priceInfoRef.current.contains(event.target)
+      ) {
+        setShowPriceInfo(false);
       }
     };
 
@@ -383,14 +397,14 @@ const Navbar = () => {
 
                 {showSuggestionsText && (
                   <div className="flex flex-col justify-evenly text-black px-9 py-6 h-full">
-                    <Link to="/category">Mattress Topper</Link>
-                    <Link to="/category">Matte Lipstick</Link>
-                    <Link to="/category">Mattress Queen Size</Link>
-                    <Link to="/category">Mattress</Link>
-                    <Link to="/category">Mattress Protector</Link>
-                    <Link to="/category">Mattress Full Size</Link>
+                    <Link onClick={()=>setShowSuggestion(false)} to="/category">Mattress Topper</Link>
+                    <Link onClick={()=>setShowSuggestion(false)} to="/category">Matte Lipstick</Link>
+                    <Link onClick={()=>setShowSuggestion(false)} to="/category">Mattress Queen Size</Link>
+                    <Link onClick={()=>setShowSuggestion(false)} to="/category">Mattress</Link>
+                    <Link onClick={()=>setShowSuggestion(false)} to="/category">Mattress Protector</Link>
+                    <Link onClick={()=>setShowSuggestion(false)} to="/category">Mattress Full Size</Link>
                     <Link to="/category">Mattress Cover</Link>
-                    <Link to="/category">Mattress Gloves</Link>
+                    <Link onClick={()=>setShowSuggestion(false)} to="/category">Mattress Gloves</Link>
                   </div>
                 )}
               </div>
@@ -398,10 +412,14 @@ const Navbar = () => {
           </div>
 
           <div className="flex items-center gap-12">
-            <div className="cursor-pointer">
+            <div
+              ref={priceInfoRef}
+              onClick={() => setShowPriceInfo(!showPriceInfo)}
+              className="cursor-pointer"
+            >
               <div
-                onMouseEnter={() => setShowPriceInfo(true)}
-                onMouseLeave={() => setShowPriceInfo(false)}
+                // onMouseEnter={() => setShowPriceInfo(true)}
+                // onMouseLeave={() => setShowPriceInfo(false)}
                 className="flex items-center gap-2 relative"
               >
                 <div className="size-6 rounded-full overflow-hidden">
@@ -423,12 +441,12 @@ const Navbar = () => {
 
                 {/* popup */}
                 <div
-                  onMouseEnter={() => setShowPriceInfo(true)}
-                  onMouseLeave={() => setShowPriceInfo(false)}
-                  className={`relative transition-all duration-300 ${
+                  // onMouseEnter={() => setShowPriceInfo(true)}
+                  // onMouseLeave={() => setShowPriceInfo(false)}
+                  className={`relative transition-transform duration-300 ${
                     showPriceInfo
-                      ? 'z-10 scale-100 opacity-100 transition-all duration-300'
-                      : '-z-10 scale-90 opacity-0 transition-all duration-300'
+                      ? 'z-10 scale-100 opacity-100 transition-transform duration-300'
+                      : '-z-10 scale-90 opacity-0 transition-transform duration-300'
                   }`}
                 >
                   <div className="w-[300px] absolute top-8 -right-10 bg-white shadow-lg rounded-3xl p-8">
@@ -501,13 +519,15 @@ const Navbar = () => {
               </div>
             </div>
             <div
-              onMouseEnter={() => setShowProfileInfo(true)}
-              onMouseLeave={() => setShowProfileInfo(false)}
+              ref={profileInfoRef}
+              onClick={() => setShowProfileInfo(!showProfileInfo)}
+              // onMouseEnter={() => setShowProfileInfo(true)}
+              // onMouseLeave={() => setShowProfileInfo(false)}
               className="cursor-pointer relative"
             >
               <div
-                onMouseEnter={() => setShowProfileInfo(true)}
-                onMouseLeave={() => setShowProfileInfo(false)}
+                // onMouseEnter={() => setShowProfileInfo(true)}
+                // onMouseLeave={() => setShowProfileInfo(false)}
                 className="flex items-center gap-2 cursor-pointer relative"
               >
                 <div>
@@ -523,13 +543,13 @@ const Navbar = () => {
               </div>
               {/* popup */}
               <div
-                onMouseEnter={() => setShowProfileInfo(true)}
-                onMouseLeave={() => setShowProfileInfo(false)}
+                // onClick={() => setShowProfileInfo(true)}
+                // onMouseLeave={() => setShowProfileInfo(false)}
                 className={`  p-6 text-black absolute top-5 -right-10
                   ${
                     showProfileInfo
-                      ? 'opacity-100 transition-all duration-500 z-10'
-                      : 'opacity-0 transition-all duration-500 -z-10'
+                      ? 'opacity-100 transition-transform duration-500 translate-y-2 z-10'
+                      : 'opacity-0 transition-transform duration-500 translate-y-5 -z-10'
                   }
                   `}
               >
