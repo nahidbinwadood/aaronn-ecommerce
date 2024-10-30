@@ -30,10 +30,7 @@ const Footer = () => {
       title: 'Delivery options',
       path: '/delivery-options',
     },
-    {
-      title: 'Buyer Protection',
-      path: '/buyer-protection',
-    },
+     
   ];
   const companyLinks = [
     {
