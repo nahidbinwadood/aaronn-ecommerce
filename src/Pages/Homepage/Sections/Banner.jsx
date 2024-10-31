@@ -88,7 +88,7 @@ const Banner = () => {
             <div className="h-[550px] relative">
               <img
                 className=" w-full h-full rounded-2xl object-cover"
-                src="https://i.imgur.com/XAt0aHi.png"
+                src="https://assets.lummi.ai/assets/QmNraz99nRmGZhXW11eLZhySjqq2b5DXFLwhwVXJR8NEio?auto=format&w=1500"
                 alt=""
               />
               <div className="absolute bottom-8 right-10">

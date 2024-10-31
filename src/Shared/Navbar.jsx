@@ -19,7 +19,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/Components/ui/select';
-import ReactFlagsSelect from 'react-flags-select';
+// import ReactFlagsSelect from 'react-flags-select';
 
 const navLinks = [
   {
@@ -241,7 +241,7 @@ const Navbar = () => {
   const [showSuggestionsText, setShowSuggestionsText] = useState(false);
   const [showProfileInfo, setShowProfileInfo] = useState(false);
   const [searchText, setSearchText] = useState('');
-  const [selected, setSelected] = useState('BD');
+  // const [selected, setSelected] = useState('BD');
   const dropdownRef = useRef(null);
   const profileInfoRef = useRef(null);
   const priceInfoRef = useRef(null);
