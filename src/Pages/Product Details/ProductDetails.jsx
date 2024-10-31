@@ -12,7 +12,6 @@ import {
 import MyTabs from '@/Components/Tabs';
 import { useState } from 'react';
 import Services from '../Homepage/Sections/Services';
-import { Link } from 'react-router-dom';
 import toast from 'react-hot-toast';
 const allProducts = [
   {

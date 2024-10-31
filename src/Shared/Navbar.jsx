@@ -37,62 +37,543 @@ const navLinks = [
 ];
 const categories = [
   {
-    title: 'Bag',
-    path: '/categories/bag',
+    name: 'Home & Garden',
+    subcategories: [
+      {
+        name: 'Kitchen',
+        items: [
+          'Mug Thermos',
+          'Basket',
+          'Waterproof Wall Sticker',
+          'Home Brewing & Wine Making',
+          'Table Decoration & Accessories',
+          'Wok',
+        ],
+      },
+      {
+        name: 'Bathroom',
+        items: [
+          'Towel',
+          'Paper Holder',
+          'Quick Dry Towel',
+          'Hair Towel',
+          'Mat',
+          'Hand Towel',
+        ],
+      },
+      {
+        name: 'Bedroom',
+        items: [
+          'Boxes',
+          'Bags',
+          'Decorative Mirrors',
+          'Sculptures & Figurines',
+          'Photo Albums',
+          'Tapestries',
+        ],
+      },
+      {
+        name: 'Living Room',
+        items: [
+          'Painting By Numbers',
+          'Hooks',
+          'Stickers & Poster',
+          'Door Screen',
+          'Sculptures & Figurine',
+          'Tapestries',
+        ],
+      },
+      {
+        name: 'Home Office',
+        items: [
+          'Fabric & Lace',
+          'Needle Arts & Craft',
+          'Home Fragrance',
+          'Candle Making',
+          'Ceramics & Pottery',
+          'Diamond Painting',
+        ],
+      },
+      {
+        name: 'Bedding Basics',
+        items: [
+          'Mattress Cover',
+          'Cushions',
+          'Mosquito Nets',
+          'Sheet Sets',
+          'Duvets',
+          'Bedspreads & Coverlets',
+        ],
+      },
+      {
+        name: 'Garden & Balcony',
+        items: [
+          'Automatic Irrigation Equipment',
+          'Garden Water Timers',
+          'Garden Buildings',
+          'Outdoor Heaters',
+          'Garden Pots & Planters',
+          'Watering & Irrigation',
+        ],
+      },
+      {
+        name: 'Festive & Party Supplies',
+        items: [
+          'Christmas Supplies',
+          'Glow Supplies',
+          'Birthday & Balloon',
+          'Party Supplies',
+          'Artificial Flower',
+          'Gift & Gift Bag',
+        ],
+      },
+    ],
   },
   {
-    title: 'Furniture',
-    path: '/categories/furniture',
+    name: 'Hair Extensions & Wigs',
+    subcategories: [
+      {
+        name: 'Hair Extensions',
+        items: [
+          'Clip-in Extensions',
+          'Tape-in Extensions',
+          'Weft Extensions',
+          'Fusion Extensions',
+          'Ponytail Extensions',
+        ],
+      },
+      {
+        name: 'Wigs',
+        items: [
+          'Synthetic Wigs',
+          'Human Hair Wigs',
+          'Lace Front Wigs',
+          'Full Lace Wigs',
+          'U-Part Wigs',
+        ],
+      },
+      {
+        name: 'Hair Accessories',
+        items: [
+          'Hair Clips',
+          'Hair Combs',
+          'Wig Caps',
+          'Hair Ties',
+          'Headbands',
+        ],
+      },
+    ],
   },
   {
-    title: 'Motor & parts & accessories ',
-    path: '/categories/furniture',
+    name: "Men's Clothing",
+    subcategories: [
+      {
+        name: 'Outerwear',
+        items: ['Jackets', 'Coats', 'Blazers', 'Sweaters', 'Hoodies'],
+      },
+      {
+        name: 'Bottoms',
+        items: ['Jeans', 'Casual Pants', 'Dress Pants', 'Shorts', 'Tracksuits'],
+      },
+      {
+        name: 'Suits',
+        items: ['Blazers', 'Dress Shirts', 'Ties', 'Waistcoats', 'Dress Pants'],
+      },
+    ],
   },
   {
-    title: 'Beauty & Health',
-    path: '/categories/beauty-&-health',
+    name: 'Accessories',
+    subcategories: [
+      {
+        name: 'Jewelry',
+        items: ['Necklaces', 'Bracelets', 'Earrings', 'Rings', 'Brooches'],
+      },
+      {
+        name: 'Bags',
+        items: [
+          'Handbags',
+          'Backpacks',
+          'Messenger Bags',
+          'Wallets',
+          'Briefcases',
+        ],
+      },
+      {
+        name: 'Belts & Suspenders',
+        items: ['Leather Belts', 'Fabric Belts', 'Suspenders', 'Belt Buckles'],
+      },
+    ],
   },
   {
-    title: 'Toys & Games',
-    path: '/categories/toys-&-games',
+    name: 'Consumer Electronics',
+    subcategories: [
+      {
+        name: 'Mobile Phones',
+        items: [
+          'Smartphones',
+          'Cases & Covers',
+          'Screen Protectors',
+          'Chargers',
+          'Batteries',
+        ],
+      },
+      {
+        name: 'Audio & Video',
+        items: [
+          'Earphones',
+          'Speakers',
+          'Microphones',
+          'MP3 Players',
+          'Home Audio',
+        ],
+      },
+      {
+        name: 'Computer & Office',
+        items: [
+          'Laptops',
+          'Monitors',
+          'Keyboards',
+          'Mice',
+          'Printers',
+          'Scanners',
+        ],
+      },
+    ],
   },
   {
-    title: 'Electronics',
-    path: '/categories/electronics',
+    name: 'Home Improvement & Lighting',
+    subcategories: [
+      {
+        name: 'Lighting',
+        items: [
+          'Ceiling Lights',
+          'LED Strips',
+          'Desk Lamps',
+          'Wall Lamps',
+          'Outdoor Lighting',
+        ],
+      },
+      {
+        name: 'Bathroom Fixtures',
+        items: [
+          'Faucets',
+          'Showers',
+          'Toilet Accessories',
+          'Bathroom Cabinets',
+          'Mirrors',
+        ],
+      },
+      {
+        name: 'Tools',
+        items: ['Power Drills', 'Screwdrivers', 'Wrenches', 'Pliers', 'Saws'],
+      },
+    ],
   },
   {
-    title: 'Luggage & Bags',
-    path: '/categories/luggage-&-bags',
+    name: 'Home Appliances',
+    subcategories: [
+      {
+        name: 'Kitchen Appliances',
+        items: ['Microwaves', 'Ovens', 'Blenders', 'Coffee Makers', 'Toasters'],
+      },
+      {
+        name: 'Cleaning Appliances',
+        items: [
+          'Vacuum Cleaners',
+          'Steam Cleaners',
+          'Air Purifiers',
+          'Humidifiers',
+        ],
+      },
+      {
+        name: 'Personal Care',
+        items: [
+          'Hair Dryers',
+          'Electric Shavers',
+          'Massagers',
+          'Oral Care',
+          'Hair Clippers',
+        ],
+      },
+    ],
   },
   {
-    title: 'Shoes',
-    path: '/categories/shoes',
+    name: 'Automotive & Motorcycle',
+    subcategories: [
+      {
+        name: 'Car Electronics',
+        items: ['Dash Cameras', 'Car Alarms', 'Car Chargers', 'GPS Devices'],
+      },
+      {
+        name: 'Motorcycle Gear',
+        items: ['Helmets', 'Gloves', 'Riding Jackets', 'Motorcycle Parts'],
+      },
+      {
+        name: 'Car Accessories',
+        items: [
+          'Seat Covers',
+          'Floor Mats',
+          'Steering Wheel Covers',
+          'Car Covers',
+        ],
+      },
+    ],
   },
   {
-    title: 'Home & Garden',
-    path: '/categories/home-&-garden',
+    name: 'Luggages & Bags',
+    subcategories: [
+      {
+        name: 'Travel Bags',
+        items: ['Suitcases', 'Carry-On Bags', 'Duffel Bags', 'Garment Bags'],
+      },
+      {
+        name: "Women's Bags",
+        items: ['Shoulder Bags', 'Crossbody Bags', 'Clutches', 'Mini Bags'],
+      },
+      {
+        name: "Men's Bags",
+        items: ['Briefcases', 'Messenger Bags', 'Backpacks', 'Waist Bags'],
+      },
+    ],
   },
   {
-    title: 'Men',
-    path: '/categories/men',
+    name: 'Shoes',
+    subcategories: [
+      {
+        name: "Women's Shoes",
+        items: ['Heels', 'Flats', 'Sandals', 'Sneakers', 'Boots'],
+      },
+      {
+        name: "Men's Shoes",
+        items: ['Loafers', 'Dress Shoes', 'Boots', 'Sneakers', 'Sandals'],
+      },
+      {
+        name: "Kids' Shoes",
+        items: ["Boys' Shoes", "Girls' Shoes", 'School Shoes', 'Sports Shoes'],
+      },
+    ],
   },
   {
-    title: 'Women',
-    path: '/categories/women',
+    name: 'Special Occasion Costume',
+    subcategories: [
+      {
+        name: 'Halloween Costumes',
+        items: ['Costumes for Adults', 'Costumes for Kids', 'Masks', 'Wigs'],
+      },
+      {
+        name: 'Cosplay',
+        items: [
+          'Anime Cosplay',
+          'Movie Cosplay',
+          'Fantasy Costumes',
+          'Game Characters',
+        ],
+      },
+      { name: 'Accessories', items: ['Hats', 'Wings', 'Props', 'Masks'] },
+    ],
   },
   {
-    title: 'Sport',
-    path: '/categories/sport',
+    name: "Women's Clothing",
+    subcategories: [
+      {
+        name: 'Dresses',
+        items: [
+          'Casual Dresses',
+          'Evening Dresses',
+          'Party Dresses',
+          'Maxi Dresses',
+        ],
+      },
+      { name: 'Outerwear', items: ['Coats', 'Jackets', 'Sweaters', 'Blazers'] },
+      { name: 'Bottoms', items: ['Skirts', 'Pants', 'Shorts', 'Jeans'] },
+    ],
   },
   {
-    title: 'Phones',
-    path: '/categories/phones',
+    name: 'Health & Beauty',
+    subcategories: [
+      {
+        name: 'Makeup',
+        items: ['Lipstick', 'Foundation', 'Eye Shadow', 'Blush', 'Mascara'],
+      },
+      {
+        name: 'Skin Care',
+        items: [
+          'Moisturizers',
+          'Serums',
+          'Sunscreen',
+          'Cleansers',
+          'Exfoliators',
+        ],
+      },
+      {
+        name: 'Hair Care',
+        items: [
+          'Shampoo',
+          'Conditioner',
+          'Hair Color',
+          'Hair Oil',
+          'Hair Styling',
+        ],
+      },
+    ],
   },
   {
-    title: 'Laptop',
-    path: '/categories/laptop',
+    name: 'Toys & Hobbies',
+    subcategories: [
+      {
+        name: 'Toys',
+        items: [
+          'Action Figures',
+          'Dolls',
+          'Building Blocks',
+          'Puzzles',
+          'Remote Control Toys',
+        ],
+      },
+      {
+        name: 'Outdoor Play',
+        items: [
+          'Play Tents',
+          'Trampolines',
+          'Slides',
+          'Swing Sets',
+          'Water Toys',
+        ],
+      },
+      {
+        name: 'Pet Supplies',
+        items: [
+          'Pet Beds',
+          'Toys for Pets',
+          'Leashes',
+          'Pet Clothing',
+          'Pet Food',
+        ],
+      },
+    ],
+  },
+  {
+    name: 'Sports & Entertainment',
+    subcategories: [
+      {
+        name: 'Fitness Equipment',
+        items: [
+          'Dumbbells',
+          'Treadmills',
+          'Exercise Bikes',
+          'Resistance Bands',
+        ],
+      },
+      {
+        name: 'Sportswear',
+        items: ['Sports Bras', 'Running Shoes', 'Athletic Socks', 'Gym Bags'],
+      },
+      {
+        name: 'Outdoor Recreation',
+        items: [
+          'Camping Gear',
+          'Fishing Equipment',
+          'Hiking Backpacks',
+          'Tents',
+        ],
+      },
+    ],
+  },
+  {
+    name: 'Office & School Supplies',
+    subcategories: [
+      {
+        name: 'Writing Supplies',
+        items: ['Pens', 'Pencils', 'Markers', 'Highlighters', 'Erasers'],
+      },
+      {
+        name: 'Organizational Supplies',
+        items: ['Binders', 'Folders', 'Labels', 'Desk Organizers'],
+      },
+      {
+        name: 'Art Supplies',
+        items: ['Paints', 'Brushes', 'Sketchbooks', 'Easels', 'Canvas'],
+      },
+    ],
+  },
+  {
+    name: 'Security & Protection',
+    subcategories: [
+      {
+        name: 'Surveillance',
+        items: [
+          'CCTV Cameras',
+          'Smart Door Locks',
+          'Alarm Systems',
+          'Motion Sensors',
+        ],
+      },
+      {
+        name: 'Personal Safety',
+        items: [
+          'Pepper Spray',
+          'Personal Alarms',
+          'Self-Defense Tools',
+          'Safety Whistles',
+        ],
+      },
+      {
+        name: 'Home Safety',
+        items: [
+          'Smoke Detectors',
+          'Carbon Monoxide Detectors',
+          'Fire Extinguishers',
+        ],
+      },
+    ],
+  },
+  {
+    name: 'Mother & Kids',
+    subcategories: [
+      {
+        name: 'Baby Clothing',
+        items: ['Onesies', 'Rompers', 'Sleepwear', 'Hats', 'Baby Shoes'],
+      },
+      {
+        name: 'Nursing',
+        items: [
+          'Breast Pumps',
+          'Nursing Pads',
+          'Bottle Warmers',
+          'Sterilizers',
+        ],
+      },
+      {
+        name: 'Baby Gear',
+        items: ['Strollers', 'Car Seats', 'Playpens', 'Swings'],
+      },
+    ],
+  },
+  {
+    name: 'Tools',
+    subcategories: [
+      {
+        name: 'Power Tools',
+        items: ['Drills', 'Saws', 'Angle Grinders', 'Impact Wrenches'],
+      },
+      {
+        name: 'Hand Tools',
+        items: [
+          'Hammers',
+          'Screwdrivers',
+          'Wrenches',
+          'Pliers',
+          'Measuring Tape',
+        ],
+      },
+      {
+        name: 'Garden Tools',
+        items: ['Pruners', 'Shovels', 'Rakes', 'Garden Forks', 'Hose Reels'],
+      },
+    ],
   },
 ];
+
 const profileNavLinks = [
   {
     title: 'My Orders',
@@ -235,7 +716,9 @@ const homeAppliances = [
   },
 ];
 const Navbar = () => {
-  const [showCategory, setShowCategory] = useState(false);
+  const [showCategory, setShowCategory] = useState(true);
+  const [activeCategory, setActiveCategory] = useState(null);
+  const [showSubCategory, setShowSubCategory] = useState(false);
   const [showPriceInfo, setShowPriceInfo] = useState(false);
   const [showSuggestion, setShowSuggestion] = useState(false);
   const [showSuggestionsText, setShowSuggestionsText] = useState(false);
@@ -247,6 +730,7 @@ const Navbar = () => {
   const priceInfoRef = useRef(null);
   const navigate = useNavigate();
 
+  console.log(activeCategory);
   const handleSubmit = (e) => {
     e.preventDefault();
     const search = e.target.search.value;
@@ -303,6 +787,7 @@ const Navbar = () => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
   }, [searchText]);
+
   return (
     <div className="font-poppins">
       {/* primary navbar */}
@@ -509,9 +994,13 @@ const Navbar = () => {
                                 <SelectValue placeholder="United States" />
                               </SelectTrigger>
                               <SelectContent>
-                                <SelectItem value="United States">United States</SelectItem>
+                                <SelectItem value="United States">
+                                  United States
+                                </SelectItem>
                                 <SelectItem value="Canada">Canada</SelectItem>
-                                <SelectItem value="United Kingdom">United Kingdom</SelectItem>
+                                <SelectItem value="United Kingdom">
+                                  United Kingdom
+                                </SelectItem>
                               </SelectContent>
                             </Select>
                           </div>
@@ -529,7 +1018,6 @@ const Navbar = () => {
                             <SelectContent>
                               <SelectItem value="English">English</SelectItem>
                               <SelectItem value="system">Spanish</SelectItem>
-
                             </SelectContent>
                           </Select>
                         </div>
@@ -670,10 +1158,13 @@ const Navbar = () => {
           <div className="relative flex-shrink-0">
             <button
               onMouseEnter={() => setShowCategory(true)}
-              onMouseLeave={() => setShowCategory(false)}
-              className={` bg-white px-6 py-3 rounded-full flex items-center gap-16 w-fit cursor-pointer`}
+              onMouseLeave={() => {
+                setShowCategory(false);
+                setActiveCategory(null);
+              }}
+              className={`bg-white px-6 py-3 rounded-full w-[275px] flex items-center gap-20 cursor-pointer`}
             >
-              <div className="flex items-center gap-3">
+              <div className="flex items-center gap-3.5">
                 <HamburgerSvg />
                 <p className="text-sm font-semibold">All Categories</p>
               </div>
@@ -681,26 +1172,40 @@ const Navbar = () => {
                 <DownArrowSvg dark={true} />
               </div>
             </button>
+
+            {/* categories */}
+
             <div
-              onMouseEnter={() => setShowCategory(true)}
+              onMouseEnter={() => {
+                setShowCategory(true);
+              }}
               onMouseLeave={() => setShowCategory(false)}
-              className={`bg-white p-6 rounded-3xl absolute w-full shadow-lg transition-all duration-500
-                ${
-                  showCategory
-                    ? 'z-20 translate-y-3 opacity-100 transition-all duration-500'
-                    : '-z-20 translate-y-6 opacity-0 transition-all duration-500'
-                }
-                `}
+              className={`bg-white flex p-6 pr-2 ${
+                showSubCategory ? 'w-[1000px]' : 'w-[275px]'
+              } rounded-3xl absolute shadow-lg transition-all duration-200
+    ${
+      showCategory
+        ? 'z-20 translate-y-0 opacity-100 transition-transform duration-200'
+        : '-z-20 translate-y-5 opacity-0 transition-transform duration-200'
+    }
+  `}
             >
-              <ul className="space-y-4">
+              <ul className="space-y-4 h-[635px] w-[243px] overflow-y-auto discover-more pr-5 flex-shrink-0">
                 {categories?.map((category, index) => (
-                  <li key={category?.title} className="cursor-pointer w-full">
+                  <li key={category?.name} className="cursor-pointer w-full">
                     <Link
                       onClick={() => setShowCategory(false)}
-                      className="block hover:font-bold duration-200 transition-all"
+                      onMouseEnter={() => {
+                        setActiveCategory([...category.subcategories]);
+                        setShowSubCategory(true);
+                      }}
+                      onMouseLeave={() => {
+                        // setActiveCategory(null);
+                      }}
+                      className="block hover:font-bold duration-200"
                       to="/category"
                     >
-                      {category?.title}
+                      {category?.name}
                       {index < categories.length - 1 && (
                         <div className="h-[0.5px] w-full bg-[#E5E5E5] mt-3" />
                       )}
@@ -708,8 +1213,30 @@ const Navbar = () => {
                   </li>
                 ))}
               </ul>
+
+              {/* subcategory */}
+              <div className="grid grid-cols-4 gap-10 px-8 h-fit">
+                {activeCategory?.map((subCategory, idx) => (
+                  <div key={idx}>
+                    <div>
+                      <h2 className="font-semibold">{subCategory?.name}</h2>
+                    </div>
+                    <div className="mt-4">
+                      <ul className="space-y-4  transition-opacity   duration-1000">
+                        {subCategory?.items?.map((item) => (
+                          <li key={item}>
+                            <Link>{item}</Link>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
+
+          {/* navLinks */}
           <ul className="flex items-center gap-12 flex-1 w-full justify-center mr-72">
             {navLinks?.map((link) => (
               <li key={link?.title}>
