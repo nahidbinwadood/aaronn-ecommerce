@@ -1,5 +1,6 @@
 import ServiceCard from '@/Components/Cards/ServiceCard';
 import {
+  CustomerSupportMessageSvg,
   DiamondSvg,
   GuaranteeSvg,
   ReturnSvg,
@@ -21,8 +22,8 @@ const Services = () => {
       title: '24 Hour Return Policy',
     },
     {
-      icon: <TruckSvg />,
-      title: 'Fast & Secure Delivery',
+      icon: <CustomerSupportMessageSvg />,
+      title: '24-hour Customer Support Via Chat',
     },
     {
       icon: <DiamondSvg />,

@@ -42,12 +42,7 @@ const VerifyEmail = () => {
   };
   return (
     <div className="w-full flex h-screen">
-      <div className="h-full w-1/2 bg-[#FFEADF] flex items-center justify-center">
-        <div>
-          <img src="https://i.postimg.cc/xTLCXKjq/OBJECTS.png" alt="" />
-        </div>
-      </div>
-      <div className="w-1/2 h-full flex items-center justify-center">
+      <div className="w-full h-full flex items-center justify-center">
         <div className="rounded-[24px] border border-[#E5E5E5] w-[573px] py-10">
           <div className="text-center ">
             <h3 className="font-semibold text-2xl">Verify Your Email</h3>

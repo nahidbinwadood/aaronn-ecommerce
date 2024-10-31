@@ -30,30 +30,8 @@ const Footer = () => {
       title: 'Delivery options',
       path: '/delivery-options',
     },
-     
   ];
-  const companyLinks = [
-    {
-      title: 'Tech Solutions Inc.',
-      path: 'www.techsolutions.com',
-    },
-    {
-      title: 'Green Earth Products',
-      path: 'www.greenearthproducts.com',
-    },
-    {
-      title: 'Innovative Designs LLC',
-      path: 'www.innovativedesigns.com',
-    },
-    {
-      title: 'Health & Wellness Co',
-      path: 'www.healthandwellness.com',
-    },
-    {
-      title: 'Future Finance Group',
-      path: 'www.futurefinancegroup.com',
-    },
-  ];
+
   const payments = [
     {
       name: 'Visa',
@@ -75,14 +53,6 @@ const Footer = () => {
       name: 'Paypal',
       img: 'https://i.imgur.com/x32Scnr.png',
     },
-    {
-      name: 'Google Pay',
-      img: 'https://i.imgur.com/2I1lzEZ.png',
-    },
-    {
-      name: 'Apple Pay',
-      img: 'https://i.imgur.com/OGgQx09.png',
-    },
   ];
   return (
     <section className="bg-blackColor text-white">
@@ -91,11 +61,6 @@ const Footer = () => {
           <Link to="/">
             <h3 className="text-3xl font-semibold">Logo Here</h3>
           </Link>
-          <p className="pt-6 w-1/2">
-            Lorem ipsum dolor sit amet consectetur. Dignissim elementum enim
-            blandit ullamcorper sagittis. Neque enim eu sed euismod tellus odio
-            elit lacus. Nulla fermentum tincidunt arcu viverra proin at proin.{' '}
-          </p>
 
           {/* Social Links */}
 
@@ -128,20 +93,6 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* company Name */}
-          <div>
-            <h3 className="text-xl font-semibold pb-6 text-nowrap">Company</h3>
-            <ul className="space-y-4">
-              {companyLinks?.map((link) => (
-                <li key={link?.title}>
-                  <Link to={link?.path} className="text-nowrap">
-                    {link?.title}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
           {/* payments */}
           <div>
             <h3 className="text-xl font-semibold pb-6 text-nowrap">Pay with</h3>
@@ -158,6 +109,9 @@ const Footer = () => {
             </div>
           </div>
         </div>
+      </div>
+      <div className='text-center py-7 border-t container mx-auto border-[#444343] text-sm'>
+        <p>Copyright @2024Company Name Here</p>
       </div>
     </section>
   );

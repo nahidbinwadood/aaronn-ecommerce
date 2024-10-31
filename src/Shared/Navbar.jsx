@@ -34,14 +34,6 @@ const navLinks = [
     title: 'Top Brands',
     path: '/top-brands',
   },
-  {
-    title: 'Hair Extension & Wigs',
-    path: '/hair-extension',
-  },
-  {
-    title: 'Home & Garden',
-    path: '/home-and-garden',
-  },
 ];
 const categories = [
   {
@@ -298,7 +290,7 @@ const Navbar = () => {
           !isShadcnSelectClick &&
           !isInsideDropdown
         ) {
-           setShowPriceInfo(false);
+          setShowPriceInfo(false);
         }
       }
     };
@@ -512,12 +504,16 @@ const Navbar = () => {
                         </h2>
                         <div>
                           <div>
-                            <ReactFlagsSelect
-                              selected={selected}
-                              onSelect={(code) => setSelected(code)}
-                              className="border-black"
-                              selectButtonClassName="!border-black focus:!border-black !text-black !text-sm !h-10"
-                            />
+                            <Select>
+                              <SelectTrigger className="w-full">
+                                <SelectValue placeholder="United States" />
+                              </SelectTrigger>
+                              <SelectContent>
+                                <SelectItem value="United States">United States</SelectItem>
+                                <SelectItem value="Canada">Canada</SelectItem>
+                                <SelectItem value="United Kingdom">United Kingdom</SelectItem>
+                              </SelectContent>
+                            </Select>
                           </div>
                         </div>
                       </div>
@@ -531,9 +527,9 @@ const Navbar = () => {
                               <SelectValue placeholder="English" />
                             </SelectTrigger>
                             <SelectContent>
-                              <SelectItem value="light">English</SelectItem>
-                              <SelectItem value="dark">Spanish</SelectItem>
-                              <SelectItem value="system">Bangla</SelectItem>
+                              <SelectItem value="English">English</SelectItem>
+                              <SelectItem value="system">Spanish</SelectItem>
+
                             </SelectContent>
                           </Select>
                         </div>
@@ -545,18 +541,11 @@ const Navbar = () => {
                         <div className="pt-2">
                           <Select>
                             <SelectTrigger className="w-full">
-                              <SelectValue placeholder="BDT ( Bangladeshi Taka) " />
+                              <SelectValue placeholder="USD" />
                             </SelectTrigger>
                             <SelectContent>
-                              <SelectItem value="BDT">
-                                BDT ( BAngladeshi Taka){' '}
-                              </SelectItem>
-                              <SelectItem value="USD">
-                                USD(United States Dollar)
-                              </SelectItem>
-                              <SelectItem value="Rupee">
-                                Rupee (Indian Rupee)
-                              </SelectItem>
+                              <SelectItem value="BDT">USD</SelectItem>
+                              <SelectItem value="USD">Pounds</SelectItem>
                             </SelectContent>
                           </Select>
                         </div>
@@ -677,8 +666,8 @@ const Navbar = () => {
 
       {/* secondary navbar */}
       <div className="bg-secondaryColor h-[80px] flex items-center">
-        <div className="container mx-auto flex items-center gap-40">
-          <div className="relative">
+        <div className="container mx-auto flex items-center  ">
+          <div className="relative flex-shrink-0">
             <button
               onMouseEnter={() => setShowCategory(true)}
               onMouseLeave={() => setShowCategory(false)}
@@ -721,14 +710,14 @@ const Navbar = () => {
               </ul>
             </div>
           </div>
-          <ul className="flex items-center gap-8">
+          <ul className="flex items-center gap-12 flex-1 w-full justify-center mr-72">
             {navLinks?.map((link) => (
               <li key={link?.title}>
                 <NavLink
                   to={link?.path}
                   className={({ isActive }) =>
-                    `flex items-center gap-1 ${
-                      isActive ? 'font-semibold' : 'font-normal'
+                    `flex items-center gap-1 font-medium ${
+                      isActive ? 'text-black' : 'text-[#785700]'
                     }`
                   }
                 >

@@ -33,13 +33,8 @@ const ChangePassword = () => {
   };
   return (
     <div className="w-full flex h-screen">
-      <div className="h-full w-1/2 bg-[#FFEADF] flex items-center justify-center">
-        <div>
-          <img src="https://i.postimg.cc/xTLCXKjq/OBJECTS.png" alt="" />
-        </div>
-      </div>
       {!passwordChanged ? (
-        <div className="w-1/2 h-full flex items-center justify-center">
+        <div className="w-full h-full flex items-center justify-center">
           <div className="rounded-[24px] border border-[#E5E5E5] w-[573px] py-10">
             <div className="text-center mt-10">
               <h3 className="font-semibold text-2xl">Change Password</h3>
@@ -124,7 +119,7 @@ const ChangePassword = () => {
           </div>
         </div>
       ) : (
-        <div className="w-1/2 h-full flex items-center justify-center">
+        <div className="w-full h-full flex items-center justify-center">
           <div className="rounded-[24px] border border-[#E5E5E5] w-[573px] py-10 px-16 text-center">
             <div className="flex flex-col items-center justify-center my-28">
               <h3 className="font-semibold text-2xl">Change Password</h3>
