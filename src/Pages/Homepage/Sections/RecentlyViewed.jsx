@@ -5,7 +5,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import ItemCard from '@/Components/Cards/ItemCard';
 import {
-  LeftArrowNavSvg,
+  LeftArrowNavLightSvg,
   RightArrowNavSvg,
 } from '@/Components/Svg Container/SvgContainer';
 const allProducts = [
@@ -133,7 +133,7 @@ const RecentlyViewed = () => {
               onClick={() => swiperRef.slidePrev()}
               className="size-10 group hover:bg-blackColor transition duration-300 border border-blackColor flex items-center justify-center"
             >
-              <LeftArrowNavSvg />
+              <LeftArrowNavLightSvg />
             </button>
             <button
               onClick={() => swiperRef.slideNext()}

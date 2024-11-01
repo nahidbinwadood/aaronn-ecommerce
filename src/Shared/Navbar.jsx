@@ -716,8 +716,9 @@ const homeAppliances = [
   },
 ];
 const Navbar = () => {
-  const [showCategory, setShowCategory] = useState(true);
-  const [activeCategory, setActiveCategory] = useState(null);
+  const [showCategory, setShowCategory] = useState(false);
+  const [activeCategory, setActiveCategory] = useState('');
+  const [activeSubCategory, setActiveSubCategory] = useState(null);
   const [showSubCategory, setShowSubCategory] = useState(false);
   const [showPriceInfo, setShowPriceInfo] = useState(false);
   const [showSuggestion, setShowSuggestion] = useState(false);
@@ -730,7 +731,7 @@ const Navbar = () => {
   const priceInfoRef = useRef(null);
   const navigate = useNavigate();
 
-  console.log(activeCategory);
+  console.log(activeSubCategory);
   const handleSubmit = (e) => {
     e.preventDefault();
     const search = e.target.search.value;
@@ -1160,6 +1161,8 @@ const Navbar = () => {
               onMouseEnter={() => setShowCategory(true)}
               onMouseLeave={() => {
                 setShowCategory(false);
+                setActiveSubCategory(null);
+                setShowSubCategory(false);
                 setActiveCategory(null);
               }}
               className={`bg-white px-6 py-3 rounded-full w-[275px] flex items-center gap-20 cursor-pointer`}
@@ -1179,7 +1182,12 @@ const Navbar = () => {
               onMouseEnter={() => {
                 setShowCategory(true);
               }}
-              onMouseLeave={() => setShowCategory(false)}
+              onMouseLeave={() => {
+                setShowSubCategory(false);
+                setActiveSubCategory(null);
+                setShowCategory(false);
+                setActiveCategory(null);
+              }}
               className={`bg-white flex p-6 pr-2 ${
                 showSubCategory ? 'w-[1000px]' : 'w-[275px]'
               } rounded-3xl absolute shadow-lg transition-all duration-200
@@ -1194,16 +1202,20 @@ const Navbar = () => {
                 {categories?.map((category, index) => (
                   <li key={category?.name} className="cursor-pointer w-full">
                     <Link
-                      onClick={() => setShowCategory(false)}
+                      // onClick={() => setShowCategory(false)}
                       onMouseEnter={() => {
-                        setActiveCategory([...category.subcategories]);
+                        setActiveSubCategory(category);
                         setShowSubCategory(true);
+                        setActiveCategory(category.name);
                       }}
                       onMouseLeave={() => {
-                        // setActiveCategory(null);
+                        // setActiveSubCategory(null);
                       }}
-                      className="block hover:font-bold duration-200"
-                      to="/category"
+                      className={`block ${
+                        activeCategory === category.name
+                          ? 'font-bold duration-200'
+                          : ''
+                      }`}
                     >
                       {category?.name}
                       {index < categories.length - 1 && (
@@ -1215,8 +1227,15 @@ const Navbar = () => {
               </ul>
 
               {/* subcategory */}
-              <div className="grid grid-cols-4 gap-10 px-8 h-fit">
-                {activeCategory?.map((subCategory, idx) => (
+              <div
+                onMouseLeave={() => {
+                  setShowSubCategory(false);
+                  setActiveSubCategory(null);
+                  setActiveCategory(null);
+                }}
+                className="grid grid-cols-4 gap-10 px-8 h-fit"
+              >
+                {activeSubCategory?.subcategories?.map((subCategory, idx) => (
                   <div key={idx}>
                     <div>
                       <h2 className="font-semibold">{subCategory?.name}</h2>
@@ -1225,7 +1244,15 @@ const Navbar = () => {
                       <ul className="space-y-4  transition-opacity   duration-1000">
                         {subCategory?.items?.map((item) => (
                           <li key={item}>
-                            <Link>{item}</Link>
+                            <Link
+                              onClick={() => {
+                                setShowSubCategory(false);
+                                setShowCategory(false);
+                              }}
+                              to="/category"
+                            >
+                              {item}
+                            </Link>
                           </li>
                         ))}
                       </ul>
