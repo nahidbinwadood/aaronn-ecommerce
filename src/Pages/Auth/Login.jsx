@@ -96,7 +96,7 @@ const Login = () => {
               </button>
             </div>
 
-            <div className="flex items-center justify-center mt-5">
+            <div className="hidden items-center justify-center mt-5">
               <p>Location :</p>{' '}
               <div>
                 <div className="relative inline-flex items-center">
@@ -110,7 +110,7 @@ const Login = () => {
                 </div>
               </div>
             </div>
-            <div className="mt-5 text-center w-4/5  mx-auto">
+            <div className="mt-5 text-center w-4/5  mx-auto hidden">
               <p>
                 By continuing, you confirm that you‘re an adult and you’ve read
                 and accepted our{' '}

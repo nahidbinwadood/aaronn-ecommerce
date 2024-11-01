@@ -124,7 +124,6 @@ const router = createBrowserRouter([
   { path: '/email-login', element: <EmailLogin /> },
   { path: '/number-login', element: <NumberLogin /> },
   { path: '/verify-email', element: <VerifyEmail /> },
-  { path: '/verify-email', element: <VerifyEmail /> },
   { path: '/reset-password', element: <ResetPassword /> },
   { path: '/reset-password/email', element: <ResetPassEmail /> },
   { path: '/reset-password/number', element: <ResetPassNumber /> },

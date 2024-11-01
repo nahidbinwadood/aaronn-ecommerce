@@ -3,17 +3,19 @@ import {
   FacebookAuthSvg,
   GoogleAuthSvg,
   GreenTickSvg,
+  ImageUploadPlaceholderSvg,
   TwitterAuthSvg,
 } from '@/Components/Svg Container/SvgContainer';
-import { FaRegEye, FaRegEyeSlash } from 'react-icons/fa6';
-import { CgSpinnerTwo } from 'react-icons/cg';
 import { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import toast from 'react-hot-toast';
+import { CgSpinnerTwo } from 'react-icons/cg';
+import { FaRegEye, FaRegEyeSlash } from 'react-icons/fa6';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Registration = () => {
   const [show, SetShow] = useState(false);
+  const [selectedImage, setSelectedImage] = useState(null);
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   const { register, handleSubmit } = useForm();
@@ -29,6 +31,10 @@ const Registration = () => {
         navigate('/verify-email');
       }, 2000);
     }
+  };
+  const handleImageChange = (e) => {
+    const file = e.target.files[0];
+    setSelectedImage(URL.createObjectURL(file));
   };
   return (
     <div className="w-full flex h-screen">
@@ -50,6 +56,44 @@ const Registration = () => {
               action=""
               className="w-3/4 mx-auto flex flex-col gap-5"
             >
+              <div className="w-full flex items-center justify-center">
+                <label
+                  id="image"
+                  className=" cursor-pointer size-40 rounded-[24px] bg-[#D9D9D9] flex items-center justify-center"
+                >
+                  <input
+                    onChange={handleImageChange}
+                    className="hidden"
+                    type="file"
+                    name=""
+                    id="image"
+                  />
+                  {selectedImage ? (
+                    <div className="size-40">
+                      <img
+                        className="w-full h-full object-cover rounded-[24px]"
+                        src={selectedImage}
+                        alt=""
+                      />
+                    </div>
+                  ) : (
+                    <div className="flex flex-col items-center justify-center">
+                      <ImageUploadPlaceholderSvg  register={true}/>
+                      <p className="text-sm font-medium">Upload Image</p>
+                    </div>
+                  )}
+                </label>
+              </div>
+              <div>
+                <input
+                  {...register('name', { required: true })}
+                  className="w-full py-4 px-6 focus:outline-none border border-borderColor rounded-[24px]"
+                  placeholder="Enter Your Name"
+                  type="name"
+                  name="name"
+                  id=""
+                />
+              </div>
               <div>
                 <input
                   {...register('email', { required: true })}
@@ -83,7 +127,7 @@ const Registration = () => {
                   )}
                 </div>
               </div>
-              <div className="mt-2 space-y-2 ml-5">
+              <div className="space-y-2 ml-5">
                 <div className="flex items-center gap-2">
                   <div className="size-2 bg-textLight rounded-full" />
                   <p className="text-textLight">6-20 Characters </p>
@@ -97,7 +141,7 @@ const Registration = () => {
               </div>
 
               {/* button */}
-              <div className="flex items-center justify-center mt-4">
+              <div className="flex items-center justify-center">
                 <button
                   type="submit"
                   className={`transition flex items-center justify-center h-14 duration-300 hover:bg-transparent hover:text-[#FF4B26] py-4 rounded-[24px] font-semibold bg-[#FF4B26] border border-[#FF4B26] text-white  w-full opacity-100`}
@@ -142,7 +186,7 @@ const Registration = () => {
               </button>
             </div>
 
-            <div className="flex items-center justify-center mt-5">
+            <div className="  items-center justify-center mt-5 hidden">
               <p>Location :</p>{' '}
               <div>
                 <div className="relative inline-flex items-center">
@@ -156,7 +200,7 @@ const Registration = () => {
                 </div>
               </div>
             </div>
-            <div className="mt-5 text-center w-4/5  mx-auto">
+            <div className="mt-5 text-center w-4/5  mx-auto hidden">
               <p>
                 By continuing, you confirm that you‘re an adult and you’ve read
                 and accepted our{' '}
