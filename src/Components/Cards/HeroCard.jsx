@@ -5,16 +5,16 @@ const HeroCard = ({ card }) => {
   const { image, price, previousPrice } = card;
   return (
     <Link to="/product-details">
-      <div className="h-[220px] w-full">
+      <div className="h-[130px] w-full">
         <img
-          className="h-full w-full object-cover rounded-2xl"
+          className="h-full w-full object-cover rounded-xl"
           src={image}
           alt=""
         />
       </div>
-      <div className="flex items-center justify-center gap-3 pt-3 text-lg">
+      <div className="flex items-center justify-center gap-2 pt-3 text-sm text-nowrap">
         <p className="font-semibold">$ {price}</p>
-        <p className="text-textLight line-through text-base">
+        <p className="text-textLight line-through">
           $ {previousPrice}
         </p>
       </div>

@@ -115,7 +115,7 @@ const RecentlyViewed = () => {
           <Swiper
             loop={true}
             onSwiper={setSwiperRef}
-            slidesPerView={4}
+            slidesPerView={5}
             spaceBetween={30}
             modules={[Pagination, Navigation]}
             className="mySwiper relative mb-16 rounded-2xl"

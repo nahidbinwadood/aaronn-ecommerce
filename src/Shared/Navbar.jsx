@@ -1211,9 +1211,9 @@ const Navbar = () => {
                       onMouseLeave={() => {
                         // setActiveSubCategory(null);
                       }}
-                      className={`block ${
+                      className={`block text-sm text-nowrap ${
                         activeCategory === category.name
-                          ? 'font-bold duration-200'
+                          ? 'font-semibold duration-200'
                           : ''
                       }`}
                     >
@@ -1238,13 +1238,13 @@ const Navbar = () => {
                 {activeSubCategory?.subcategories?.map((subCategory, idx) => (
                   <div key={idx}>
                     <div>
-                      <h2 className="font-semibold">{subCategory?.name}</h2>
+                      <h2 className="font-semibold text-sm">{subCategory?.name}</h2>
                     </div>
                     <div className="mt-4">
-                      <ul className="space-y-4  transition-opacity   duration-1000">
+                      <ul className="space-y-3  transition-opacity   duration-1000">
                         {subCategory?.items?.map((item) => (
                           <li key={item}>
-                            <Link
+                            <Link className='text-sm'
                               onClick={() => {
                                 setShowSubCategory(false);
                                 setShowCategory(false);

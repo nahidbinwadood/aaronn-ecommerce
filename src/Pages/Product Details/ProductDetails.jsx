@@ -22,6 +22,20 @@ const allProducts = [
     previousPrice: 330.69,
   },
   {
+    image: 'https://i.imgur.com/ia0QnBP.png',
+    title: 'Xiaomi Mijia vacuum Cleaner',
+    review: 5,
+    price: 196.33,
+    previousPrice: 330.69,
+  },
+  {
+    image: 'https://i.imgur.com/ia0QnBP.png',
+    title: 'Xiaomi Mijia vacuum Cleaner',
+    review: 5,
+    price: 196.33,
+    previousPrice: 330.69,
+  },
+  {
     image: 'https://i.imgur.com/SQQlarb.png',
     title: 'Xiaomi Mijia vacuum Cleaner',
     review: 5,
@@ -259,7 +273,7 @@ const ProductDetails = () => {
         <div>
           <h2 className="text-center text-4xl font-semibold">Related Items</h2>
         </div>
-        <div className="mt-20 grid grid-cols-4 gap-8">
+        <div className="mt-20 grid grid-cols-5 gap-8">
           {allProducts?.map((item, idx) => (
             <ItemCard key={idx} item={item} />
           ))}

@@ -6,14 +6,14 @@ const ItemCard = ({ item }) => {
   const { title, review, price, previousPrice, image } = item;
   return (
     <Link to="/product-details">
-      <div className="h-[450px] w-full relative">
+      <div className="h-[300px] w-full relative">
         <img
-          className="h-full w-full object-cover rounded-2xl"
+          className="h-full w-full object-cover rounded-xl"
           src={image}
           alt=""
         />
         <div className="absolute bottom-4 w-full">
-          <div className="bg-white mx-4 rounded-2xl py-5 px-6">
+          <div className="bg-white mx-4 rounded-2xl py-3 px-3">
             <p className="text-sm font-medium">{title}</p>
             <div className="flex items-center gap-1 mt-2">
               {Array(review)
