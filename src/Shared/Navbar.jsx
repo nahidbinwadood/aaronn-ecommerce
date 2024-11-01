@@ -1201,7 +1201,7 @@ const Navbar = () => {
               <ul className="space-y-4 h-[635px] w-[243px] overflow-y-auto discover-more pr-5 flex-shrink-0">
                 {categories?.map((category, index) => (
                   <li key={category?.name} className="cursor-pointer w-full">
-                    <Link
+                    <button
                       // onClick={() => setShowCategory(false)}
                       onMouseEnter={() => {
                         setActiveSubCategory(category);
@@ -1211,7 +1211,7 @@ const Navbar = () => {
                       onMouseLeave={() => {
                         // setActiveSubCategory(null);
                       }}
-                      className={`block text-sm text-nowrap ${
+                      className={` w-full text-start text-sm text-nowrap ${
                         activeCategory === category.name
                           ? 'font-semibold duration-200'
                           : ''
@@ -1221,7 +1221,7 @@ const Navbar = () => {
                       {index < categories.length - 1 && (
                         <div className="h-[0.5px] w-full bg-[#E5E5E5] mt-3" />
                       )}
-                    </Link>
+                    </button>
                   </li>
                 ))}
               </ul>
@@ -1238,18 +1238,27 @@ const Navbar = () => {
                 {activeSubCategory?.subcategories?.map((subCategory, idx) => (
                   <div key={idx}>
                     <div>
-                      <h2 className="font-semibold text-sm">{subCategory?.name}</h2>
+                      <h2 className="font-semibold text-sm">
+                        {subCategory?.name}
+                      </h2>
                     </div>
                     <div className="mt-4">
                       <ul className="space-y-3  transition-opacity   duration-1000">
                         {subCategory?.items?.map((item) => (
                           <li key={item}>
-                            <Link className='text-sm'
+                            <Link
+                              className="text-sm"
                               onClick={() => {
                                 setShowSubCategory(false);
                                 setShowCategory(false);
                               }}
-                              to="/category"
+                              to={
+                                activeCategory === 'Home & Garden'
+                                  ? '/home-and-garden'
+                                  : activeCategory === 'Hair Extensions & Wigs'
+                                  ? '/hair-extension'
+                                  : '/category' // Default or fallback path
+                              }
                             >
                               {item}
                             </Link>
