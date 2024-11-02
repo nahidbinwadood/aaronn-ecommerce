@@ -18,7 +18,7 @@ const MainLayout = () => {
       </footer>
 
       {/* message icon */}
-      <Link to="/dashboard/message-center" className="fixed hidden right-10 bottom-10 bg-[#FF6F23] p-5 rounded-full z-50">
+      <Link to="/dashboard/message-center" className="fixed right-10 bottom-10 bg-[#FF6F23] p-5 rounded-full z-50">
         <FaRegMessage className='text-white size-5' />
       </Link>
     </div>
