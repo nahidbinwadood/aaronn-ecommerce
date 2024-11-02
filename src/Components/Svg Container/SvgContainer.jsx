@@ -32,12 +32,12 @@ export function DownArrowSvg({ dark }) {
     </svg>
   );
 }
-export function PersonSvg() {
+export function PersonSvg({ small }) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
+      width={small ? 20 : 24}
+      height={small ? 20 : 24}
       viewBox="0 0 24 24"
       fill="none"
     >
@@ -65,12 +65,12 @@ export function PersonBlackSvg() {
     </svg>
   );
 }
-export function CartSvg() {
+export function CartSvg({small}) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
+      width= {small ? 20 : 24}
+      height= {small ? 20 : 24}
       viewBox="0 0 24 24"
       fill="none"
     >
@@ -1336,9 +1336,8 @@ export function MessageCenterSvg() {
       x="0"
       y="0"
       viewBox="0 0 682.667 682.667"
-      style={{enableBackground:"new 0 0 512 512"}}
+      style={{ enableBackground: 'new 0 0 512 512' }}
       xmlSpace="preserve"
-
     >
       <g>
         <defs>
@@ -1361,21 +1360,21 @@ export function MessageCenterSvg() {
           ></rect>
           <path
             d="M0 0c0-13.807-11.193-25-25-25S-50-13.807-50 0s11.193 25 25 25S0 13.807 0 0"
-            style={{fillOpacity:"1",fillRule:"nonzero",stroke:"none"}}
+            style={{ fillOpacity: '1', fillRule: 'nonzero', stroke: 'none' }}
             transform="matrix(1.33333 0 0 -1.33333 374.667 341.333)"
             fill="#ffffff"
             data-original="#ffffff"
           ></path>
           <path
             d="M0 0c0-13.807-11.193-25-25-25S-50-13.807-50 0s11.193 25 25 25S0 13.807 0 0"
-            style={{fillOpacity:"1",fillRule:"nonzero",stroke:"none"}}
+            style={{ fillOpacity: '1', fillRule: 'nonzero', stroke: 'none' }}
             transform="matrix(1.33333 0 0 -1.33333 508 341.333)"
             fill="#ffffff"
             data-original="#ffffff"
           ></path>
           <path
             d="M0 0c0-13.807-11.193-25-25-25S-50-13.807-50 0s11.193 25 25 25S0 13.807 0 0"
-            style={{fillOpacity:"1",fillRule:"nonzero",stroke:"none"}}
+            style={{ fillOpacity: '1', fillRule: 'nonzero', stroke: 'none' }}
             transform="matrix(1.33333 0 0 -1.33333 241.333 341.333)"
             fill="#ffffff"
             data-original="#ffffff"
@@ -1402,21 +1401,21 @@ export function MessageCenterSvg() {
             ></path>
             <path
               d="M0 0c0-13.807-11.193-25-25-25S-50-13.807-50 0s11.193 25 25 25S0 13.807 0 0"
-              style={{fillOpacity:"1",fillRule:"nonzero",stroke:"none"}}
+              style={{ fillOpacity: '1', fillRule: 'nonzero', stroke: 'none' }}
               transform="translate(281 256)"
               fill="#000000"
               data-original="#000000"
             ></path>
             <path
               d="M0 0c0-13.807-11.193-25-25-25S-50-13.807-50 0s11.193 25 25 25S0 13.807 0 0"
-              style={{fillOpacity:"1",fillRule:"nonzero",stroke:"none"}}
+              style={{ fillOpacity: '1', fillRule: 'nonzero', stroke: 'none' }}
               transform="translate(381 256)"
               fill="#000000"
               data-original="#000000"
             ></path>
             <path
               d="M0 0c0-13.807-11.193-25-25-25S-50-13.807-50 0s11.193 25 25 25S0 13.807 0 0"
-              style={{fillOpacity:"1",fillRule:"nonzero",stroke:"none"}}
+              style={{ fillOpacity: '1', fillRule: 'nonzero', stroke: 'none' }}
               transform="translate(181 256)"
               fill="#000000"
               data-original="#000000"

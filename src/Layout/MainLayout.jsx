@@ -10,15 +10,15 @@ const MainLayout = () => {
       <nav className="font-poppins">
         <Navbar />
       </nav>
-      <main className="min-h-[calc(100vh-612px)]">
+      <main className="min-h-[calc(100vh-612px)] hidden">
         <Outlet />
       </main>
-      <footer className="font-poppins">
+      <footer className="font-poppins hidden">
         <Footer />
       </footer>
 
       {/* message icon */}
-      <Link to="/dashboard/message-center" className="fixed right-10 bottom-10 bg-[#FF6F23] p-5 rounded-full z-50">
+      <Link to="/dashboard/message-center" className="fixed hidden right-10 bottom-10 bg-[#FF6F23] p-5 rounded-full z-50">
         <FaRegMessage className='text-white size-5' />
       </Link>
     </div>

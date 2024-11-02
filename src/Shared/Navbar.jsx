@@ -19,6 +19,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/Components/ui/select';
+import NavbarRes from '@/Components/NavbarRes';
 // import ReactFlagsSelect from 'react-flags-select';
 
 const navLinks = [
@@ -731,7 +732,6 @@ const Navbar = () => {
   const priceInfoRef = useRef(null);
   const navigate = useNavigate();
 
-  console.log(activeSubCategory);
   const handleSubmit = (e) => {
     e.preventDefault();
     const search = e.target.search.value;
@@ -792,7 +792,7 @@ const Navbar = () => {
   return (
     <div className="font-poppins">
       {/* primary navbar */}
-      <div className="bg-primaryColor text-white h-[70px] flex items-center">
+      <div className="bg-primaryColor text-white h-[70px] lg:flex items-center hidden">
         <div className="container mx-auto w-full flex items-center justify-between">
           <div>
             <Link to="/">
@@ -1154,7 +1154,7 @@ const Navbar = () => {
       </div>
 
       {/* secondary navbar */}
-      <div className="bg-secondaryColor h-[80px] flex items-center">
+      <div className="bg-secondaryColor h-[80px] lg:flex items-center hidden">
         <div className="container mx-auto flex items-center  ">
           <div className="relative flex-shrink-0">
             <button
@@ -1290,6 +1290,10 @@ const Navbar = () => {
             ))}
           </ul>
         </div>
+      </div>
+
+      <div className='lg:hidden'>
+        <NavbarRes />
       </div>
     </div>
   );
