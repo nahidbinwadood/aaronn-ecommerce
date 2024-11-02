@@ -18,16 +18,16 @@ export default function DetailsSlider() {
 
   // Images array for easier maintenance
   const images = [
-    'https://swiperjs.com/demos/images/nature-1.jpg',
-    'https://swiperjs.com/demos/images/nature-2.jpg',
-    'https://swiperjs.com/demos/images/nature-3.jpg',
-    'https://swiperjs.com/demos/images/nature-4.jpg',
-    'https://swiperjs.com/demos/images/nature-5.jpg',
-    'https://swiperjs.com/demos/images/nature-6.jpg',
-    'https://swiperjs.com/demos/images/nature-7.jpg',
-    'https://swiperjs.com/demos/images/nature-8.jpg',
-    'https://swiperjs.com/demos/images/nature-9.jpg',
-    'https://swiperjs.com/demos/images/nature-10.jpg',
+    'https://i.postimg.cc/pdJByqZW/product-1.jpg',
+    'https://i.postimg.cc/3RrFGmSg/product-2.jpg',
+    'https://i.postimg.cc/Jr86mBq7/product-3.jpg',
+    'https://i.postimg.cc/zfrjJ9T2/product-4.jpg',
+    'https://i.postimg.cc/9f1WmwD4/product-5.jpg',
+    'https://i.postimg.cc/xTbTvd47/product-6.jpg',
+    'https://i.postimg.cc/g2Vz7TdH/product-7.jpg',
+    'https://i.postimg.cc/JzV7PLwh/product-8.jpg',
+    'https://i.postimg.cc/ZqJbzx5t/product-9.jpg',
+    'https://i.postimg.cc/L4W8gPNL/product-10.jpg',
   ];
 
   return (
@@ -49,7 +49,7 @@ export default function DetailsSlider() {
       >
         {images.map((image, index) => (
           <SwiperSlide key={`main-${index}`}>
-            <div className="aspect-w-16 aspect-h-9">
+            <div className="h-[650px]">
               <img
                 src={image}
                 alt={`Slide ${index + 1}`}
@@ -98,11 +98,11 @@ export default function DetailsSlider() {
           >
             {images.map((image, index) => (
               <SwiperSlide key={`thumb-${index}`}>
-                <div className="cursor-pointer">
+                <div className="cursor-pointer h-20 ">
                   <img
                     src={image}
                     alt={`Thumbnail ${index + 1}`}
-                    className="w-full h-20 object-cover rounded transition-all duration-300 hover:opacity-100"
+                    className="w-full h-full object-cover rounded transition-all duration-300 hover:opacity-100"
                     loading="lazy"
                   />
                 </div>
