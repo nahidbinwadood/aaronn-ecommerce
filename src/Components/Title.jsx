@@ -2,7 +2,7 @@
 const Title = ({ title }) => {
   return (
     <>
-      <h2 className="text-4xl font-semibold text-center">{title}</h2>
+      <h2 className="text-2xl md:text-3xl xl:text-4xl font-semibold text-center">{title}</h2>
     </>
   );
 };

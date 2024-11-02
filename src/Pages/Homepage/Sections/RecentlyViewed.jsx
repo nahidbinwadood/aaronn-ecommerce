@@ -85,9 +85,9 @@ const RecentlyViewed = () => {
   const [swiperRef, setSwiperRef] = useState(null);
 
   return (
-    <section className="my-40 ">
+    <section className="my-10 md:my-16 lg:my-20 xl:my-28 2xl:my-40">
       <div>
-        <h3 className="text-4xl font-semibold text-center">
+        <h3 className="text-2xl md:text-3xl xl:text-4xl font-semibold text-center">
           Recently Reviewed
         </h3>
       </div>
@@ -98,7 +98,7 @@ const RecentlyViewed = () => {
             background:
               'linear-gradient(-90deg, #FFEADF 0%, rgba(245, 245, 245, 0.00) 100%)',
           }}
-          className="w-[500px] h-full absolute top-0 right-0 -z-10"
+          className="w-[120px] sm:w-[150px] md:w-[220px] lg:w-[350px] xl:w-[450px] 2xl:w-[500px] h-full absolute top-0 right-0 -z-10"
         />
 
         {/* Left Gradient Box */}
@@ -107,18 +107,25 @@ const RecentlyViewed = () => {
             background:
               'linear-gradient(90deg, #FFEADF 0%, rgba(245, 245, 245, 0.00) 100%)',
           }}
-          className="w-[500px] h-full absolute top-0 left-0 -z-10"
+          className="w-[120px] sm:w-[150px] md:w-[220px] lg:w-[350px] xl:w-[450px] 2xl:w-[500px] h-full absolute top-0 left-0 -z-10"
         />
 
         {/* sliders */}
-        <div className="container mx-auto py-10 rounded-2xl">
+        <div className="container mx-auto py-6 lg:py-10 rounded-2xl px-5 md:px-7 2xl:px-0">
           <Swiper
             loop={true}
             onSwiper={setSwiperRef}
             slidesPerView={5}
             spaceBetween={30}
             modules={[Pagination, Navigation]}
-            className="mySwiper relative mb-16 rounded-2xl"
+            className="mySwiper relative  lg:mb-16 rounded-2xl"
+            breakpoints={{
+              320: { slidesPerView: 1, spaceBetween: 10 }, // Small screens
+              640: { slidesPerView: 2, spaceBetween: 20 }, // Medium screens
+              768: { slidesPerView: 3, spaceBetween: 20 }, // Tablet screens
+
+              1280: { slidesPerView: 5, spaceBetween: 30 }, // Extra-large screens
+            }}
           >
             {allProducts.map((item, idx) => (
               <SwiperSlide key={idx}>
@@ -126,23 +133,22 @@ const RecentlyViewed = () => {
               </SwiperSlide>
             ))}
           </Swiper>
-
-          {/* Navigation buttons */}
-          <div className="w-full flex items-center justify-center gap-5">
-            <button
-              onClick={() => swiperRef.slidePrev()}
-              className="size-10 group hover:bg-blackColor transition duration-300 border border-blackColor flex items-center justify-center"
-            >
-              <LeftArrowNavLightSvg />
-            </button>
-            <button
-              onClick={() => swiperRef.slideNext()}
-              className="size-10 group hover:bg-blackColor transition duration-300 border border-blackColor flex items-center justify-center"
-            >
-              <RightArrowNavSvg />
-            </button>
-          </div>
         </div>
+      </div>
+      {/* Navigation buttons */}
+      <div className="w-full flex items-center justify-center gap-5 mt-4 md:mt-6 lg:mt-8">
+        <button
+          onClick={() => swiperRef.slidePrev()}
+          className="size-10 group hover:bg-blackColor transition duration-300 border border-blackColor flex items-center justify-center"
+        >
+          <LeftArrowNavLightSvg />
+        </button>
+        <button
+          onClick={() => swiperRef.slideNext()}
+          className="size-10 group hover:bg-blackColor transition duration-300 border border-blackColor flex items-center justify-center"
+        >
+          <RightArrowNavSvg />
+        </button>
       </div>
     </section>
   );

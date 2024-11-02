@@ -5,9 +5,9 @@ const HeroCard = ({ card }) => {
   const { image, price, previousPrice } = card;
   return (
     <Link to="/product-details">
-      <div className="h-[130px] w-full">
+      <div className="h-[150px] md:h-[130px] w-full  ">
         <img
-          className="h-full w-full object-cover rounded-xl"
+          className="h-full w-full object-cover rounded-md md:rounded-xl"
           src={image}
           alt=""
         />

@@ -13,20 +13,22 @@ const BannerCardContainer = ({ choice, choiceContents }) => {
     <div
       className={`h-1/2 w-full ${
         choice ? 'bg-[#FDF9D4]' : 'bg-[#FFEADF]'
-      } rounded-3xl px-6 py-4`}
+      } rounded-xl md:rounded-2xl lg:rounded-3xl px-6 py-4`}
     >
       <div className="flex items-center gap-2">
         <YellowTickSvg />
-        <h2 className="text-3xl font-semibold">{title}</h2>
+        <h2 className="text-xl md:text-2xl lg:text-3xl font-semibold">
+          {title}
+        </h2>
       </div>
       {choice ? (
-        <div className="pt-2 flex items-center gap-3 ">
+        <div className="pt-2 flex items-center gap-3 text-sm md:text-base">
           <p>{description?.[0]} </p>
           <div className="h-3 w-[1px] bg-black" />
           <p>{description?.[1]} </p>
         </div>
       ) : (
-        <div className="pt-4 flex items-center gap-3 ">
+        <div className="pt-4 flex items-center gap-3 text-sm md:text-base">
           <p>{description} </p>
         </div>
       )}
@@ -40,7 +42,14 @@ const BannerCardContainer = ({ choice, choiceContents }) => {
           }}
           spaceBetween={30}
           modules={[Pagination, Navigation, Autoplay]}
-          className="mySwiper relative rounded-2xl"
+          breakpoints={{
+            320: { slidesPerView: 1, spaceBetween: 10 }, // Small screens
+            640: { slidesPerView: 2, spaceBetween: 20 }, // Medium screens
+            768: { slidesPerView: 3, spaceBetween: 20 }, // Tablet screens
+            1024: { slidesPerView: 4, spaceBetween: 30 }, // Large screens
+            1280: { slidesPerView: 5, spaceBetween: 30 }, // Extra-large screens
+          }}
+          className="mySwiper relative rounded-md lg:rounded-2xl"
         >
           {cards.map((item, idx) => (
             <SwiperSlide key={idx}>

@@ -65,12 +65,12 @@ export function PersonBlackSvg() {
     </svg>
   );
 }
-export function CartSvg({small}) {
+export function CartSvg({ small }) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width= {small ? 20 : 24}
-      height= {small ? 20 : 24}
+      width={small ? 20 : 24}
+      height={small ? 20 : 24}
       viewBox="0 0 24 24"
       fill="none"
     >
@@ -166,9 +166,8 @@ export function StarSvg() {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="128"
-      height="136"
       viewBox="0 0 128 136"
+      className="w-[70px] h-auto max-w-[128px] md:max-w-[96px] lg:max-w-[128px]"
       fill="none"
     >
       <path
@@ -183,8 +182,7 @@ export function YellowTickSvg() {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="35"
-      height="35"
+      className="size-6 md:size-7 lg:size-8"
       viewBox="0 0 48 49"
       fill="none"
     >
