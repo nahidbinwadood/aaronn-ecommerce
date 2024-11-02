@@ -188,8 +188,8 @@ const ProductsSection = () => {
           <ItemCard key={idx} item={item} />
         ))}
       </div>
-      <div className="w-full flex items-center justify-center pt-20">
-        <button className="bg-[#191919] px-8 py-3 rounded-full text-white  ">
+      <div className="w-full flex items-center justify-center pt-8 sm:pt-10 md:pt-14 lg:pt-16 2xl:pt-20">
+        <button className="bg-[#191919] px-8 py-2.5 md:py-3 rounded-full text-white  text-sm ">
           Load More
         </button>
       </div>

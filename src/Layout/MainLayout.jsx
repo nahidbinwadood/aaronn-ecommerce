@@ -10,10 +10,10 @@ const MainLayout = () => {
       <nav className="font-poppins">
         <Navbar />
       </nav>
-      <main className="min-h-[calc(100vh-612px)]">
+      <main className="min-h-[calc(100vh-612px)] overflow-x-hidden">
         <Outlet />
       </main>
-      <footer className="font-poppins hidden">
+      <footer className="font-poppins">
         <Footer />
       </footer>
 

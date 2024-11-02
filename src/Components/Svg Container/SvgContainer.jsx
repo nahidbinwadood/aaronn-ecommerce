@@ -246,6 +246,7 @@ export function TruckSvg() {
       xmlns="http://www.w3.org/2000/svg"
       width="100"
       height="69"
+      className="w-16 md:w-20 lg:w-auto"
       viewBox="0 0 100 69"
       fill="none"
     >
@@ -273,6 +274,7 @@ export function GuaranteeSvg() {
       xmlns="http://www.w3.org/2000/svg"
       width="70"
       height="70"
+      className="size-14 md:size-16 lg:size-auto"
       viewBox="0 0 70 70"
       fill="none"
     >
@@ -297,6 +299,7 @@ export function ReturnSvg() {
       xmlns="http://www.w3.org/2000/svg"
       width="70"
       height="70"
+      className="size-14 md:size-16 lg:size-auto"
       viewBox="0 0 70 70"
       fill="none"
     >
@@ -313,6 +316,7 @@ export function DiamondSvg() {
       xmlns="http://www.w3.org/2000/svg"
       width="70"
       height="70"
+      className="size-14 md:size-16 lg:size-auto"
       viewBox="0 0 70 70"
       fill="none"
     >
@@ -344,6 +348,7 @@ export function InstagramSvg() {
       xmlns="http://www.w3.org/2000/svg"
       width="24"
       height="24"
+      className="size-5 md:size-auto"
       viewBox="0 0 24 24"
       fill="none"
     >
@@ -361,6 +366,7 @@ export function FacebookSvg() {
       xmlns="http://www.w3.org/2000/svg"
       width="24"
       height="24"
+      className="size-5 md:size-auto"
       viewBox="0 0 24 24"
       fill="none"
     >
@@ -375,7 +381,7 @@ export function FacebookSvg() {
 export function TwitterSvg() {
   return (
     <svg
-      className="size-6"
+      className="size-5 md:size-6"
       xmlns="http://www.w3.org/2000/svg"
       version="1.1"
       xmlnsXlink="http://www.w3.org/1999/xlink"

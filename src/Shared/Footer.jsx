@@ -56,21 +56,21 @@ const Footer = () => {
   ];
   return (
     <section className="bg-blackColor text-white">
-      <div className="container mx-auto py-[100px] flex justify-between ">
-        <div className="w-2/3">
+      <div className="container mx-auto py-14 md:py-16 xl:py-[100px] flex flex-col sm:flex-row justify-between  px-5 md:px-7 2xl:px-0">
+        <div className="2xl:w-2/3">
           <Link to="/">
-            <h3 className="text-3xl font-semibold">Logo Here</h3>
+            <h3 className="text-2xl md:text-3xl font-semibold">Logo Here</h3>
           </Link>
 
           {/* Social Links */}
 
-          <ul className="flex items-center gap-4 pt-8">
+          <ul className="flex items-center gap-3 md:gap-4 pt-4 md:pt-6 lg:pt-8">
             {socialLinks?.map((link) => (
               <li key={link?.path}>
                 <Link
                   target="_blank"
                   to={link?.path}
-                  className="p-3 rounded-full bg-[#0B0B0B] flex items-center group border border-[#0B0B0B] hover:bg-white transition-all duration-500 hover:border-white"
+                  className="p-2 md:p-3 rounded-full bg-[#0B0B0B] flex items-center group border border-[#0B0B0B] hover:bg-white transition-all duration-500 hover:border-white"
                 >
                   {link?.icon}
                 </Link>
@@ -78,13 +78,13 @@ const Footer = () => {
             ))}
           </ul>
         </div>
-        <div className="flex gap-12">
+        <div className="flex flex-col   gap-5 md:gap-8 lg:gap-12 mt-5">
           {/* shopping with us */}
           <div>
-            <h3 className="text-xl font-semibold pb-6 text-nowrap">
+            <h3 className="text-lg md:text-xl font-semibold pb-3 md:pb-4 lg:pb-6 text-nowrap">
               Shipping with us
             </h3>
-            <ul className="space-y-4">
+            <ul className="space-y-3 md:space-y-4 text-sm md:text-base">
               {shippingLinks?.map((link) => (
                 <li key={link?.title}>
                   <Link to={link?.path}>{link?.title}</Link>
@@ -96,7 +96,7 @@ const Footer = () => {
           {/* payments */}
           <div>
             <h3 className="text-xl font-semibold pb-6 text-nowrap">Pay with</h3>
-            <div className="grid grid-cols-3 gap-3 w-full">
+            <div className="md:grid md:grid-cols-3 gap-3 w-full flex items-center">
               {payments?.map((payment) => (
                 <div className="h-6 w-9 " key={payment?.name}>
                   <img
@@ -110,7 +110,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className='text-center py-7 border-t container mx-auto border-[#444343] text-sm'>
+      <div className='text-center py-5 md:py-7 border-t container mx-auto border-[#444343] text-sm'>
         <p>Copyright @2024Company Name Here</p>
       </div>
     </section>
