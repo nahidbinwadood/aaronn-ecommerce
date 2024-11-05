@@ -2,6 +2,7 @@ import {
   CartSvg,
   DownArrowSvg,
   HamburgerSvg,
+  LocationSvg,
   MessageSvg,
   OrderSvg,
   PersonBlackSvg,
@@ -11,16 +12,9 @@ import {
 } from '@/Components/Svg Container/SvgContainer';
 import { Link, NavLink, useNavigate } from 'react-router-dom';
 import { useEffect, useRef, useState } from 'react';
-
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from '@/Components/ui/select';
 import NavbarRes from '@/Components/NavbarRes';
-// import ReactFlagsSelect from 'react-flags-select';
+import { Modal } from '@/Components/Modals/Modal';
+import DeliveryLocationModal from '@/Components/Modals/DeliveryLocationModal';
 
 const navLinks = [
   {
@@ -717,11 +711,11 @@ const homeAppliances = [
   },
 ];
 const Navbar = () => {
+  const [open, setOpen] = useState(false);
   const [showCategory, setShowCategory] = useState(false);
   const [activeCategory, setActiveCategory] = useState('');
   const [activeSubCategory, setActiveSubCategory] = useState(null);
   const [showSubCategory, setShowSubCategory] = useState(false);
-  const [showPriceInfo, setShowPriceInfo] = useState(false);
   const [showSuggestion, setShowSuggestion] = useState(false);
   const [showSuggestionsText, setShowSuggestionsText] = useState(false);
   const [showProfileInfo, setShowProfileInfo] = useState(false);
@@ -729,7 +723,6 @@ const Navbar = () => {
   // const [selected, setSelected] = useState('BD');
   const dropdownRef = useRef(null);
   const profileInfoRef = useRef(null);
-  const priceInfoRef = useRef(null);
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
@@ -758,26 +751,6 @@ const Navbar = () => {
       ) {
         setShowProfileInfo(false);
       }
-
-      if (priceInfoRef.current) {
-        // Check if the click is on the flags select or its dropdown
-        const isReactFlagsSelectClick =
-          event.target.closest('.ReactFlagsSelect') !== null;
-        // Check if the click is on the shadcn select
-        const isShadcnSelectClick =
-          event.target.closest('[role="listbox"]') !== null;
-        // Check if the click is inside our main dropdown
-        const isInsideDropdown = priceInfoRef.current.contains(event.target);
-
-        // Only close if the click is outside all of these areas
-        if (
-          !isReactFlagsSelectClick &&
-          !isShadcnSelectClick &&
-          !isInsideDropdown
-        ) {
-          setShowPriceInfo(false);
-        }
-      }
     };
 
     // Add event listener when component mounts
@@ -791,13 +764,32 @@ const Navbar = () => {
 
   return (
     <div className="font-poppins">
+      {/* Modal */}
+
+      <Modal open={open} setOpen={setOpen}>
+        <DeliveryLocationModal setOpen={setOpen} />
+      </Modal>
+
       {/* primary navbar */}
-      <div className="bg-primaryColor text-white h-[70px] lg:flex items-center hidden">
+      <div className="h-[70px] lg:flex items-center hidden">
         <div className="container mx-auto w-full flex items-center justify-between">
-          <div>
+          <div className="flex items-center gap-7">
             <Link to="/">
-              <h3 className="text-2xl">Logo Here</h3>
+              <h3 className="text-xl">Logo Here</h3>
             </Link>
+
+            <div
+              onClick={() => setOpen(true)}
+              className="flex items-center gap-2 cursor-pointer border border-transparent hover:border-blackColor px-5 py-2 rounded duration-300 transition"
+            >
+              <div>
+                <LocationSvg />
+              </div>
+              <div>
+                <h4 className="text-xs">Deliver To</h4>
+                <p className="text-sm">USA</p>
+              </div>
+            </div>
           </div>
           <div>
             <form onSubmit={handleSubmit} action="" className="relative">
@@ -812,7 +804,7 @@ const Navbar = () => {
                   value={searchText}
                   id="search"
                   name="search"
-                  className="w-full pl-6 pr-40 py-3 text-black border border-gray-300 rounded-full focus:outline-none placeholder:text-sm text-sm"
+                  className="w-full pl-6 pr-40 py-3 text-black border border-[#191919] rounded-full focus:outline-none placeholder:text-sm text-sm"
                   placeholder="Search for the product"
                 />
                 <button
@@ -943,108 +935,6 @@ const Navbar = () => {
 
           <div className="flex items-center gap-12">
             <div
-              ref={priceInfoRef}
-              onClick={() => setShowPriceInfo(true)}
-              className="cursor-pointer"
-            >
-              <div
-                // onMouseEnter={() => setShowPriceInfo(true)}
-                // onMouseLeave={() => setShowPriceInfo(false)}
-                className="flex items-center gap-2 relative"
-              >
-                <div className="size-6 rounded-full overflow-hidden">
-                  <img
-                    className="w-full h-full object-cover"
-                    src="https://i.imgur.com/2lC7irs.png"
-                    alt=""
-                  />
-                </div>
-                <div className="flex gap-1 items-center">
-                  <div>
-                    <p className="text-xs">EN / </p>
-                    <p className="text-sm">USD</p>
-                  </div>
-                  <div>
-                    <DownArrowSvg />
-                  </div>
-                </div>
-
-                {/* popup */}
-                <div
-                  // onMouseEnter={() => setShowPriceInfo(true)}
-                  // onMouseLeave={() => setShowPriceInfo(false)}
-                  className={`relative transition-transform duration-300 ${
-                    showPriceInfo
-                      ? 'z-10 scale-100 opacity-100 transition-transform duration-300'
-                      : '-z-10 scale-90 opacity-0 transition-transform duration-300'
-                  }`}
-                >
-                  <div className="w-[300px] absolute top-8 -right-10 bg-white shadow-lg rounded-3xl p-8">
-                    <div className="absolute top-[-13px] right-[48px] w-0 h-0 border-r-[13px] border-b-[13px] border-l-[13px] border-b-white border-r-transparent border-l-transparent" />
-
-                    {/* contents */}
-                    <div className="space-y-4">
-                      <div>
-                        <h2 className="text-xl font-semibold text-black pb-2">
-                          Ship to
-                        </h2>
-                        <div>
-                          <div>
-                            <Select>
-                              <SelectTrigger className="w-full">
-                                <SelectValue placeholder="United States" />
-                              </SelectTrigger>
-                              <SelectContent>
-                                <SelectItem value="United States">
-                                  United States
-                                </SelectItem>
-                                <SelectItem value="Canada">Canada</SelectItem>
-                                <SelectItem value="United Kingdom">
-                                  United Kingdom
-                                </SelectItem>
-                              </SelectContent>
-                            </Select>
-                          </div>
-                        </div>
-                      </div>
-                      <div>
-                        <h2 className="text-xl font-semibold text-black">
-                          Language
-                        </h2>
-                        <div className="pt-2">
-                          <Select>
-                            <SelectTrigger className="w-full">
-                              <SelectValue placeholder="English" />
-                            </SelectTrigger>
-                            <SelectContent>
-                              <SelectItem value="English">English</SelectItem>
-                              <SelectItem value="system">Spanish</SelectItem>
-                            </SelectContent>
-                          </Select>
-                        </div>
-                      </div>
-                      <div>
-                        <h2 className="text-xl font-semibold text-black">
-                          Currency
-                        </h2>
-                        <div className="pt-2">
-                          <Select>
-                            <SelectTrigger className="w-full">
-                              <SelectValue placeholder="USD" />
-                            </SelectTrigger>
-                            <SelectContent>
-                              <SelectItem value="BDT">USD</SelectItem>
-                              <SelectItem value="USD">Pounds</SelectItem>
-                            </SelectContent>
-                          </Select>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
               ref={profileInfoRef}
               onClick={() => setShowProfileInfo(!showProfileInfo)}
               // onMouseEnter={() => setShowProfileInfo(true)}
@@ -1142,7 +1032,7 @@ const Navbar = () => {
             </div>
             <Link to="/cart" className="flex items-center gap-2 cursor-pointer">
               <div>
-                <CartSvg />
+                <CartSvg dark={true} />
               </div>
               <div>
                 <p className="text-xs">0</p>
@@ -1154,7 +1044,7 @@ const Navbar = () => {
       </div>
 
       {/* secondary navbar */}
-      <div className="bg-secondaryColor h-[80px] lg:flex items-center hidden">
+      <div className="bg-blackColor h-[80px] lg:flex items-center hidden">
         <div className="container mx-auto flex items-center  ">
           <div className="relative flex-shrink-0">
             <button
@@ -1280,7 +1170,7 @@ const Navbar = () => {
                   to={link?.path}
                   className={({ isActive }) =>
                     `flex items-center gap-1 font-medium ${
-                      isActive ? 'text-black' : 'text-[#785700]'
+                      isActive ? 'text-white' : 'text-white/60'
                     }`
                   }
                 >
@@ -1292,7 +1182,7 @@ const Navbar = () => {
         </div>
       </div>
 
-      <div className='lg:hidden'>
+      <div className="lg:hidden">
         <NavbarRes />
       </div>
     </div>

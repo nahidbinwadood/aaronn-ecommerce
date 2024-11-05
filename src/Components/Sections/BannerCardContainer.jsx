@@ -13,7 +13,7 @@ const BannerCardContainer = ({ choice, choiceContents }) => {
     <div
       className={`h-1/2 w-full ${
         choice ? 'bg-[#FDF9D4]' : 'bg-[#FFEADF]'
-      } rounded-xl md:rounded-2xl lg:rounded-3xl px-6 py-4`}
+      } rounded-xl md:rounded-2xl lg:rounded-3xl px-5 py-4`}
     >
       <div className="flex items-center gap-2">
         <YellowTickSvg />
@@ -40,7 +40,7 @@ const BannerCardContainer = ({ choice, choiceContents }) => {
             delay: choice ? 2500 : 1500,
             disableOnInteraction: false,
           }}
-          spaceBetween={30}
+          spaceBetween={10}
           modules={[Pagination, Navigation, Autoplay]}
           breakpoints={{
             320: { slidesPerView: 1, spaceBetween: 10 }, // Small screens

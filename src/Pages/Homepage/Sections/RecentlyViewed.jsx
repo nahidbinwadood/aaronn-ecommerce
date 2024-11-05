@@ -97,7 +97,7 @@ const RecentlyViewed = () => {
           <Swiper
             loop={true}
             onSwiper={setSwiperRef}
-            slidesPerView={5}
+            slidesPerView={6}
             spaceBetween={30}
             modules={[Pagination, Navigation]}
             className="mySwiper relative  lg:mb-16 rounded-2xl"
@@ -105,8 +105,7 @@ const RecentlyViewed = () => {
               320: { slidesPerView: 1, spaceBetween: 10 }, // Small screens
               640: { slidesPerView: 2, spaceBetween: 20 }, // Medium screens
               768: { slidesPerView: 3, spaceBetween: 20 }, // Tablet screens
-
-              1280: { slidesPerView: 5, spaceBetween: 30 }, // Extra-large screens
+              1280: { slidesPerView: 6, spaceBetween: 30 }, // Extra-large screens
             }}
           >
             {allProducts.map((item, idx) => (

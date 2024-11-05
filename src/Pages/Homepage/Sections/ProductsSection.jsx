@@ -11,13 +11,6 @@ const ProductsSection = () => {
       previousPrice: 330.69,
     },
     {
-      image: 'https://i.imgur.com/ia0QnBP.png',
-      title: 'Xiaomi Mijia vacuum Cleaner',
-      review: 5,
-      price: 196.33,
-      previousPrice: 330.69,
-    },
-    {
       image: 'https://i.imgur.com/SQQlarb.png',
       title: 'Xiaomi Mijia vacuum Cleaner',
       review: 5,
@@ -183,7 +176,7 @@ const ProductsSection = () => {
     <section className="container mx-auto px-5 md:px-7 2xl:px-0">
       <Title title={'More to Love'} />
 
-      <div className="mt-10 md:mt-12 lg:mt-16 xl:mt-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8">
+      <div className="mt-10 md:mt-12 lg:mt-16 xl:mt-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-8">
         {allProducts?.map((item, idx) => (
           <ItemCard key={idx} item={item} />
         ))}

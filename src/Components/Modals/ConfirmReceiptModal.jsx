@@ -1,10 +1,11 @@
+/* eslint-disable react/prop-types */
 import {
   DialogContent,
   DialogDescription,
   DialogFooter,
   DialogHeader,
   DialogTitle,
-  DialogTrigger,
+ 
 } from '@/Components/ui/dialog';
 import toast from 'react-hot-toast';
 const ConfirmReceiptModal = ({ setOpen }) => {

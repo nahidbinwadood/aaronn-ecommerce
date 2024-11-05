@@ -1,20 +1,26 @@
 /* eslint-disable react/prop-types */
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { CartSvg, YellowStarSvg } from '../Svg Container/SvgContainer';
-
-const ItemCard = ({ item ,banner}) => {
+import { FaHeart } from "react-icons/fa6";
+const ItemCard = ({ item }) => {
   const { title, review, price, previousPrice, image } = item;
+  const [isFavorite, setIsFavorite] = useState(false);
+  console.log(isFavorite);
   return (
-    <Link to="/product-details">
-      <div className="h-[300px] md:h-[350px] lg:h-[400px] w-full relative">
+    <div className="relative">
+      <div className="h-[280px] w-full relative">
         <img
           className="h-full w-full object-cover rounded-xl"
           src={image}
           alt={title}
         />
         <div className="absolute bottom-4 w-full">
-          <div className="bg-white mx-2 md:mx-4 rounded-2xl py-2 px-3 md:py-3 md:px-4">
-            <p className="text-sm md:text-base font-medium">{title}</p>
+          <Link
+            to="/product-details"
+            className="bg-white block mx-2 md:mx-4 rounded-2xl py-2 px-3 md:py-3 md:px-4"
+          >
+            <p className="text-sm font-medium">{title}</p>
             <div className="flex items-center gap-1 mt-1 md:mt-2">
               {Array(review)
                 .fill()
@@ -23,11 +29,15 @@ const ItemCard = ({ item ,banner}) => {
                 ))}
             </div>
             <div className="flex items-center justify-between mt-2 md:mt-3">
-              <div className="flex items-center gap-3 md:gap-4">
-                <p className={`font-semibold  ${banner? "text-xs md:text-base ":"text-sm md:text-base lg:text-lg"}`}>
+              <div className="flex items-center gap-3 md:gap-2">
+                <p
+                  className={`font-semibold text-sm`}
+                >
                   $ {price}
                 </p>
-                <p className={`text-textLight line-through ${banner? "text-xs md:text-sm":"text-sm md:text-base lg:text-lg"}`}>
+                <p
+                  className={`text-textLight line-through text-xs text-nowrap`}
+                >
                   $ {previousPrice}
                 </p>
               </div>
@@ -35,10 +45,16 @@ const ItemCard = ({ item ,banner}) => {
                 <CartSvg />
               </div>
             </div>
-          </div>
+          </Link>
         </div>
       </div>
-    </Link>
+      <button
+        onClick={() => setIsFavorite(!isFavorite)}
+        className="absolute top-5 right-5 bg-white p-2 rounded-full"
+      >
+        <FaHeart className={`${!isFavorite ? "text-black" :"text-red-500"}`} />
+      </button>
+    </div>
   );
 };
 

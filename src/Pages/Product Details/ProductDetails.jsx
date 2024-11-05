@@ -11,7 +11,6 @@ import {
 } from '@/Components/Svg Container/SvgContainer';
 import MyTabs from '@/Components/Tabs';
 import { useState } from 'react';
-import Services from '../Homepage/Sections/Services';
 import toast from 'react-hot-toast';
 const allProducts = [
   {
@@ -227,9 +226,9 @@ const ProductDetails = () => {
               {/* add to cart */}
               <div className="flex items-center gap-5">
                 <button
-                 onClick={()=>{
-                  toast.success("Product added in cart !!")
-                 }}
+                  onClick={() => {
+                    toast.success('Product added in cart !!');
+                  }}
                   className="bg-[#191919] px-8 py-3 rounded-full text-white flex items-center justify-center gap-3"
                 >
                   <CartFullSvg />
@@ -279,8 +278,6 @@ const ProductDetails = () => {
           ))}
         </div>
       </div>
-
-      <Services />
     </section>
   );
 };
