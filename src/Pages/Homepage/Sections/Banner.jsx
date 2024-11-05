@@ -224,7 +224,7 @@ const Banner = () => {
     },
   ];
   return (
-    <section className="mt-5 lg:mt-10 container mx-auto  ">
+    <section className="mt-5 lg:mt-10 container mx-auto px-5 md:px-7 2xl:px-0 ">
       <div className="flex gap-6 flex-col">
         <div className=" bg-[#FD384F] rounded-3xl p-5 md:p-7 xl:p-8 flex-grow-0">
           <div className=" text-center text-white">
@@ -274,14 +274,14 @@ const Banner = () => {
             ))}
           </Swiper>
         </div>
-        <div className="flex items-center gap-6">
-          <div className="w-1/2">
+        <div className="flex flex-col lg:flex-row items-center gap-6">
+          <div className="lg:w-1/2 w-full">
             <BannerCardContainer
               choice={true}
               choiceContents={choiceContents}
             />
           </div>
-          <div className="w-1/2 pr-6">
+          <div className="lg:w-1/2 lg:pr-6 w-full">
             <BannerCardContainer choice={false} choiceContents={weeklyDeals} />
           </div>
         </div>

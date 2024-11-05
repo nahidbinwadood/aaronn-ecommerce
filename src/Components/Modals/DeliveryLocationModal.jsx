@@ -6,7 +6,7 @@ import {
   DialogHeader,
   DialogTitle,
 } from '@/Components/ui/dialog';
- 
+
 import { Link } from 'react-router-dom';
 import {
   Select,
@@ -74,7 +74,7 @@ const DeliveryLocationModal = ({ setOpen }) => {
 
         <div className="flex items-center gap-3 text-nowrap pt-4">
           <div className="w-full border-t border-[#C5C5C5]" />
-          <p className="text-[#5A5C5F]">or ship outside the US</p>
+          <p className="text-[#5A5C5F]">or select the state</p>
           <div className="w-full border-t border-[#C5C5C5]" />
         </div>
 
