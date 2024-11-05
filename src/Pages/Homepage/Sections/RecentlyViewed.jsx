@@ -92,24 +92,6 @@ const RecentlyViewed = () => {
         </h3>
       </div>
       <div className="mt-12 relative">
-        {/* Right Gradient Box */}
-        <div
-          style={{
-            background:
-              'linear-gradient(-90deg, #FFEADF 0%, rgba(245, 245, 245, 0.00) 100%)',
-          }}
-          className="w-[120px] sm:w-[150px] md:w-[220px] lg:w-[350px] xl:w-[450px] 2xl:w-[500px] h-full absolute top-0 right-0 -z-10"
-        />
-
-        {/* Left Gradient Box */}
-        <div
-          style={{
-            background:
-              'linear-gradient(90deg, #FFEADF 0%, rgba(245, 245, 245, 0.00) 100%)',
-          }}
-          className="w-[120px] sm:w-[150px] md:w-[220px] lg:w-[350px] xl:w-[450px] 2xl:w-[500px] h-full absolute top-0 left-0 -z-10"
-        />
-
         {/* sliders */}
         <div className="container mx-auto py-6 lg:py-10 rounded-2xl px-5 md:px-7 2xl:px-0">
           <Swiper

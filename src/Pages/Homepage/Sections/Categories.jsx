@@ -54,25 +54,7 @@ const Categories = () => {
     },
   ];
   return (
-    <section className="my-10 md:my-16 lg:my-20 xl:my-28 2xl:my-40  bg-[#F8F8F8] relative">
-      {/* Right Gradient Box */}
-      <div
-        style={{
-          background:
-            'linear-gradient(-90deg, #FFEADF 0%, rgba(245, 245, 245, 0.00) 100%)',
-        }}
-        className="w-[120px] sm:w-[150px] md:w-[220px] lg:w-[350px] xl:w-[450px] 2xl:w-[500px] h-full absolute top-0 right-0 z-10"
-      />
-
-      {/* Left Gradient Box */}
-      <div
-        style={{
-          background:
-            'linear-gradient(90deg, #FFEADF 0%, rgba(245, 245, 245, 0.00) 100%)',
-        }}
-        className="w-[120px] sm:w-[150px] md:w-[220px] lg:w-[350px] xl:w-[450px] 2xl:w-[500px] h-full absolute top-0 left-0 z-10"
-      />
-
+    <section className="my-10 md:my-16 lg:my-20 xl:my-28 2xl:my-40 relative">
       <div className="container mx-auto pt-10 sm:pt-14 md:pt-16 lg:pt-20 2xl:pt-28 pb-10 md:pb-14 lg:pb-16 xl:pb-20 relative z-20">
         <Title title={'Shop By Categories'} />
 
@@ -84,7 +66,7 @@ const Categories = () => {
             ))}
           </Marquee>
           <Marquee
-          direction={"right"}
+            direction={'right'}
             autoFill={true}
             pauseOnHover={true}
             speed={50}

@@ -88,13 +88,13 @@ const DashboardSetting = () => {
               </div>
               <div className="px-6 py-3 rounded-[24px] flex items-center gap-2 border border-borderColor w-full">
                 <label className="text-nowrap" htmlFor="email">
-                  Email Address :
+                  Gender :
                 </label>
                 <input
                   readOnly={!editable}
-                  defaultValue={'nahidbinwadood@gmail.com'}
+                  defaultValue={'Female'}
                   className="w-full font-medium py-2 focus:outline-none"
-                  type="email"
+                  type="text"
                   name="email"
                   id="email"
                 />

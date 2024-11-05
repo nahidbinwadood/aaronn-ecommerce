@@ -1,7 +1,11 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Navigation } from 'swiper/modules';
 import { Star } from 'lucide-react';
-import SliderNavButtons from './Sliders/SliderNavButtons';
+import {
+  LeftArrowReviewSvg,
+  RightArrowReviewSvg,
+} from './Svg Container/SvgContainer';
+import { useState } from 'react';
 
 const TestimonialSlider = () => {
   const testimonials = [
@@ -61,19 +65,39 @@ const TestimonialSlider = () => {
     },
   ];
 
-  const duplicatedTestimonials = [...testimonials, ...testimonials,...testimonials,...testimonials,...testimonials];
+  const duplicatedTestimonials = [
+    ...testimonials,
+    ...testimonials,
+    ...testimonials,
+    ...testimonials,
+    ...testimonials,
+  ];
+
+  const [swiperRef, setSwiperRef] = useState(null);
 
   return (
     <div className="relative overflow-hidden">
       <div className="flex items-center justify-between pl-10">
-        <div>
-          <h2 className="text-2xl font-semibold pb-16">Customer Reviews </h2>
+        <div className="flex items-center justify-between w-full pb-16">
+          <h2 className="text-2xl font-semibold ">Customer Reviews </h2>
+          <div className="flex items-center gap-3">
+            <div
+              onClick={() => swiperRef.slidePrev()}
+              className="border border-[#F9E106] rounded p-3 bg-[#F9E106] cursor-pointer hover:bg-white transition duration-500"
+            >
+              <LeftArrowReviewSvg />
+            </div>
+            <div
+              onClick={() => swiperRef.slideNext()}
+              className="border border-[#F9E106] rounded p-3 bg-[#F9E106] cursor-pointer hover:bg-white transition duration-500"
+            >
+              <RightArrowReviewSvg />
+            </div>
+          </div>
         </div>
 
         {/* nav btns */}
-        <div>
-          {/* <SliderNavButtons /> */}
-        </div>
+        <div>{/* <SliderNavButtons /> */}</div>
       </div>
       <Swiper
         loop={true}
@@ -86,6 +110,7 @@ const TestimonialSlider = () => {
         slidesPerView="auto"
         centeredSlides={true}
         initialSlide={1}
+        onSwiper={setSwiperRef}
         spaceBetween={30}
         watchSlidesProgress={true}
         slideToClickedSlide={true}

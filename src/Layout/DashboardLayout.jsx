@@ -21,7 +21,7 @@ const DashboardLayout = () => {
         path: '/dashboard/orders',
       },
       {
-        title: 'Wishlist',
+        title: 'Watchlist',
         path: '/dashboard/wishlist',
       },
       {

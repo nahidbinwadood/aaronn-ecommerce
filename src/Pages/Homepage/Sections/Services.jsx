@@ -1,7 +1,7 @@
 import ServiceCard from '@/Components/Cards/ServiceCard';
 import {
   CustomerSupportMessageSvg,
-  DiamondSvg,
+  // DiamondSvg,
   GuaranteeSvg,
   ReturnSvg,
   TruckSvg,
@@ -26,8 +26,8 @@ const Services = () => {
       title: '24-hour Customer Support Via Chat',
     },
     {
-      icon: <DiamondSvg />,
-      title: 'Next Level Pro Quality',
+      icon: "",
+      title: '',
     },
   ];
 

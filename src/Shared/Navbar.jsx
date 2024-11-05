@@ -587,7 +587,7 @@ const profileNavLinks = [
     path: '/dashboard/message-center',
   },
   {
-    title: 'Wishlist ',
+    title: 'Watchlist ',
     logo: <WishlistSvg />,
     path: '/dashboard/wishlist',
   },
