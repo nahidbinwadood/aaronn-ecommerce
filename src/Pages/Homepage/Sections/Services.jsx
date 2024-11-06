@@ -1,8 +1,8 @@
 import ServiceCard from '@/Components/Cards/ServiceCard';
 import {
   CustomerSupportMessageSvg,
-  // DiamondSvg,
-  GuaranteeSvg,
+  FreeShippingSvg,
+  RefundSvg,
   ReturnSvg,
   TruckSvg,
 } from '@/Components/Svg Container/SvgContainer';
@@ -11,23 +11,23 @@ const Services = () => {
   const allServices = [
     {
       icon: <TruckSvg />,
-      title: 'Fast & Secure Delivery',
+      title: 'Fast Delivery',
     },
     {
-      icon: <GuaranteeSvg />,
-      title: '100% Guarantee On Product',
+      icon: <FreeShippingSvg />,
+      title: 'Free Shipping',
     },
     {
       icon: <ReturnSvg />,
-      title: '24 Hour Return Policy',
+      title: 'Refund if package is lost',
     },
     {
       icon: <CustomerSupportMessageSvg />,
       title: '24-hour Customer Support Via Chat',
     },
     {
-      icon: "",
-      title: '',
+      icon: <RefundSvg />,
+      title: 'Refund if there is no delivery within 20 days',
     },
   ];
 
