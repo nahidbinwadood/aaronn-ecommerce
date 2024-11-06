@@ -30,6 +30,18 @@ const navLinks = [
     title: 'Top Brands',
     path: '/top-brands',
   },
+  {
+    title: "Today's Deals",
+    path: '/todays-deals',
+  },
+  {
+    title: 'Gift Cards',
+    path: '/gift-cards',
+  },
+  {
+    title: 'Buy Again',
+    path: '/buy-again',
+  },
 ];
 const categories = [
   {
@@ -1231,7 +1243,7 @@ const Navbar = () => {
           </div>
 
           {/* navLinks */}
-          <ul className="flex items-center gap-12 flex-1 w-full justify-center mr-72">
+          <ul className="flex items-center gap-12 flex-1 w-full justify-center">
             {navLinks?.map((link) => (
               <li key={link?.title}>
                 <NavLink

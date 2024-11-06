@@ -224,9 +224,9 @@ const Banner = () => {
     },
   ];
   return (
-    <section className="mt-5 lg:mt-10 container mx-auto px-5 md:px-7 2xl:px-0 ">
-      <div className="flex gap-6 flex-col">
-        <div className=" bg-[#FD384F] rounded-3xl p-5 md:p-7 xl:p-8 flex-grow-0">
+    <section className="mt-5 container mx-auto px-5 md:px-7 2xl:px-0 ">
+      <div className="flex gap-5 flex-col">
+        <div className=" bg-[#FD384F] rounded-3xl p-5 md:p-7 flex-grow-0">
           <div className=" text-center text-white">
             <h1 className="text-3xl md:text-4xl lg:text-5xl mb-2 md:mb-3 font-medium">
               Welcome deals
@@ -254,7 +254,7 @@ const Banner = () => {
           >
             {welcomeDeals?.map((item,idx) => (
               <SwiperSlide key={idx}>
-                <Link to='/welcome-deals' className="h-[220px] lg:h-[400px] relative block">
+                <Link to='/welcome-deals' className="h-[220px] lg:h-[300px] relative block">
                   <img
                     className=" w-full h-full rounded-2xl object-cover"
                     src={item?.img}
@@ -263,7 +263,7 @@ const Banner = () => {
                   <div className="absolute bottom-5 right-5 md:bottom-6 md:right-8 lg:bottom-8 lg:right-10">
                     <div className="relative">
                       <StarSvg />
-                      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-semibold  text-sm md:text-base lg:text-xl">
+                      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-semibold  text-sm ml-[2px] mt-[1px]">
                         <p>{item?.discount}%</p>
                         <p>Off</p>
                       </div>

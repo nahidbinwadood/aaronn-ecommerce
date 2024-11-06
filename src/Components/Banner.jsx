@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 const Banner = ({ title, secondaryTitle, buyInBulk }) => {
   return (
-    <section className="py-10">
+    <section className="py-5 ">
       <div
         className={`${
           buyInBulk ? 'bg-[#E9EBF8]' : 'bg-[#FD384F]'

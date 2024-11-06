@@ -44,10 +44,10 @@ const BannerCardContainer = ({ choice, choiceContents }) => {
           modules={[Pagination, Navigation, Autoplay]}
           breakpoints={{
             320: { slidesPerView: 1, spaceBetween: 10 }, // Small screens
-            640: { slidesPerView: 2, spaceBetween: 20 }, // Medium screens
-            768: { slidesPerView: 3, spaceBetween: 20 }, // Tablet screens
-            1024: { slidesPerView: 4, spaceBetween: 30 }, // Large screens
-            1280: { slidesPerView: 5, spaceBetween: 30 }, // Extra-large screens
+            640: { slidesPerView: 2, spaceBetween: 10 }, // Medium screens
+            768: { slidesPerView: 3, spaceBetween: 10 }, // Tablet screens
+            1024: { slidesPerView: 4, spaceBetween: 10 }, // Large screens
+            1280: { slidesPerView: 5, spaceBetween: 10 }, // Extra-large screens
           }}
           className="mySwiper relative rounded-md lg:rounded-2xl"
         >

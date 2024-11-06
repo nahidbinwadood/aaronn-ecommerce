@@ -167,7 +167,7 @@ export function StarSvg() {
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 128 136"
-      className="w-[70px] h-auto md:w-[96px] lg:w-[128px]"
+      className="w-[70px] h-auto md:w-[96px]"
       fill="none"
     >
       <path
