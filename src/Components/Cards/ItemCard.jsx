@@ -45,9 +45,9 @@ const ItemCard = ({ item }) => {
       </div>
       <button
         onClick={() => setIsFavorite(!isFavorite)}
-        className="absolute top-5 right-5 bg-white p-2 rounded-full"
+        className="absolute top-5 right-5 bg-blackColor p-2 rounded-full"
       >
-        <FaHeart className={`${!isFavorite ? 'text-black' : 'text-red-500'}`} />
+        <FaHeart className={`${!isFavorite ? 'text-white' : 'text-red-600'}`} />
       </button>
     </div>
   );

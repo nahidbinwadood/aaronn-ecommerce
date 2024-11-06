@@ -7,7 +7,7 @@ const ItemCardListView = ({ item }) => {
   return (
     <Link
       to="/product-details"
-      className="flex items-center justify-between gap-8 p-8 rounded-[24px] border border-borderColor"
+      className="flex items-center justify-between gap-8 p-8 border-b border-borderColor"
     >
       <div className="flex-shrink-0">
         <img

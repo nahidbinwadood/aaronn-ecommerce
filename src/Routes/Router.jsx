@@ -30,6 +30,9 @@ import BuyInBulk from '@/Pages/Buy In Bulk/BuyInBulk';
 import Cart from '@/Pages/Cart/Cart';
 import SearchResult from '@/Pages/SearchResult/SearchResult';
 import ErrorPage from '@/Pages/Error Page/ErrorPage';
+import TodaysDeals from '@/Pages/Todays Deals/TodaysDeals';
+import GiftCards from '@/Pages/Gift Cards/GiftCards';
+import BuyAgain from '@/Pages/Buy Again/BuyAgain';
 
 const router = createBrowserRouter([
   {
@@ -84,6 +87,18 @@ const router = createBrowserRouter([
       {
         path: '/cart',
         element: <Cart />,
+      },
+      {
+        path: '/todays-deals',
+        element: <TodaysDeals />,
+      },
+      {
+        path: '/gift-cards',
+        element: <GiftCards />,
+      },
+      {
+        path: '/buy-again',
+        element: <BuyAgain />,
       },
     ],
   },
