@@ -85,13 +85,13 @@ const RecentlyViewed = () => {
   const [swiperRef, setSwiperRef] = useState(null);
 
   return (
-    <section className="my-10 md:my-16 lg:my-20 xl:my-28 2xl:my-40">
+    <section className="my-10 md:my-16 lg:my-20 xl:my-24">
       <div>
         <h3 className="text-2xl md:text-3xl xl:text-4xl font-semibold text-center">
           Recently Reviewed
         </h3>
       </div>
-      <div className="mt-12 relative">
+      <div className="mt-8 relative">
         {/* sliders */}
         <div className="container mx-auto py-6 lg:py-10 rounded-2xl px-5 md:px-7 2xl:px-0">
           <Swiper
@@ -100,7 +100,7 @@ const RecentlyViewed = () => {
             slidesPerView={6}
             spaceBetween={30}
             modules={[Pagination, Navigation]}
-            className="mySwiper relative  lg:mb-16 rounded-2xl"
+            className="mySwiper relative lg:mb-8 rounded-2xl"
             breakpoints={{
               320: { slidesPerView: 1, spaceBetween: 10 }, // Small screens
               640: { slidesPerView: 2, spaceBetween: 20 }, // Medium screens
@@ -117,7 +117,7 @@ const RecentlyViewed = () => {
         </div>
       </div>
       {/* Navigation buttons */}
-      <div className="w-full flex items-center justify-center gap-5 mt-4 md:mt-6 lg:mt-8">
+      <div className="w-full flex items-center justify-center gap-5">
         <button
           onClick={() => swiperRef.slidePrev()}
           className="size-10 group hover:bg-blackColor transition duration-300 border border-blackColor flex items-center justify-center"

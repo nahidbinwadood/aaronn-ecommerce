@@ -975,10 +975,10 @@ const Navbar = () => {
               </div>
 
               <div
-                className={`bg-secondaryColor  p-4 rounded-lg shadow-lg absolute z-10 min-w-44 -right-10 ${
+                className={`bg-secondaryColor  p-4 rounded-lg shadow-lg absolute min-w-44 -right-10 ${
                   showLanguage
-                    ? 'translate-y-3 opacity-100 transition-transform duration-300'
-                    : 'translate-y-5 opacity-0 transition-transform duration-300'
+                    ? 'translate-y-3 opacity-100 transition-transform duration-300 z-10'
+                    : 'translate-y-5 opacity-0 transition-transform duration-300 -z-10'
                 }`}
               >
                 <div ref={languageRef} className="flex flex-col gap-2">

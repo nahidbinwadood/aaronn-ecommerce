@@ -56,7 +56,7 @@ const Footer = () => {
   ];
   return (
     <section className="bg-blackColor text-white">
-      <div className="container mx-auto py-14 md:py-16 xl:py-[100px] flex flex-col sm:flex-row justify-between  px-5 md:px-7 2xl:px-0">
+      <div className="container mx-auto py-14   flex flex-col sm:flex-row justify-between  px-5 md:px-7 2xl:px-0">
         <div className="2xl:w-2/3">
           <Link to="/">
             <h3 className="text-2xl md:text-3xl font-semibold">Logo Here</h3>
@@ -78,7 +78,7 @@ const Footer = () => {
             ))}
           </ul>
         </div>
-        <div className="flex flex-col   gap-5 md:gap-8 lg:gap-12 mt-5">
+        <div className="flex flex-col lg:flex-row  gap-5 md:gap-8 lg:gap-12 mt-5">
           {/* shopping with us */}
           <div>
             <h3 className="text-lg md:text-xl font-semibold pb-3 md:pb-4 lg:pb-6 text-nowrap">

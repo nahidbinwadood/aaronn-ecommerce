@@ -54,7 +54,7 @@ const Categories = () => {
     },
   ];
   return (
-    <section className="my-10 md:my-16 lg:my-20 xl:my-28 2xl:my-40 relative">
+    <section className="my-10 md:my-16 relative">
       <div className="container mx-auto pt-10 sm:pt-14 md:pt-16 lg:pt-20 2xl:pt-28 pb-10 md:pb-14 lg:pb-16 xl:pb-20 relative z-20">
         <Title title={'Shop By Categories'} />
 
@@ -70,7 +70,7 @@ const Categories = () => {
             autoFill={true}
             pauseOnHover={true}
             speed={50}
-            className="mt-10 md:mt-12 lg:mt-16 xl:mt-20"
+            className="mt-10 md:mt-12 lg:mt-16"
           >
             {' '}
             {allCategories?.map((category) => (

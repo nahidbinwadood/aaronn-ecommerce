@@ -29,11 +29,13 @@ import DashboardWishlist from '@/Pages/Dashboard/Wishlist/DashboardWishlist';
 import BuyInBulk from '@/Pages/Buy In Bulk/BuyInBulk';
 import Cart from '@/Pages/Cart/Cart';
 import SearchResult from '@/Pages/SearchResult/SearchResult';
+import ErrorPage from '@/Pages/Error Page/ErrorPage';
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <MainLayout />,
+    errorElement:<ErrorPage/>,
     children: [
       {
         path: '/',
@@ -88,6 +90,7 @@ const router = createBrowserRouter([
   {
     path: '/dashboard',
     element: <DashboardLayout />,
+    errorElement:<ErrorPage/>,
     children: [
       {
         path: '/dashboard/overview',
