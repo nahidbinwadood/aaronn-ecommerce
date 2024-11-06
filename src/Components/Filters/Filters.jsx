@@ -89,7 +89,7 @@ const Filters = ({
             onClick={() => {
               setShowSort(true);
             }}
-            className="flex w-48 justify-center items-center gap-4 py-3 px-6 text-[#1B1B1B] rounded-full border border-[#E5E5E5]"
+            className="flex w-56 justify-center items-center gap-4 py-3 px-6 text-[#1B1B1B] rounded-full border border-[#E5E5E5] text-nowrap"
           >
             {sort ? sort : 'Sort by Latest'}
             <DownArrowSvg dark={true} />
@@ -110,28 +110,28 @@ const Filters = ({
                 Best Selling
               </p>
               <p
-                onClick={() => handleSortClick('New to old')}
+                onClick={() => handleSortClick('Customer Review')}
                 className=" w-full py-2 border-b border-borderColor cursor-pointer"
               >
-                New to old
+                Customer Review
               </p>
               <p
-                onClick={() => handleSortClick('Old to New')}
+                onClick={() => handleSortClick('New Arrivals')}
                 className=" w-full py-2 border-b border-borderColor cursor-pointer"
               >
-                Old to New
+                New Arrivals
               </p>
               <p
-                onClick={() => handleSortClick('A - Z')}
+                onClick={() => handleSortClick('Most Viewed')}
                 className=" w-full py-2 border-b border-borderColor cursor-pointer"
               >
-                A - Z
+                Most Viewed
               </p>
               <p
-                onClick={() => handleSortClick('Z - A')}
+                onClick={() => handleSortClick('Featured')}
                 className=" w-full pt-2 cursor-pointer"
               >
-                Z - A
+                Featured
               </p>
             </div>
           </div>

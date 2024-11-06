@@ -16,18 +16,19 @@ export default function DetailsSlider() {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
   const [swiperRef, setSwiperRef] = useState(null);
 
-  // Images array for easier maintenance
-  const images = [
+  // Images and Video array for easier maintenance
+  const media = [
+    'https://videos.pexels.com/video-files/4154241/4154241-uhd_2732_1440_25fps.mp4', // Video URL
     'https://i.postimg.cc/pdJByqZW/product-1.jpg',
     'https://i.postimg.cc/3RrFGmSg/product-2.jpg',
     'https://i.postimg.cc/Jr86mBq7/product-3.jpg',
     'https://i.postimg.cc/zfrjJ9T2/product-4.jpg',
     'https://i.postimg.cc/9f1WmwD4/product-5.jpg',
-    'https://i.postimg.cc/xTbTvd47/product-6.jpg',
-    'https://i.postimg.cc/g2Vz7TdH/product-7.jpg',
-    'https://i.postimg.cc/JzV7PLwh/product-8.jpg',
-    'https://i.postimg.cc/ZqJbzx5t/product-9.jpg',
-    'https://i.postimg.cc/L4W8gPNL/product-10.jpg',
+    // 'https://i.postimg.cc/xTbTvd47/product-6.jpg',
+    // 'https://i.postimg.cc/g2Vz7TdH/product-7.jpg',
+    // 'https://i.postimg.cc/JzV7PLwh/product-8.jpg',
+    // 'https://i.postimg.cc/ZqJbzx5t/product-9.jpg',
+    // 'https://i.postimg.cc/L4W8gPNL/product-10.jpg',
   ];
 
   return (
@@ -47,15 +48,26 @@ export default function DetailsSlider() {
         modules={[FreeMode, Navigation, Thumbs]}
         className="w-full rounded-lg main-swiper"
       >
-        {images.map((image, index) => (
+        {media.map((item, index) => (
           <SwiperSlide key={`main-${index}`}>
-            <div className="h-[650px]">
-              <img
-                src={image}
-                alt={`Slide ${index + 1}`}
-                className="w-full h-full object-cover"
-                loading="lazy"
-              />
+            <div className="h-[400px]">
+              {item.endsWith('.mp4') ? (
+                // Video element
+                <video
+                  src={item}
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                  controls
+                />
+              ) : (
+                // Image element
+                <img
+                  src={item}
+                  alt={`Slide ${index + 1}`}
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                />
+              )}
             </div>
           </SwiperSlide>
         ))}
@@ -96,15 +108,23 @@ export default function DetailsSlider() {
               },
             }}
           >
-            {images.map((image, index) => (
+            {media.map((item, index) => (
               <SwiperSlide key={`thumb-${index}`}>
-                <div className="cursor-pointer h-20 ">
-                  <img
-                    src={image}
-                    alt={`Thumbnail ${index + 1}`}
-                    className="w-full h-full object-cover rounded transition-all duration-300 hover:opacity-100"
-                    loading="lazy"
-                  />
+                <div className="cursor-pointer h-20">
+                  {item.endsWith('.mp4') ? (
+                    <video
+                      src={item}
+                      className="w-full h-full object-cover rounded transition-all duration-300 hover:opacity-100"
+                      loading="lazy"
+                    />
+                  ) : (
+                    <img
+                      src={item}
+                      alt={`Thumbnail ${index + 1}`}
+                      className="w-full h-full object-cover rounded transition-all duration-300 hover:opacity-100"
+                      loading="lazy"
+                    />
+                  )}
                 </div>
               </SwiperSlide>
             ))}

@@ -5,14 +5,34 @@ import {
   CartFullSvg,
   HeartRedSvg,
   HeartSvg,
+  ListArrowSvg,
   MinusSvg,
   PlusSvg,
   YellowStarSvg,
 } from '@/Components/Svg Container/SvgContainer';
-import MyTabs from '@/Components/Tabs';
+// import MyTabs from '@/Components/Tabs';
 import { useState } from 'react';
 import toast from 'react-hot-toast';
+import { FaLocationDot } from 'react-icons/fa6';
+import { MdLocalShipping } from 'react-icons/md';
+import { FaShieldAlt, FaShippingFast } from 'react-icons/fa';
+import { PiKeyReturnBold } from 'react-icons/pi';
+import ReviewTab from '@/Components/ReviewTab';
 const allProducts = [
+  {
+    image: 'https://i.imgur.com/ia0QnBP.png',
+    title: 'Xiaomi Mijia vacuum Cleaner',
+    review: 5,
+    price: 196.33,
+    previousPrice: 330.69,
+  },
+  {
+    image: 'https://i.imgur.com/ia0QnBP.png',
+    title: 'Xiaomi Mijia vacuum Cleaner',
+    review: 5,
+    price: 196.33,
+    previousPrice: 330.69,
+  },
   {
     image: 'https://i.imgur.com/ia0QnBP.png',
     title: 'Xiaomi Mijia vacuum Cleaner',
@@ -105,9 +125,9 @@ const ProductDetails = () => {
     }
   };
   return (
-    <section className="my-16 ">
-      <div className="flex gap-16 container mx-auto">
-        <div className="w-1/2">
+    <section className="mt-16 ">
+      <div className="flex gap-10 container mx-auto">
+        <div className="w-[40%]">
           {/* <img
             className="rounded-2xl w-full h-full object-cover"
             src="https://i.imgur.com/yK7SZMY.png"
@@ -115,9 +135,9 @@ const ProductDetails = () => {
           /> */}
           <DetailsSlider />
         </div>
-        <div className="w-1/2">
+        <div className="w-[35%]">
           <div>
-            <h2 className="text-2xl font-semibold  pb-6">
+            <h2 className="text-2xl font-semibold  pb-5">
               Air Wave Mattress Cool Sleep Supportive and Pressure Relief Air
               Wrapped Coils Comforthable Mattress Topper Affordable Queen&SS
             </h2>
@@ -147,7 +167,7 @@ const ProductDetails = () => {
                 </div>
               </div>
 
-              <div className="mt-10 space-y-6">
+              <div className="mt-5 space-y-3">
                 <div className="flex gap-3">
                   <div className="size-3 mt-[6px] rounded-full bg-[#868686]" />
                   <p className="text-[#868686] w-4/5">
@@ -167,9 +187,12 @@ const ProductDetails = () => {
               </div>
             </div>
 
-            <div className="space-y-12">
+            <div className="space-y-8">
+              {/*available  */}
+              <p className='mt-6 block'><span className='font-medium'>This item is available in :</span> United States, Canada and United Kingdom</p>
+
               {/* size */}
-              <div className="mt-12 flex items-center gap-3">
+              <div className="mt-8 flex items-center gap-3">
                 <h4 className="text-blackColor text-lg font-semibold">Size:</h4>
                 <div className="flex items-center gap-4">
                   <p className="px-4 py-2 border border-[#E5E5E5] rounded-md cursor-pointer">
@@ -245,6 +268,96 @@ const ProductDetails = () => {
             </div>
           </div>
         </div>
+        <div className="w-[25%] border border-blackColor/60 rounded-md h-fit pb-10">
+          <div className="p-5">
+            <div className="flex items-center justify-between py-4 border-b border-blackColor/50">
+              <h4 className="text-sm">Ship to</h4>
+              <div className="flex items-center gap-2">
+                <FaLocationDot />
+                <span className="text-sm">United States</span>
+              </div>
+            </div>
+            <div className="flex items-center justify-between py-4 border-b border-blackColor/50">
+              <h4 className="text-sm">Estimated Delivery</h4>
+              <div className="flex items-center gap-2">
+                <span className="text-sm font-medium">Nov</span>
+                <span className="text-sm">15-20</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Commitments */}
+          <div className="mt-2 bg-black text-white py-3 text-center">
+            <h2>Our Commitments</h2>
+          </div>
+          <div className="px-5 mt-5">
+            <div className="flex items-center gap-2 text-sm mb-2">
+              <FaShippingFast className="size-6 text-[#FF4B26]" />
+              <div>
+                <h5 className="font-medium">Free Shipping</h5>
+              </div>
+            </div>
+
+            {/* Fast shipping */}
+            <div>
+              <div className="flex items-center gap-2 text-sm">
+                <MdLocalShipping className="size-6 text-[#FF4B26]" />
+                <div>
+                  <h5 className="font-medium">Fast Shipping</h5>
+                </div>
+              </div>
+              <div className="mt-2 flex items-center gap-2">
+                <ListArrowSvg />
+                <span className="text-sm text-textLight">
+                  Refund if package is lost
+                </span>
+              </div>
+              <div className="mt-2 flex items-center gap-2">
+                <ListArrowSvg />
+                <span className="text-sm text-textLight">
+                  Refund if the item is damaged
+                </span>
+              </div>
+              <div className="mt-2 flex items-center gap-2">
+                <ListArrowSvg />
+                <span className="text-sm text-textLight">
+                  Refund if no delivery in 20-30 days
+                </span>
+              </div>
+            </div>
+            <div className="mt-4">
+              <div className="flex items-center gap-2 text-sm mb-2">
+                <PiKeyReturnBold className="size-6 " />
+                <div>
+                  <h5 className="font-medium">Free returns within 20 Days</h5>
+                </div>
+              </div>
+            </div>
+            <div className="mt-4">
+              <div className="flex items-center gap-2 text-sm mb-2">
+                <FaShieldAlt className="size-5 " />
+                <div>
+                  <h5 className="font-medium">Security & Privacy</h5>
+                </div>
+              </div>
+              <div className='space-y-2'>
+                <div className='text-sm text-textLight gap-2'>
+                  <h4 className='text-black/90 font-medium inline'>Safe Payments : </h4>
+                  <span  >
+                    We never disclose your personal information to any parties
+                    without your consent
+                  </span>
+                </div>
+                <div className='text-textLight text-sm gap-2'>
+                  <h4 className='inline font-medium text-black/90'>Secure Personal Details : </h4>
+                  <span>
+                    We protect your privacy and keep data safe and secure
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
 
       <div className="mt-40 container mx-auto">
@@ -254,28 +367,28 @@ const ProductDetails = () => {
           {/* tabs */}
           <div className="bg-[#F6F7FB] px-16 py-12 mt-16 rounded-lg">
             <div className="flex items-center gap-5">
-              <MyTabs />
+              <ReviewTab />
             </div>
           </div>
         </div>
       </div>
 
-      <div className="my-40 bg-[#FDF9D4]  ">
+      <div className="my-20 container mx-auto">
+        <div>
+          <h2 className="text-center text-4xl font-semibold">Related Items</h2>
+        </div>
+        <div className="mt-12 grid grid-cols-6 gap-8">
+          {allProducts?.map((item, idx) => (
+            <ItemCard key={idx} item={item} />
+          ))}
+        </div>
+      </div>
+
+      <div className="  bg-[#FDF9D4]  ">
         <div className="container mx-auto py-24">
           <div className="pt-10">
             <ReviewsSlider />
           </div>
-        </div>
-      </div>
-
-      <div className="my-40 container mx-auto">
-        <div>
-          <h2 className="text-center text-4xl font-semibold">Related Items</h2>
-        </div>
-        <div className="mt-20 grid grid-cols-5 gap-8">
-          {allProducts?.map((item, idx) => (
-            <ItemCard key={idx} item={item} />
-          ))}
         </div>
       </div>
     </section>
