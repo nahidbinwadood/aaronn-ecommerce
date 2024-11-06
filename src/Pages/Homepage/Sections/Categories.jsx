@@ -20,32 +20,27 @@ const Categories = () => {
       path: '/categories/home-and-garden',
     },
     {
-      image:
-        'https://i.postimg.cc/7hxFdsM9/4.png',
+      image: 'https://i.postimg.cc/7hxFdsM9/4.png',
       category: 'Electronics',
       path: '/categories/electronics',
     },
     {
-      image:
-        'https://i.postimg.cc/j5QV80NC/6.png',
+      image: 'https://i.postimg.cc/j5QV80NC/6.png',
       category: "Women's Clothing",
       path: "/categories/women's-clothing",
     },
     {
-      image:
-        'https://s3-alpha-sig.figma.com/img/f340/5244/c28ffff907eee4c4d7f51c55e555eeaf?Expires=1730678400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=cVTT46udQUWMfKNbmYA2QtfzdzP1bq0k2rXbWE~cNgH7qmW3pW8FPoypCmWd3wk9cN6AREK8Mgf-NvqOG9R~se4OIyKKOH7nbGtKDqlr06oT39xN~rMUn3uJrxLaWlmBB-HoYIjBiPubfLKi1I8eAnLObRz9hBraHNJ65gv0GG388wUfPEGGD2xlRtIllYljug49aD1SrViVm5ufVhKdhlmjc~9UEaJiwPEEsEzLkaBDSjwVicSDaIBEgtFnxLwPArrg6t-kaNm7AuAKKu3BRf14AHJi1k5lPQXX03Al5MPQoGIbVoV2Vf~7FjZLabq5cPJ41fUQ~ovAi7EBuROEjg__',
+      image: 'https://i.postimg.cc/fbdQ90Rc/7.png',
       category: 'Babies & Kids',
       path: '/categories/babies-&-kids',
     },
     {
-      image:
-        'https://i.postimg.cc/fbdQ90Rc/7.png',
+      image: 'https://i.postimg.cc/fbdQ90Rc/7.png',
       category: 'Beauty & Health',
       path: '/categories/beauty-&-health',
     },
     {
-      image:
-        'https://i.postimg.cc/y8tzxTs6/8.png',
+      image: 'https://i.postimg.cc/y8tzxTs6/8.png',
       category: 'Sports & Entertainment',
       path: '/categories/sports-&-entertainment',
     },
