@@ -32,7 +32,7 @@ const Services = () => {
   ];
 
   return (
-    <section className="my-10 md:my-16 lg:my-20 xl:my-28 2xl:my-40 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 container mx-auto px-5 md:px-7 2xl:px-0">
+    <section className="my-10 md:my-16 lg:my-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 container mx-auto px-5 md:px-7 2xl:px-0">
       {allServices?.map((service, idx) => (
         <ServiceCard key={idx} service={service} />
       ))}

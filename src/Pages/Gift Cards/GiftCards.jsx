@@ -215,7 +215,7 @@ const GiftCards = () => {
       <div>
         <section className="container mx-auto">
           {activeView == 'gallery' && (
-            <div className="mt-20 grid grid-cols-5 gap-8">
+            <div className="mt-20 grid grid-cols-6 gap-8">
               {allProducts?.map((item, idx) => (
                 <ItemCard key={idx} item={item} />
               ))}

@@ -121,20 +121,6 @@ const WelcomePage = () => {
       previousPrice: 330.69,
     },
     {
-      image: 'https://i.imgur.com/ia0QnBP.png',
-      title: 'Xiaomi Mijia vacuum Cleaner',
-      review: 5,
-      price: 196.34,
-      previousPrice: 330.69,
-    },
-    {
-      image: 'https://i.imgur.com/SQQlarb.png',
-      title: 'Xiaomi Mijia vacuum Cleaner',
-      review: 5,
-      price: 196.34,
-      previousPrice: 330.69,
-    },
-    {
       image: 'https://i.imgur.com/LRfGo6D.png',
       title: 'Xiaomi Mijia vacuum Cleaner',
       review: 5,
@@ -220,6 +206,55 @@ const WelcomePage = () => {
     },
     {
       image: 'https://i.imgur.com/LRfGo6D.png',
+      title: 'Xiaomi Mijia vacuum Cleaner',
+      review: 5,
+      price: 196.34,
+      previousPrice: 330.69,
+    },
+    {
+      image: 'https://i.imgur.com/LRfGo6D.png',
+      title: 'Xiaomi Mijia vacuum Cleaner',
+      review: 5,
+      price: 196.34,
+      previousPrice: 330.69,
+    },
+    {
+      image: 'https://i.imgur.com/ia0QnBP.png',
+      title: 'Xiaomi Mijia vacuum Cleaner',
+      review: 5,
+      price: 196.34,
+      previousPrice: 330.69,
+    },
+    {
+      image: 'https://i.imgur.com/SQQlarb.png',
+      title: 'Xiaomi Mijia vacuum Cleaner',
+      review: 5,
+      price: 196.34,
+      previousPrice: 330.69,
+    },
+    {
+      image: 'https://i.imgur.com/LRfGo6D.png',
+      title: 'Xiaomi Mijia vacuum Cleaner',
+      review: 5,
+      price: 196.34,
+      previousPrice: 330.69,
+    },
+    {
+      image: 'https://i.imgur.com/SQQlarb.png',
+      title: 'Xiaomi Mijia vacuum Cleaner',
+      review: 5,
+      price: 196.34,
+      previousPrice: 330.69,
+    },
+    {
+      image: 'https://i.imgur.com/LRfGo6D.png',
+      title: 'Xiaomi Mijia vacuum Cleaner',
+      review: 5,
+      price: 196.34,
+      previousPrice: 330.69,
+    },
+    {
+      image: 'https://i.imgur.com/SQQlarb.png',
       title: 'Xiaomi Mijia vacuum Cleaner',
       review: 5,
       price: 196.34,
@@ -241,7 +276,7 @@ const WelcomePage = () => {
       </div>
 
       {/* Categories */}
-      <section className="my-40  bg-[#F8F8F8] relative">
+      <section className="my-16  bg-[#F8F8F8] relative">
         <div className=" pt-28 pb-28 relative z-20">
           <Title title={'Discover our welcome deals'} />
 
@@ -259,12 +294,12 @@ const WelcomePage = () => {
       {/* Products Page */}
       <div>
         <section className="container mx-auto">
-          <div className="mt-20 grid grid-cols-5 gap-8">
+          <div className="mt-16 grid grid-cols-6 gap-8">
             {allProducts?.map((item, idx) => (
               <ItemCard key={idx} item={item} />
             ))}
           </div>
-          <div className="w-full flex items-center justify-center pt-20">
+          <div className="w-full flex items-center justify-center pt-12">
             <button className="bg-[#191919] px-8 py-3 rounded-full text-white  ">
               Load More
             </button>
