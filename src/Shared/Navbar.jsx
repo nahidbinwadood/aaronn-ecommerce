@@ -8,6 +8,7 @@ import {
   PersonBlackSvg,
   PersonSvg,
   SearchSvg,
+  USAFlagSvg,
   WishlistSvg,
 } from '@/Components/Svg Container/SvgContainer';
 import { Link, NavLink, useNavigate } from 'react-router-dom';
@@ -710,6 +711,17 @@ const homeAppliances = [
     path: '/category/charger',
   },
 ];
+
+const languages=[
+  {
+    name:"English-US",
+    code:"EN"
+  },
+  {
+    name:"español - Es",
+    code:"ES"
+  },
+]
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   const [showCategory, setShowCategory] = useState(false);
@@ -720,9 +732,11 @@ const Navbar = () => {
   const [showSuggestionsText, setShowSuggestionsText] = useState(false);
   const [showProfileInfo, setShowProfileInfo] = useState(false);
   const [searchText, setSearchText] = useState('');
-  // const [selected, setSelected] = useState('BD');
+  const [showLanguage, setShowLanguage] = useState(false);
+  const [language,setLanguage]=useState("EN")
   const dropdownRef = useRef(null);
   const profileInfoRef = useRef(null);
+  const languageRef = useRef(null);
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
@@ -750,6 +764,10 @@ const Navbar = () => {
         !profileInfoRef.current.contains(event.target)
       ) {
         setShowProfileInfo(false);
+      }
+
+      if (languageRef.current && !languageRef.current.contains(event.target)) {
+        setShowLanguage(false);
       }
     };
 
@@ -933,7 +951,55 @@ const Navbar = () => {
             </form>
           </div>
 
-          <div className="flex items-center gap-12">
+          <div className="flex items-center gap-6">
+            {/* Language */}
+            <div className="relative">
+              <div
+                onClick={() => setShowLanguage(!showLanguage)}
+                className="flex items-center gap-2 cursor-pointer font-poppins border border-transparent hover:border-blackColor rounded px-2 transition duration-500"
+              >
+                <USAFlagSvg />
+                <p>{language}</p>
+              </div>
+
+              <div
+                className={`bg-secondaryColor  p-4 rounded-lg shadow-lg absolute z-10 min-w-44 -right-10 ${
+                  showLanguage
+                    ? 'translate-y-3 opacity-100 transition-transform duration-300'
+                    : 'translate-y-5 opacity-0 transition-transform duration-300'
+                }`}
+              >
+                <div ref={languageRef} className="flex flex-col gap-2">
+
+                  {
+                    languages.map(lang=>
+                      <div key={lang?.name}>
+                      <input
+                        type="radio"
+                        name="language"
+                        id={lang?.name}
+                        className="peer hidden"
+                        checked={language ==lang?.code}
+                      />
+                      <label
+                        onClick={() => {
+                          setLanguage(lang.code)
+                          setShowLanguage(false)
+                        }}
+                        htmlFor={lang?.name}
+                        className="flex items-center gap-2 cursor-pointer before:content-[''] before:size-4 before:bg-white before:rounded-full peer-checked:before:bg-secondaryColor before:border before:border-white peer-checked:before:border-[4px]"
+                      >
+                        <span>{lang?.name}</span>
+                      </label>
+                    </div>
+                    )
+                  }
+
+                </div>
+              </div>
+            </div>
+
+            {/* Profile Information */}
             <div
               ref={profileInfoRef}
               onClick={() => setShowProfileInfo(!showProfileInfo)}
@@ -1030,6 +1096,8 @@ const Navbar = () => {
                 </div>
               </div>
             </div>
+
+            {/* Cart */}
             <Link to="/cart" className="flex items-center gap-2 cursor-pointer">
               <div>
                 <CartSvg dark={true} />
