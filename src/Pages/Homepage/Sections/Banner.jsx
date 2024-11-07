@@ -27,6 +27,22 @@ const Banner = () => {
       img: 'https://assets.lummi.ai/assets/QmNraz99nRmGZhXW11eLZhySjqq2b5DXFLwhwVXJR8NEio?auto=format&w=1500',
       discount: 30,
     },
+    {
+      img: 'https://i.postimg.cc/QdhqH3SH/bottle.avif',
+      discount: 70,
+    },
+    {
+      img: 'https://i.postimg.cc/rwwtBFQC/glass.avif',
+      discount: 80,
+    },
+    {
+      img: 'https://i.postimg.cc/63yctfcc/watch.avif',
+      discount: 50,
+    },
+    {
+      img: 'https://assets.lummi.ai/assets/QmNraz99nRmGZhXW11eLZhySjqq2b5DXFLwhwVXJR8NEio?auto=format&w=1500',
+      discount: 30,
+    },
   ];
   const choiceContents = {
     title: 'Choice',
@@ -248,7 +264,7 @@ const Banner = () => {
               640: { slidesPerView: 1, spaceBetween: 20 }, // Medium screens
               768: { slidesPerView: 1, spaceBetween: 20 }, // Tablet screens
               1024: { slidesPerView: 2, spaceBetween: 30 }, // Large screens
-              1280: { slidesPerView: 3, spaceBetween: 30 }, // Extra-large screens
+              1280: { slidesPerView: 4, spaceBetween: 30 }, // Extra-large screens
             }}
             className="mySwiper relative rounded-md lg:rounded-2xl mt-5"
           >
