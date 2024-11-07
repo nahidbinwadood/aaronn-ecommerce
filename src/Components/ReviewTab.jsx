@@ -8,7 +8,7 @@ const ReviewTab = () => {
       <div className="flex items-center gap-8 text-lg font-medium">
         <button
           onClick={() => setActive('description')}
-          className={`pb-3 border-b-[3px] border-transparent transition-all duration-300 ease-in-out ${
+          className={`pb-3 border-b-[3px] transition-all duration-300 ease-in-out ${
             active == 'description'
               ? 'border-[#3979F0] text-[#3979F0]'
               : 'text-textLight border-transparent'

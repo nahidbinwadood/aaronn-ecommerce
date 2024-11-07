@@ -1,6 +1,5 @@
 import ItemCard from '@/Components/Cards/ItemCard';
 import ReviewsSlider from '@/Components/Review';
-import DetailsSlider from '@/Components/Sliders/DetailsSlider';
 import {
   CartFullSvg,
   HeartRedSvg,
@@ -11,13 +10,14 @@ import {
   YellowStarSvg,
 } from '@/Components/Svg Container/SvgContainer';
 // import MyTabs from '@/Components/Tabs';
+import ReviewTab from '@/Components/ReviewTab';
+import CustomSlider from '@/Components/Sliders/CustomSlider';
 import { useState } from 'react';
 import toast from 'react-hot-toast';
+import { FaShieldAlt, FaShippingFast } from 'react-icons/fa';
 import { FaLocationDot } from 'react-icons/fa6';
 import { MdLocalShipping } from 'react-icons/md';
-import { FaShieldAlt, FaShippingFast } from 'react-icons/fa';
 import { PiKeyReturnBold } from 'react-icons/pi';
-import ReviewTab from '@/Components/ReviewTab';
 const allProducts = [
   {
     image: 'https://i.imgur.com/ia0QnBP.png',
@@ -104,7 +104,53 @@ const allProducts = [
     previousPrice: 330.69,
   },
 ];
+
+const media = [
+  {
+    type: 'image',
+    src: 'https://i.postimg.cc/GpQ87R85/black-Shirt.jpg',
+    color: 'black',
+    colorCode: '#000000',
+  },
+  {
+    type: 'image',
+    src: 'https://i.postimg.cc/43ZHQydc/blue-Shirt.jpg',
+    color: 'blue',
+    colorCode: '#0000FF',
+  },
+  {
+    type: 'image',
+    src: 'https://i.postimg.cc/BQrKtMfM/redShirt.jpg',
+    color: 'red',
+    colorCode: '#FF0000',
+  },
+  {
+    type: 'image',
+    src: 'https://i.postimg.cc/DfYs37jV/white-Shirt.jpg',
+    color: 'white',
+    colorCode: '#FFFFFF',
+  },
+  {
+    type: 'image',
+    src: 'https://i.postimg.cc/hPzmSN6X/gray-Shirt.jpg',
+    color: 'gray',
+    colorCode: '#808080',
+  },
+  {
+    type: 'image',
+    src: 'https://i.postimg.cc/JzjBXZ1m/green-Shirt.jpg',
+    color: 'green',
+    colorCode: '#008000',
+  },
+  {
+    type: 'image',
+    src: 'https://i.postimg.cc/tJfV3zZR/purple-Shirt.jpg',
+    color: 'purple',
+    colorCode: '#800080',
+  },
+];
 const ProductDetails = () => {
+  const [activeSlide, setActiveSlide] = useState(media[0]);
   const [wished, setWished] = useState(false);
   const [count, setCount] = useState(1);
   const [price, setPrice] = useState(88.0);
@@ -133,7 +179,12 @@ const ProductDetails = () => {
             src="https://i.imgur.com/yK7SZMY.png"
             alt=""
           /> */}
-          <DetailsSlider />
+          {/* <DetailsSlider /> */}
+          <CustomSlider
+            media={media}
+            activeSlide={activeSlide}
+            setActiveSlide={setActiveSlide}
+          />
         </div>
         <div className="w-[35%]">
           <div>
@@ -189,7 +240,10 @@ const ProductDetails = () => {
 
             <div className="space-y-8">
               {/*available  */}
-              <p className='mt-6 block'><span className='font-medium'>This item is available in :</span> United States, Canada and United Kingdom</p>
+              <p className="mt-6 block">
+                <span className="font-medium">This item is available in :</span>{' '}
+                United States, Canada and United Kingdom
+              </p>
 
               {/* size */}
               <div className="mt-8 flex items-center gap-3">
@@ -210,10 +264,18 @@ const ProductDetails = () => {
                   Colors:
                 </h4>
                 <div className="flex items-center gap-3">
-                  <div className="size-8 rounded-full bg-[#686463] cursor-pointer" />
-                  <div className="size-8 rounded-full bg-[#618BF7] cursor-pointer" />
-                  <div className="size-8 rounded-full bg-[#59C3C0] cursor-pointer" />
-                  <div className="size-8 rounded-full bg-[#D3BBF3] cursor-pointer" />
+                  {media?.map((item) => (
+                    <div
+                      onClick={() => setActiveSlide(item)}
+                      key={item?.colorCode}
+                      style={{ backgroundColor: item?.colorCode }}
+                      className={`size-7 rounded-full shadow-lg cursor-pointer ${
+                        item == activeSlide
+                          ? 'scale-125 transition-all duration-500'
+                          : 'scale-100 transition-all duration-500 '
+                      }`}
+                    />
+                  ))}
                 </div>
               </div>
 
@@ -340,16 +402,20 @@ const ProductDetails = () => {
                   <h5 className="font-medium">Security & Privacy</h5>
                 </div>
               </div>
-              <div className='space-y-2'>
-                <div className='text-sm text-textLight gap-2'>
-                  <h4 className='text-black/90 font-medium inline'>Safe Payments : </h4>
-                  <span  >
+              <div className="space-y-2">
+                <div className="text-sm text-textLight gap-2">
+                  <h4 className="text-black/90 font-medium inline">
+                    Safe Payments :{' '}
+                  </h4>
+                  <span>
                     We never disclose your personal information to any parties
                     without your consent
                   </span>
                 </div>
-                <div className='text-textLight text-sm gap-2'>
-                  <h4 className='inline font-medium text-black/90'>Secure Personal Details : </h4>
+                <div className="text-textLight text-sm gap-2">
+                  <h4 className="inline font-medium text-black/90">
+                    Secure Personal Details :{' '}
+                  </h4>
                   <span>
                     We protect your privacy and keep data safe and secure
                   </span>

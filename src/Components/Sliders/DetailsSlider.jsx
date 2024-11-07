@@ -16,6 +16,8 @@ export default function DetailsSlider() {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
   const [swiperRef, setSwiperRef] = useState(null);
 
+  console.log(setSwiperRef);
+
   // Images and Video array for easier maintenance
   const media = [
     'https://videos.pexels.com/video-files/4154241/4154241-uhd_2732_1440_25fps.mp4', // Video URL
@@ -24,11 +26,11 @@ export default function DetailsSlider() {
     'https://i.postimg.cc/Jr86mBq7/product-3.jpg',
     'https://i.postimg.cc/zfrjJ9T2/product-4.jpg',
     'https://i.postimg.cc/9f1WmwD4/product-5.jpg',
-    // 'https://i.postimg.cc/xTbTvd47/product-6.jpg',
-    // 'https://i.postimg.cc/g2Vz7TdH/product-7.jpg',
-    // 'https://i.postimg.cc/JzV7PLwh/product-8.jpg',
-    // 'https://i.postimg.cc/ZqJbzx5t/product-9.jpg',
-    // 'https://i.postimg.cc/L4W8gPNL/product-10.jpg',
+    'https://i.postimg.cc/xTbTvd47/product-6.jpg',
+    'https://i.postimg.cc/g2Vz7TdH/product-7.jpg',
+    'https://i.postimg.cc/JzV7PLwh/product-8.jpg',
+    'https://i.postimg.cc/ZqJbzx5t/product-9.jpg',
+    'https://i.postimg.cc/L4W8gPNL/product-10.jpg',
   ];
 
   return (
@@ -57,7 +59,10 @@ export default function DetailsSlider() {
                   src={item}
                   className="w-full h-full object-cover"
                   loading="lazy"
-                  controls
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
                 />
               ) : (
                 // Image element
@@ -84,6 +89,7 @@ export default function DetailsSlider() {
           </button>
           <Swiper
             onSwiper={setThumbsSwiper}
+
             spaceBetween={10}
             slidesPerView={6}
             freeMode={true}

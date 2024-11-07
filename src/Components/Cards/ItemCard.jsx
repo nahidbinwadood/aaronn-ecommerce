@@ -6,9 +6,9 @@ import { FaHeart } from 'react-icons/fa6';
 const ItemCard = ({ item }) => {
   const { title, review, price, previousPrice, image } = item;
   const [isFavorite, setIsFavorite] = useState(false);
-  console.log(isFavorite);
+
   return (
-    <div className='relative'>
+    <div className="relative">
       <div className="w-full relative bg-white rounded-2xl">
         <div className="h-[200px]">
           <img
