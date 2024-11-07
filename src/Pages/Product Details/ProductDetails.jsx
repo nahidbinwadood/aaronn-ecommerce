@@ -107,6 +107,12 @@ const allProducts = [
 
 const media = [
   {
+    type:"video",
+    src:"https://videos.pexels.com/video-files/8496762/8496762-hd_1080_1920_25fps.mp4",
+   // color:"black",
+    //colorCode:"#000000"
+  },
+  {
     type: 'image',
     src: 'https://i.postimg.cc/GpQ87R85/black-Shirt.jpg',
     color: 'black',
