@@ -155,6 +155,10 @@ const media = [
     colorCode: '#800080',
   },
 ];
+
+const availableSizes=[
+  
+]
 const ProductDetails = () => {
   const [activeSlide, setActiveSlide] = useState(media[0]);
   const [wished, setWished] = useState(false);
