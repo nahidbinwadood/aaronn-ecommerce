@@ -5,20 +5,36 @@ import { useEffect, useRef, useState } from 'react';
 const NavbarRes = () => {
   const navLinks = [
     {
-      name: 'Home',
+      title: 'Home',
       path: '/',
     },
     {
-      name: 'Best Sellers',
+      title: 'Best sellers',
       path: '/best-sellers',
     },
     {
-      name: 'Top Brands',
+      title: 'Top Brands',
       path: '/top-brands',
     },
     {
-      name: 'Categories',
-      path: '/category',
+      title: "Today's Deals",
+      path: '/todays-deals',
+    },
+    {
+      title: 'Gift Cards',
+      path: '/gift-cards',
+    },
+    {
+      title: 'Buy Again',
+      path: '/buy-again',
+    },
+    {
+      title: 'Watchlist',
+      path: '/dashboard/wishlist',
+    },
+    {
+      title: 'Order',
+      path: '/dashboard/orders',
     },
   ];
   const dashboardLinks = [
@@ -92,7 +108,7 @@ const NavbarRes = () => {
                 name=""
                 id=""
               />
-              <div className="absolute right-4 top-0">
+              <div className="absolute right-4 top-0 mt-[2px]">
                 <SearchSvg />
               </div>
             </label>
@@ -129,7 +145,7 @@ const NavbarRes = () => {
           {navLinks.map((link) => (
             <NavLink
               onClick={() => setShowSidebar(false)}
-              key={link?.name}
+              key={link?.title}
               to={link?.path}
               className={({ isActive }) =>
                 `flex items-center gap-1 font-medium text-sm md:text-base ${
@@ -137,7 +153,7 @@ const NavbarRes = () => {
                 }`
               }
             >
-              {link?.name}
+              {link?.title}
             </NavLink>
           ))}
         </div>

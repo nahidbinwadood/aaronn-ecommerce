@@ -809,16 +809,16 @@ const Navbar = () => {
       </Modal>
 
       {/* primary navbar */}
-      <div className="h-[70px] lg:flex items-center hidden">
+      <div className="h-[70px] lg:flex items-center hidden px-7 2xl:px-0">
         <div className="container mx-auto w-full flex items-center justify-between">
-          <div className="flex items-center gap-7">
+          <div className="flex items-center gap-4 2xl:gap-7">
             <Link to="/">
               <h3 className="text-xl">Logo Here</h3>
             </Link>
 
             <div
               onClick={() => setOpen(true)}
-              className="flex items-center gap-2 cursor-pointer border border-transparent hover:border-blackColor px-5 py-2 rounded duration-300 transition"
+              className="flex items-center gap-2 cursor-pointer border border-transparent hover:border-blackColor px-3 2xl:px-5 py-2 rounded duration-300 transition"
             >
               <div>
                 <LocationSvg />
@@ -831,7 +831,7 @@ const Navbar = () => {
           </div>
           <div>
             <form onSubmit={handleSubmit} action="" className="relative">
-              <label htmlFor="search" className="relative block w-[750px]">
+              <label htmlFor="search" className="relative block xl:w-[500px] 2xl:w-[750px]">
                 <input
                   onFocus={() => setShowSuggestion(true)}
                   onChange={(e) => {
@@ -867,10 +867,10 @@ const Navbar = () => {
                 }`}
               >
                 {!showSuggestionsText && (
-                  <div className="flex text-black p-9 h-full">
-                    <div className="w-[25%] overflow-y-scroll discover-more">
+                  <div className="flex text-black p-6 2xl:p-9 h-full">
+                    <div className="w-[30%] 2xl:w-[25%] overflow-y-scroll discover-more">
                       <div>
-                        <h2 className="text-xl font-medium">Discover More</h2>
+                        <h2 className="2xl:text-xl font-medium">Discover More</h2>
                       </div>
                       <div>
                         <ul className="mt-6 flex flex-col gap-4">
@@ -879,7 +879,7 @@ const Navbar = () => {
                               onClick={() => setShowSuggestion(false)}
                               key={idx}
                             >
-                              <Link to={'/category'} className="">
+                              <Link to={'/category'} className="text-sm">
                                 {item?.title}
                               </Link>
                             </li>
@@ -1132,7 +1132,7 @@ const Navbar = () => {
       </div>
 
       {/* secondary navbar */}
-      <div className="bg-blackColor h-[80px] lg:flex items-center hidden">
+      <div className="bg-blackColor h-[80px] lg:flex items-center hidden px-7 2xl:px-0">
         <div className="container mx-auto flex items-center  ">
           <div className="relative flex-shrink-0">
             <button
