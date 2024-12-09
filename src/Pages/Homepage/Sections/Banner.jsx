@@ -9,38 +9,43 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
+import wcBanner1 from "../../../assets/images/banner/wc-1.avif"
+import wcBanner2 from "../../../assets/images/banner/wc-2.avif"
+import wcBanner3 from "../../../assets/images/banner/wc-3.avif"
+import wcBanner4 from "../../../assets/images/banner/wc-4.avif"
+import wcBanner5 from "../../../assets/images/banner/wc-5.avif"
 const Banner = () => {
   const welcomeDeals = [
     {
-      img: 'https://i.postimg.cc/QdhqH3SH/bottle.avif',
+      img: wcBanner4,
       discount: 70,
     },
     {
-      img: 'https://i.postimg.cc/rwwtBFQC/glass.avif',
+      img: wcBanner1,
       discount: 80,
     },
     {
-      img: 'https://i.postimg.cc/63yctfcc/watch.avif',
+      img: wcBanner2,
       discount: 50,
     },
     {
-      img: 'https://assets.lummi.ai/assets/QmNraz99nRmGZhXW11eLZhySjqq2b5DXFLwhwVXJR8NEio?auto=format&w=1500',
+      img: wcBanner3,
       discount: 30,
     },
     {
-      img: 'https://i.postimg.cc/QdhqH3SH/bottle.avif',
+      img: wcBanner5,
       discount: 70,
     },
     {
-      img: 'https://i.postimg.cc/rwwtBFQC/glass.avif',
+      img: wcBanner4,
       discount: 80,
     },
     {
-      img: 'https://i.postimg.cc/63yctfcc/watch.avif',
+      img: wcBanner1,
       discount: 50,
     },
     {
-      img: 'https://assets.lummi.ai/assets/QmNraz99nRmGZhXW11eLZhySjqq2b5DXFLwhwVXJR8NEio?auto=format&w=1500',
+      img: wcBanner3,
       discount: 30,
     },
   ];
